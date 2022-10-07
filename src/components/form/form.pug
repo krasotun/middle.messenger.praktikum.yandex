@@ -1,0 +1,6 @@
+mixin form (title, inputList)
+	form
+		.form__container
+			h2.form__title=title
+			each val in inputList
+				input(name=val.name placeholder=val.placeholder)
