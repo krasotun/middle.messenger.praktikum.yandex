@@ -1,0 +1,42 @@
+.chat {
+  display: flex;
+  &-list {
+    width: 310px;
+    background: #fbfbfb;
+    height: 100vh;
+    border-right: 1px solid #eaeaea;
+    padding: 21px 10px;
+    &__form-container {
+      margin-top: 23px;
+    }
+    &__profile-link {
+      display: block;
+      text-decoration: none;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 12px;
+      text-align: right;
+      color: #999999;
+    }
+  }
+  &-search-form {
+    &__input {
+      background: #efefef;
+      border-radius: 5px;
+      border: 1px transparent solid;
+      height: 32px;
+      width: 100%;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 12px;
+      color: #999999;
+      text-align: center;
+      &:focus {
+        outline: transparent;
+        border: 1px black solid;
+      }
+    }
+  }
+}

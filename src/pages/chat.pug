@@ -1,0 +1,11 @@
+extends ../layout/layout
+block title 
+	title Чат
+	block content
+	.chat 
+		.chat-list 
+			a.chat-list__profile-link(href="index.pug")='Профиль >'
+			.chat-list__form-container
+				include ../components/chat-search-form/chat-search-form
+		.chat-window
+			p Chat window
