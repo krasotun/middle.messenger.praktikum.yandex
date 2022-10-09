@@ -1,0 +1,30 @@
+mixin chat-messages-list(messageDate)
+	p.chat-window__date=messageDate
+	ul.chat-messages-list
+		include ../chat-message/chat-message
+		+chat-message([
+			{
+				date:'11:01',
+				text:'Привет! Смотри, тут всплыл интересный кусок лунной космической истории НАСА в какой-то момент попросила Хассельблад адаптировать модель SWC для полетов на Луну.'
+	},
+	{
+		date:'12:01',
+		text:'Сейчас мы все знаем что астронавты летали с моделью 500 EL — и к слову говоря, все тушки этих камер все еще находятся на поверхности Луны, так как астронавты с собой забрали только кассеты с пленкой.'
+	},
+	{
+		date:'13:01',
+		text:'Хассельблад в итоге адаптировал SWC для космоса, но что-то пошло не так и на ракету они так никогда и не попали. Всего их было произведено 25 штук, одну из них недавно продали на аукционе за 45000 евро.'
+	},
+	{
+		date:'14:01',
+		text:'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+	},
+	{
+		date:'15:01',
+		text:'Короткое сообщение'
+	},
+	{
+		date:'16:01',
+		text:':)'
+	},
+	])

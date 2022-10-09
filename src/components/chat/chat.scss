@@ -58,5 +58,47 @@
       align-items: center;
       gap: 10px;
     }
+    &__content {
+      margin-top: 48px;
+      padding: 0 20px;
+    }
+    &__date {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 12px;
+      text-align: center;
+      color: #999999;
+    }
+  }
+  &-messages-list {
+    margin-top: 20px;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  &-message {
+    &__container {
+      background-color: #f8f8f8;
+      width: 400px;
+      padding: 11px;
+      border-radius: 0px 15px 15px 0px;
+    }
+    &__text {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 15px;
+      color: #1e1e1e;
+    }
+    &__date {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 9px;
+      line-height: 9px;
+      text-align: right;
+      color: #999999;
+    }
   }
 }
