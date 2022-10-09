@@ -1,0 +1,12 @@
+mixin single-chat (singleChatProps)
+	each val in singleChatProps
+		li.single-chat
+			article.single-chat__container
+				.single-chat__left-block
+					img.single-chat__avatar(src=val.avatarLink alt=val.senderName)
+					.single-chat__message-data
+						p.single-chat__sender-name=val.senderName
+						p.single-chat__message-text=val.messageText
+				.single-chat__right-block
+					p.single-chat__message-time=val.messageTime
+					span.single-chat__unread-messages=val.unreadMessages
