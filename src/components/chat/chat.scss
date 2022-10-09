@@ -53,6 +53,10 @@
       width: 100%;
       border-bottom: 1px solid #eaeaea;
     }
+    &__footer {
+      height: 54px;
+      outline: 1px red solid;
+    }
     &__left-block {
       display: flex;
       align-items: center;
