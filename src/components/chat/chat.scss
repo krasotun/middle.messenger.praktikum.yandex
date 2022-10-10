@@ -53,8 +53,10 @@
       border-bottom: 1px solid #eaeaea;
     }
     &__footer {
+      margin-top: 30px;
       height: 54px;
-      outline: 1px red solid;
+      border-top: 1px solid #eaeaea;
+      padding: 11px 20px;
     }
     &__left-block {
       display: flex;
