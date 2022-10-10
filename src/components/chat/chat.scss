@@ -4,6 +4,8 @@
     width: 310px;
     background: #fbfbfb;
     border-right: 1px solid #eaeaea;
+    border-left: 1px solid #eaeaea;
+    border-bottom: 1px solid #eaeaea;
     padding: 21px 10px;
     &__form-container {
       margin-top: 23px;
@@ -43,20 +45,23 @@
     }
   }
   &-window {
+    border-right: 1px solid #eaeaea;
     width: 880px;
     &__header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 10px 20px;
-      width: 100%;
       border-bottom: 1px solid #eaeaea;
     }
     &__footer {
       margin-top: 30px;
       height: 54px;
       border-top: 1px solid #eaeaea;
-      padding: 11px 20px;
+      border-bottom: 1px solid #eaeaea;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
     }
     &__left-block {
       display: flex;
