@@ -4,8 +4,8 @@
   "description": "---",
   "scripts": {
     "build": "parcel build src/pages/*.pug",
-    "server": "parcel build src/pages/*.pug && node ./server/app.js",
-    "start": "parcel src/pages/*.pug --port 3000 --open"
+    "dev": "parcel src/pages/*.pug --port 3000 --open",
+    "start": "node ./server/app.js"
   },
   "repository": {
     "type": "git",
