@@ -66,11 +66,29 @@
       text-align: right;
       width: 100%;
       color: #999999;
+      border: transparent;
+      &:focus {
+        outline: transparent;
+        border-bottom: 1px solid #3369f3;
+      }
       &-container {
         display: flex;
         height: 33px;
         position: relative;
       }
+    }
+    &__submit-button {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 13px;
+      line-height: 13px;
+      text-align: center;
+      color: #ffffff;
+      background: #3369f3;
+      border-radius: 8px;
+      width: 280px;
+      height: 37px;
+      margin: 60px auto;
     }
   }
 }
