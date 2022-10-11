@@ -1,0 +1,5 @@
+mixin profile-links(linksList)
+	ul.profile__links-list
+		each val in linksList
+			li.profille__list-item
+				a.profile__link(href=val.link)=val.text

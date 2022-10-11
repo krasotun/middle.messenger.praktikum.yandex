@@ -3,6 +3,8 @@
   flex-direction: column;
   align-items: center;
   height: 100vh;
+  width: 510px;
+  margin: 0 auto;
   gap: 60px;
   &__avatar {
     margin-top: 60px;
@@ -23,11 +25,13 @@
     text-align: center;
     margin-top: 21px;
   }
-  &__links {
+  &__links-list {
     display: flex;
     flex-direction: column;
     gap: 10px;
     align-items: left;
+    width: 100%;
+    list-style: none;
   }
   &__link {
     font-style: normal;
@@ -36,8 +40,37 @@
     line-height: 13px;
     color: #3369f3;
     text-decoration: none;
-    &_red {
-      color: #ff0000;
+  }
+  &-form {
+    width: 510px;
+    display: flex;
+    flex-direction: column;
+    &__label {
+      position: absolute;
+      left: 0;
+      bottom: 8px;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 13px;
+      line-height: 13px;
+      color: #1e1e1e;
+    }
+    &__input {
+      border: none;
+      border-bottom: 1px solid #eaeaea;
+      background-color: transparent;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 13px;
+      line-height: 13px;
+      text-align: right;
+      width: 100%;
+      color: #999999;
+      &-container {
+        display: flex;
+        height: 33px;
+        position: relative;
+      }
     }
   }
 }

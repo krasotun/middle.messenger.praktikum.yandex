@@ -3,13 +3,25 @@ block title
 	title Профиль пользователя
 block content
 	.profile 
-		.profile__avatar
-			img.profile__avatar-image(src='https://avatarko.ru/img/kartinka/33/muzhchina_kapyushon_33779.jpg' alt='Krasotun')
-			p.profile__user-name Krasotun
+		include ../components/profile-avatar/profile-avatar
 		.profile__form
 			include ../components/view-profile-form/view-profile-form
-		.profile__links
-			a.profile__link(href='index.pug') Изменить данные
-			a.profile__link(href='index.pug') Изменить пароль
-			a.profile__link(href='chat.pug') Вернуться в чат
-			a.profile__link.profile__link_red(href='index.pug') Выйти
+		include ../components/profile-links/profile-links
+		+profile-links([
+			{
+				link:'index.pug',
+				text:'Изменить данные'
+			},
+			{
+				link:'index.pug',
+				text:'Изменить пароль'
+			},
+			{
+				link:'chat.pug',
+				text:'Вернуться в чат'
+			},
+			{
+				link:'index.pug',
+				text:'Выход'
+			},
+		])
