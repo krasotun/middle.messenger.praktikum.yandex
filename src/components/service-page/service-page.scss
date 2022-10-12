@@ -1,0 +1,35 @@
+.service-page {
+  display: flex;
+  width: 250px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 100px auto;
+  &__title {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: #1e1e1e;
+  }
+  &__text {
+    margin-top: 20px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 20px;
+    text-align: center;
+    color: #1e1e1e;
+  }
+  &__link {
+    margin-top: 70px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 11px;
+    text-align: center;
+    color: #3369f3;
+    text-decoration: none;
+  }
+}

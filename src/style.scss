@@ -1,11 +1,13 @@
-@import "/src/vendor/normalize.css";
-@import "/src/vendor/fonts/fonts.css";
-
 @import "/src/components/page/page.scss";
+
+@import "/src/vendor/normalize.css";
+
+@import "/src/vendor/fonts/fonts.css";
 
 @import "/src/components/button/button.scss";
 
 @import "/src/components/sign-form/sign-form.scss";
+
 @import "/src/components/send-message-form/send-message-form.scss";
 
 @import "/src/components/chat/chat.scss";
@@ -13,3 +15,5 @@
 @import "/src/components/single-chat/single-chat.scss";
 
 @import "/src/components/profile/profile.scss";
+
+@import "/src/components/service-page/service-page.scss";
