@@ -1,10 +1,21 @@
-import { render, compile } from "pug";
-import headTemplate from "./components/head/head.template";
+import { render } from "pug";
+import testTemplate from "./components/test/test.template";
+const parser: DOMParser = new DOMParser();
+const root: HTMLElement = document.getElementById("root");
+const props = {
+  title: "My title from props",
+};
+const template: string = render(testTemplate, {
+  title: props.title,
+});
 
-const template = compile(headTemplate)();
-
-const root = document.querySelector(".root");
-console.log(root);
-root?.appendChild(document.createTextNode(template));
-
-console.log(template);
+const renderTemplateToDom = (template: string, container: HTMLElement) => {
+  if (container) {
+    const doc = parser.parseFromString(template, "text/html");
+    const nodeList = Array.from(doc.body.childNodes);
+    nodeList.forEach((domElement) => {
+      container?.appendChild(domElement);
+    });
+  }
+};
+renderTemplateToDom(template, root);
