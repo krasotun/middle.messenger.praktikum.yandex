@@ -20,7 +20,9 @@
     "url": "https://github.com/krasotun/middle.messenger.praktikum.yandex/issues"
   },
   "homepage": "https://github.com/krasotun/middle.messenger.praktikum.yandex#readme",
-  "dependencies": {},
+  "dependencies": {
+    "uuid": "^9.0.0"
+  },
   "devDependencies": {
     "@parcel/transformer-pug": "^2.5.0",
     "@parcel/transformer-sass": "^2.5.0",
