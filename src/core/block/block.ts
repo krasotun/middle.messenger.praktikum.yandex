@@ -46,24 +46,33 @@ export class Block {
     console.log("_componentDidUpdate");
   }
   private _render() {
-    console.log("_render");
+    const el = this.render();
+    console.log("el", el);
+    this._element.innerHTML = el;
   }
-
+  render(): string {
+    return "";
+  }
+  get element() {
+    return this._element;
+  }
   private _makePropsProxy(props: any) {
-    const self = this;
-    return new Proxy(props, {
-      get(target, prop) {
-        const value = target[prop];
-        return typeof value === "function" ? value.bind(target) : value;
-      },
-      set(target, prop, value) {
-        target[prop] = value;
-        self.eventBus.emit(EVENTS.FLOW_CDU, { ...target }, target);
-        return true;
-      },
-      deleteProperty() {
-        throw new Error("Нет доступа");
-      },
-    });
+    if (props) {
+      const self = this;
+      return new Proxy(props, {
+        get(target, prop) {
+          const value = target[prop];
+          return typeof value === "function" ? value.bind(target) : value;
+        },
+        set(target, prop, value) {
+          target[prop] = value;
+          self.eventBus.emit(EVENTS.FLOW_CDU, { ...target }, target);
+          return true;
+        },
+        deleteProperty() {
+          throw new Error("Нет доступа");
+        },
+      });
+    }
   }
 }

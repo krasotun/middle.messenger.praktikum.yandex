@@ -9,6 +9,7 @@
 //   title: props.title,
 // });
 
+import { Header } from "./components/header/header";
 import { Block } from "./core/block/block";
 
 // const renderTemplateToDom = (template: string, container: HTMLElement) => {
@@ -22,8 +23,14 @@ import { Block } from "./core/block/block";
 // };
 // renderTemplateToDom(template, root);
 
-const testBlock: Block = new Block("root", {
-  name: "Marat",
-  job: "Developer",
-});
-console.log(testBlock.init());
+const header = new Header("div");
+const root: HTMLElement = document.getElementById("root");
+
+const renderTemplateToDOM = (template: Block, container: HTMLElement) => {
+  const nodeList = Array.from(template.element.childNodes);
+  nodeList.forEach((element) => {
+    container.appendChild(element);
+  });
+};
+
+renderTemplateToDOM(header, root);
