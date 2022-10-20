@@ -1,6 +1,5 @@
-import { EventBus } from "../event-bus/event-bus";
+import { EventBus } from "./event-bus";
 import { v4 } from "uuid";
-import { IMeta } from "../../interfaces/meta";
 enum EVENTS {
   INIT = "init",
   FLOW_CDM = "flow:component-did-mount",
@@ -9,14 +8,12 @@ enum EVENTS {
 }
 export class Block {
   private _element: HTMLElement;
-  public id: string = v4();
-  private _meta: IMeta;
+  id: string = v4();
   protected readonly props: any;
-  public eventBus: EventBus;
+  eventBus: EventBus;
 
-  constructor(tagName: string, props?: any) {
+  constructor(props?: {}) {
     this.eventBus = new EventBus();
-    this._meta = { tagName, props };
     this.props = this._makePropsProxy(props);
     this._registerEvents(this.eventBus);
     this.eventBus.emit(EVENTS.INIT);
@@ -29,11 +26,10 @@ export class Block {
     eventBus.on(EVENTS.FLOW_RENDER, this._render.bind(this));
   }
   private _createResources() {
-    const { tagName } = this._meta;
-    this._element = this._createDocumentElement(tagName);
+    this._element = this._createDocumentElement();
   }
-  private _createDocumentElement(tagName: string) {
-    return document.createElement(tagName);
+  private _createDocumentElement() {
+    return document.createElement("div");
   }
   init() {
     this._createResources();
@@ -46,13 +42,9 @@ export class Block {
     console.log("_componentDidUpdate");
   }
   private _render() {
-    const el = this.render();
-    console.log("el", el);
-    this._element.innerHTML = el;
-    console.log("До", this._element.firstElementChild);
-    const test = document.createElement("span");
-    this._element = test;
-    console.log("После", this._element);
+    const template = document.createElement("div");
+    template.innerHTML = this.render();
+    this._element = template.firstElementChild as HTMLElement;
   }
   render(): string {
     return "";
@@ -60,7 +52,7 @@ export class Block {
   get element() {
     return this._element;
   }
-  private _makePropsProxy(props: any) {
+  private _makePropsProxy(props: any): any {
     if (props) {
       const self = this;
       return new Proxy(props, {

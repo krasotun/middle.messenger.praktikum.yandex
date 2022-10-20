@@ -8,4 +8,5 @@ header.header
 	a.header__link(href='change-password.pug')='Сменить пароль'
 	a.header__link(href='404.pug')='Страница 404'
 	a.header__link(href='500.pug')='Страница 500'
+	h1 #{title}
 `;
