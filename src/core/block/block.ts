@@ -49,6 +49,10 @@ export class Block {
     const el = this.render();
     console.log("el", el);
     this._element.innerHTML = el;
+    console.log("До", this._element.firstElementChild);
+    const test = document.createElement("span");
+    this._element = test;
+    console.log("После", this._element);
   }
   render(): string {
     return "";
