@@ -10,10 +10,9 @@ export class Block {
   private _element: HTMLElement;
   id: string = v4();
   protected readonly props: any;
-  eventBus: EventBus;
+  eventBus: EventBus = new EventBus();
 
   constructor(props?: {}) {
-    this.eventBus = new EventBus();
     this.props = this._makePropsProxy(props);
     this._registerEvents(this.eventBus);
     this.eventBus.emit(EVENTS.INIT);
@@ -38,18 +37,36 @@ export class Block {
   private _componentDidMount() {
     console.log("_componentDidMount");
   }
-  private _componentDidUpdate() {
+  private _componentDidUpdate(oldProps: any, newProps: any) {
     console.log("_componentDidUpdate");
+    const response = this.componentDidUpdate(oldProps, newProps);
+    if (!response) {
+      return;
+    }
+    this._render();
   }
+
+  componentDidUpdate(oldProps: any, newProps: any) {
+    return true;
+  }
+
   private _render() {
+    console.log("Запустили рендеринг");
     const template = document.createElement("div");
     template.innerHTML = this.render();
     this._element = template.firstElementChild as HTMLElement;
   }
+
+  setProps = (newProps: any) => {
+    if (!newProps) {
+      return;
+    }
+    Object.assign(this.props, newProps);
+  };
   render(): string {
     return "";
   }
-  get element() {
+  getElement() {
     return this._element;
   }
   private _makePropsProxy(props: any): any {

@@ -4,7 +4,7 @@
   "description": "---",
   "scripts": {
     "start": "parcel build ./src/index.html && node ./server.js",
-    "dev": "parcel ./src/index.html --open",
+    "dev": "parcel src/index.html --open",
     "build": "parcel build ./src/index.html",
     "build-pug": "parcel build src/pages/*.pug",
     "dev-pug": "parcel src/pages/*.pug --port 3000 --open",
