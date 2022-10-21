@@ -10,12 +10,14 @@ export class Block {
   private _element: HTMLElement;
   id: string = v4();
   protected readonly props: any;
-  eventBus: EventBus = new EventBus();
+  protected eventBus: () => EventBus;
 
   constructor(props?: {}) {
+    const eventBus = new EventBus();
+    this.eventBus = () => eventBus;
     this.props = this._makePropsProxy(props);
-    this._registerEvents(this.eventBus);
-    this.eventBus.emit(EVENTS.INIT);
+    this._registerEvents(eventBus);
+    eventBus.emit(EVENTS.INIT, this.props);
   }
 
   private _registerEvents(eventBus: EventBus) {
@@ -32,10 +34,11 @@ export class Block {
   }
   init() {
     this._createResources();
-    this.eventBus.emit(EVENTS.FLOW_RENDER);
+    this.eventBus().emit(EVENTS.FLOW_RENDER, this.props);
   }
   private _componentDidMount() {
     console.log("_componentDidMount");
+    this.eventBus().emit(EVENTS.FLOW_RENDER);
   }
   private _componentDidUpdate(oldProps: any, newProps: any) {
     console.log("_componentDidUpdate");
@@ -43,7 +46,7 @@ export class Block {
     if (!response) {
       return;
     }
-    this._render();
+    if (response) this.eventBus().emit(EVENTS.FLOW_RENDER, newProps);
   }
 
   componentDidUpdate(oldProps: any, newProps: any) {
@@ -62,6 +65,7 @@ export class Block {
       return;
     }
     Object.assign(this.props, newProps);
+    this.eventBus().emit(EVENTS.FLOW_CDU, newProps);
   };
   render(): string {
     return "";
@@ -78,8 +82,9 @@ export class Block {
           return typeof value === "function" ? value.bind(target) : value;
         },
         set(target, prop, value) {
+          console.log(target);
           target[prop] = value;
-          self.eventBus.emit(EVENTS.FLOW_CDU, { ...target }, target);
+          self.eventBus().emit(EVENTS.FLOW_CDU, { ...target }, target);
           return true;
         },
         deleteProperty() {
