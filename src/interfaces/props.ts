@@ -4,7 +4,7 @@ interface IChild {
 }
 export interface IProps {
   [key: string]: any;
-  class?: string;
+  className?: string;
   children?: {};
   child?: IChild | HTMLElement | string;
   events?: Record<string, (...args: any) => void>;
