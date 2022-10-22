@@ -64,6 +64,14 @@ export class Block {
   private _render() {
     const template = document.createElement("div");
     template.innerHTML = this.render();
+    template.querySelectorAll(".template-props").forEach((item) => {
+      const templateProp = item.getAttribute("template-props");
+      if (this.props.children && templateProp) {
+        // @ts-ignore
+        const propForReplace = this.props.children[templateProp];
+        item.replaceWith(propForReplace.element);
+      }
+    });
     this._element = template.firstElementChild as HTMLElement;
     const id = v4();
     this._element.setAttribute("id", id);

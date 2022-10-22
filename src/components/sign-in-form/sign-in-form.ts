@@ -1,7 +1,12 @@
 import { Button } from "../button/button";
-import { SignForn } from "../sign-form/sign-form";
+import { SignForm } from "../sign-form/sign-form";
 
-export const signInForm = new SignForn({
+const submitButton = new Button({
+  buttonText: "Войти",
+  className: "sign-form__submit-button",
+});
+
+export const signInForm = new SignForm({
   formTitle: "Вход",
   linkText: "Нет аккаунта?",
   inputList: [
@@ -24,8 +29,7 @@ export const signInForm = new SignForn({
       required: true,
     },
   ],
-  submitButton: new Button({
-    buttonText: "Войти",
-    className: "sign-form__submit-button",
-  }),
+  children: {
+    submitButton,
+  },
 });
