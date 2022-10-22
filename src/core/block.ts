@@ -58,6 +58,7 @@ export class Block {
     const template = document.createElement("div");
     template.innerHTML = this.render();
     this._element = template.firstElementChild as HTMLElement;
+    console.log(this.getElement());
   }
 
   setProps = (newProps: any) => {
