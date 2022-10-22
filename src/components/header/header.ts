@@ -1,6 +1,6 @@
 import { Block } from "../../core/block";
-// import { render as renderTemplate } from "pug";
-// import template from "./header.template";
+import { render as compileTemplate } from "pug";
+import template from "./header.template";
 import { IHeaderProps } from "./header.props";
 
 export class Header extends Block {
@@ -8,6 +8,9 @@ export class Header extends Block {
     super({ title });
   }
   render() {
-    return `<h1>${this.props.title}</h1>`;
+    const { title } = this.props;
+    return compileTemplate(template, {
+      title,
+    });
   }
 }

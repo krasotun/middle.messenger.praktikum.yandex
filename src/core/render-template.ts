@@ -5,6 +5,6 @@ export const renderTemplateToDoM = (
   container: HTMLElement
 ) => {
   if (container) {
-    container.appendChild(template.getElement());
+    container.appendChild(template.element);
   }
 };
