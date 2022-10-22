@@ -37,11 +37,9 @@ export class Block {
     this.eventBus().emit(EVENTS.FLOW_RENDER, this.props);
   }
   private _componentDidMount() {
-    console.log("_componentDidMount");
     this.eventBus().emit(EVENTS.FLOW_RENDER);
   }
   private _componentDidUpdate(oldProps: any, newProps: any) {
-    console.log("_componentDidUpdate");
     const response = this.componentDidUpdate(oldProps, newProps);
     if (!response) {
       return;
@@ -54,11 +52,9 @@ export class Block {
   }
 
   private _render() {
-    console.log("Запустили рендеринг");
     const template = document.createElement("div");
     template.innerHTML = this.render();
     this._element = template.firstElementChild as HTMLElement;
-    console.log(this.getElement());
   }
 
   setProps = (newProps: any) => {
@@ -83,7 +79,6 @@ export class Block {
           return typeof value === "function" ? value.bind(target) : value;
         },
         set(target, prop, value) {
-          console.log(target);
           target[prop] = value;
           self.eventBus().emit(EVENTS.FLOW_CDU, { ...target }, target);
           return true;
