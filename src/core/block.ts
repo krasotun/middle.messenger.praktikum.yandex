@@ -65,6 +65,8 @@ export class Block {
     const template = document.createElement("div");
     template.innerHTML = this.render();
     this._element = template.firstElementChild as HTMLElement;
+    const id = v4();
+    this._element.setAttribute("id", id);
   }
   private _componentDidMount() {
     this.componentDidMount();
