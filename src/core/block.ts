@@ -20,9 +20,11 @@ export class Block {
   props: IProps;
   eventBus: () => EventBus;
 
-  constructor(props: IProps) {
+  constructor(props?: IProps) {
     const eventBus = new EventBus();
-    this.props = this._makePropsProxy(props);
+    if (props) {
+      this.props! = this._makePropsProxy(props);
+    }
     this.eventBus = () => eventBus;
     this._registerEvents(eventBus);
     eventBus.emit(EVENTS.INIT);
