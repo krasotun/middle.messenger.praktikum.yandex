@@ -1,3 +1,3 @@
 export interface IHeaderProps {
-  title: String;
+  title?: String;
 }

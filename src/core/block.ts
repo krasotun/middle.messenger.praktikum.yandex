@@ -78,10 +78,11 @@ export class Block {
         item.replaceWith(propForReplace.element);
       }
     });
-    this._element = template.firstElementChild as HTMLElement;
+    this._element = template;
     const id = v4();
     this._element.setAttribute("id", id);
   }
+
   private _componentDidMount() {
     this.componentDidMount();
     this.eventBus().emit(EVENTS.FLOW_RENDER);

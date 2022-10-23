@@ -6,7 +6,6 @@ export interface ISignFormProps {
   inputList: {}[];
   children?: {
     submitButton: Button;
-    unSubmitButton: Button;
   };
   linkHref?: string;
   linkText?: string;

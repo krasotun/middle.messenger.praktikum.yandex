@@ -5,14 +5,10 @@ const submitButton = new Button({
   buttonText: "Войти",
   className: "sign-form__submit-button",
 });
-const unSubmitButton = new Button({
-  buttonText: "Выйти",
-  className: "sign-form__submit-button",
-});
-
 export const signInForm = new SignForm({
   formTitle: "Вход",
   linkText: "Нет аккаунта?",
+  linkHref: "index.html",
   inputList: [
     {
       label: "Логин",
@@ -35,6 +31,5 @@ export const signInForm = new SignForm({
   ],
   children: {
     submitButton,
-    unSubmitButton,
   },
 });

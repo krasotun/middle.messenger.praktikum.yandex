@@ -1,6 +1,7 @@
 .header {
   display: flex;
   padding: 10px;
+  justify-content: space-between;
   gap: 10px;
   &__link {
     font-style: normal;
