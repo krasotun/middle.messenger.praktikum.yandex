@@ -13,5 +13,6 @@ form.form.sign-form
 						p.sign-form__error-text.sign-form__error-text_hidden
 			div.sign-form__bottom-container
 				button(template-props='submitButton' class='template-props')
+				button(template-props='unSubmitButton' class='template-props')
 				a.sign-form__link(href=linkHref) #{linkText}
 `;

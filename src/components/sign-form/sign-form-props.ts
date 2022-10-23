@@ -4,7 +4,10 @@ import { Button } from "../button/button";
 export interface ISignFormProps {
   formTitle: string;
   inputList: {}[];
-  children?: {};
+  children?: {
+    submitButton: Button;
+    unSubmitButton: Button;
+  };
   linkHref?: string;
   linkText?: string;
 }

@@ -31,6 +31,12 @@ export class Block {
   get proplist(): PropList {
     return this._propList;
   }
+
+  // get _children(propsAndChidren: {}) {
+  // 	const children = {};
+
+  // }
+
   get class(): string {
     return this.props.class || "";
   }
