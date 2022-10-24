@@ -7,8 +7,8 @@ const submitButton = new Button({
 });
 export const signUpForm = new SignForm({
   formTitle: "Регистрация",
-  linkText: "Войти?",
-  linkHref: "index.html",
+  linkText: "Войти",
+  linkHref: "/",
   inputList: [
     {
       label: "E-mail",
@@ -69,7 +69,7 @@ export const signUpForm = new SignForm({
       labelFor: "password",
       type: "password",
       name: "password",
-      id: "password",
+      id: "password-again",
       placeholder: "Пароль еще раз",
       required: true,
     },

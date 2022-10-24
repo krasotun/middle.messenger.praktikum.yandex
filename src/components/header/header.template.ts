@@ -1,6 +1,7 @@
 export default `
 header.header
-	a.header__link(href='index.pug')='Главная'
+	a.header__link(href='/')='Главная'
+	a.header__link(href='/sign-up')='Регистрация'
 	a.header__link(href='chat.pug')='Чаты'
 	a.header__link(href='change-password.pug')='Сменить пароль'
 	a.header__link(href='profile.pug')='Профиль'

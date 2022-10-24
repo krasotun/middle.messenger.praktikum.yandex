@@ -1,7 +1,8 @@
+import { Header } from "../../components/header/header";
 import { SignForm } from "../../components/sign-form/sign-form";
-
-export interface IMainPageProps {
+export interface ISignUpPageProps {
   children: {
-    signInForm: SignForm;
+    signUpForm: SignForm;
+    header: Header;
   };
 }

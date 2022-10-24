@@ -7,3 +7,4 @@ export class Header extends Block {
     return compileTemplate(template);
   }
 }
+export const header = new Header();

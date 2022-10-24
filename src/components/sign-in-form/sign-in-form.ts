@@ -8,7 +8,7 @@ const submitButton = new Button({
 export const signInForm = new SignForm({
   formTitle: "Вход",
   linkText: "Нет аккаунта?",
-  linkHref: "index.html",
+  linkHref: "/sign-up",
   inputList: [
     {
       label: "Логин",

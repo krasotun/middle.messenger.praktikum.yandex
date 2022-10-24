@@ -1,13 +1,6 @@
-import { Header } from "./components/header/header";
-import { signInForm } from "./components/sign-in-form/sign-in-form";
 import { renderTemplateToDoM } from "./core/render-template";
-import { MainPage } from "./pages/main-page/main-page";
+import { pageToRender } from "./core/router";
 const root: HTMLElement | null = document.getElementById("root");
-const header = new Header();
-const mainPage = new MainPage({
-  children: {
-    header,
-    signInForm,
-  },
+document.addEventListener("DOMContentLoaded", () => {
+  renderTemplateToDoM(pageToRender(), root as HTMLElement);
 });
-renderTemplateToDoM(mainPage, root as HTMLElement);
