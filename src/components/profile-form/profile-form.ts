@@ -4,18 +4,16 @@ import { render as compileTemplate } from "pug";
 import { IProfileFormProps } from "./profile-form.props";
 
 export class ProfileForm extends Block {
-  constructor({ inputList, linkList, children }: IProfileFormProps) {
+  constructor({ inputList, children }: IProfileFormProps) {
     super({
       inputList,
-      linkList,
       children,
     });
   }
   render(): string {
-    const { inputList, linkList } = this.props;
+    const { inputList } = this.props;
     return compileTemplate(template, {
       inputList,
-      linkList,
     });
   }
 }

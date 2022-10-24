@@ -8,11 +8,12 @@ export class ProfilePage extends Block {
     super({ children });
   }
   render(): string {
-    const { header, profileAvatar, viewProfileForm } = this.props;
+    const { header, profileAvatar, viewProfileForm, profileLinks } = this.props;
     return compileTemplate(template, {
       header,
       profileAvatar,
       viewProfileForm,
+      profileLinks,
     });
   }
 }
