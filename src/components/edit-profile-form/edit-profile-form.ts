@@ -1,6 +1,12 @@
+import { Button } from "../button/button";
 import { ProfileForm } from "../profile-form/profile-form";
 
-export const viewProfileForm = new ProfileForm({
+const submitButton = new Button({
+  buttonText: "Сохранить",
+  className: "profile-form__submit-button",
+});
+
+export const editProfileForm = new ProfileForm({
   inputList: [
     {
       label: "Почта",
@@ -10,7 +16,7 @@ export const viewProfileForm = new ProfileForm({
       id: "email",
       placeholder: "marat@marat.ru",
       required: true,
-      disabled: true,
+      disabled: false,
     },
     {
       label: "Логин",
@@ -20,7 +26,7 @@ export const viewProfileForm = new ProfileForm({
       id: "login",
       placeholder: "krasotun",
       required: true,
-      disabled: true,
+      disabled: false,
     },
     {
       label: "Имя",
@@ -30,7 +36,7 @@ export const viewProfileForm = new ProfileForm({
       id: "first_name",
       placeholder: "Marat",
       required: true,
-      disabled: true,
+      disabled: false,
     },
     {
       label: "Фамилия",
@@ -40,7 +46,7 @@ export const viewProfileForm = new ProfileForm({
       id: "second_name",
       placeholder: "Ibragimov",
       required: true,
-      disabled: true,
+      disabled: false,
     },
     {
       label: "Имя в чате",
@@ -50,7 +56,7 @@ export const viewProfileForm = new ProfileForm({
       id: "display_name",
       placeholder: "krasotun",
       required: true,
-      disabled: true,
+      disabled: false,
     },
     {
       label: "Телефон",
@@ -60,7 +66,10 @@ export const viewProfileForm = new ProfileForm({
       id: "phone",
       placeholder: "+7(999)999-99-99",
       required: true,
-      disabled: true,
+      disabled: false,
     },
   ],
+  children: {
+    submitButton,
+  },
 });

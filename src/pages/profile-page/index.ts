@@ -12,7 +12,7 @@ const profileAvatar = new ProfileAvatar({
 const profileLinks = new ProfileLinks({
   linkList: [
     {
-      link: "edit-profile.pug",
+      link: "/edit-profile",
       text: "Изменить данные",
     },
     {
