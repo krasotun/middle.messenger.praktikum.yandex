@@ -13,7 +13,6 @@ export class ProfileForm extends Block {
   }
   render(): string {
     const { inputList, linkList } = this.props;
-    console.log(linkList);
     return compileTemplate(template, {
       inputList,
       linkList,
