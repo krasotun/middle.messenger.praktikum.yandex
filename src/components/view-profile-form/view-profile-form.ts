@@ -63,4 +63,22 @@ export const viewProfileForm = new ProfileForm({
       disabled: true,
     },
   ],
+  linkList: [
+    {
+      link: "edit-profile.pug",
+      text: "Изменить данные",
+    },
+    {
+      link: "change-password.pug",
+      text: "Изменить пароль",
+    },
+    {
+      link: "chat.pug",
+      text: "Вернуться в чат",
+    },
+    {
+      link: "index.pug",
+      text: "Выход",
+    },
+  ],
 });

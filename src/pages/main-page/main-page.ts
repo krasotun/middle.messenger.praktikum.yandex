@@ -1,6 +1,6 @@
 import { Block } from "../../core/block";
 import { render as compileTemplate } from "pug";
-import { IMainPageProps } from "./main-page-props";
+import { IMainPageProps } from "./main-page.props";
 import template from "./main-page.template";
 
 export class MainPage extends Block {
