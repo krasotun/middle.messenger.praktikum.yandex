@@ -1,5 +1,3 @@
-// mixin sign-form (formTitle, inputList, buttontext, linkHref,linkText)
-
 export default `
 form.form.sign-form
 	.sign-form__container

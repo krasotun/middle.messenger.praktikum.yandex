@@ -1,6 +1,6 @@
 import { render as compileTemplate } from "pug";
 import { Block } from "../../core/block";
-import { ISignFormProps } from "./sign-form-props";
+import { ISignFormProps } from "./sign-form.props";
 import template from "./sign-form.template";
 
 export class SignForm extends Block {
