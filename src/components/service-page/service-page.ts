@@ -7,7 +7,7 @@ export class ServicePage extends Block {
   constructor({ errorCode, errorText }: IServicePageProps) {
     super({
       errorCode,
-      errortext: errorText,
+      errorText,
     });
   }
   render(): string {
