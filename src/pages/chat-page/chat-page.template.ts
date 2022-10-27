@@ -18,6 +18,6 @@ header(template-props='header' class='template-props')
 			ul.chat-messages-list
 				li(template-props='chatMessage' class='template-props')
 		footer.chat-window__footer
-			p Форма отправки сообщения	
+			form(template-props='sendMessageForm' class='template-props')
 
 `;

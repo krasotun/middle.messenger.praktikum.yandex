@@ -9,7 +9,6 @@ export class MainPage extends Block {
   }
   render(): string {
     const { header, signInForm } = this.props;
-    console.log(this.props.children);
     return compileTemplate(template, {
       header,
       signInForm,
