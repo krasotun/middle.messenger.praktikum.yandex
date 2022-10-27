@@ -1,3 +1,4 @@
+import { ChatMessage } from "../../components/chat-message/chat-message";
 import { ChatSearchForm } from "../../components/chat-search-form/chat-search-form";
 import { Header } from "../../components/header/header";
 import { SingleChat } from "../../components/single-chat/single-chat";
@@ -12,10 +13,15 @@ const singleChat = new SingleChat({
   messageTime: "18:25",
   unreadMessages: "3",
 });
+const chatMessage = new ChatMessage({
+  date: "11:01",
+  text: "Привет! Смотри, тут всплыл интересный кусок лунной космической истории НАСА в какой-то момент попросила Хассельблад адаптировать модель SWC для полетов на Луну.",
+});
 export const chatPage = new ChatPage({
   children: {
     header,
     chatSearchForm,
     singleChat,
+    chatMessage,
   },
 });

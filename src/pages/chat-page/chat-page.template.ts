@@ -16,9 +16,7 @@ header(template-props='header' class='template-props')
 					p иконка more	
 		.chat-window__content
 			ul.chat-messages-list
-				li Сообщение
-				li Сообщение
-				li Сообщение
+				li(template-props='chatMessage' class='template-props')
 		footer.chat-window__footer
 			p Форма отправки сообщения	
 
