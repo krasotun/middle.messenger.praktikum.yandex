@@ -8,6 +8,7 @@ export class SendMessageForm extends Block {
     super({ children });
   }
   render(): string {
+    console.log("rendered");
     const { attachButton, submitButton } = this.props;
     return compileTemplate(template, {
       attachButton,

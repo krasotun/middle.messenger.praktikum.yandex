@@ -59,17 +59,28 @@ export class Block {
     if (!events) {
       return;
     }
-    console.log(events);
     Object.keys(events).forEach((eventName) => {
       this._element.addEventListener(eventName, events[eventName]);
     });
   }
 
-  private _removeEventListeners() {}
+  private _removeEventListeners() {
+    if (!this.props || !this._element) {
+      return;
+    }
+    const { events = {} } = this.props;
+    if (!events) {
+      return;
+    }
+    Object.keys(events).forEach((eventName) => {
+      this._element.removeEventListener(eventName, events[eventName]);
+    });
+  }
 
   private _render() {
     const template = document.createElement("div");
     template.innerHTML = this.render();
+    this._removeEventListeners();
     template.querySelectorAll(".template-props").forEach((item) => {
       const templateProp = item.getAttribute("template-props");
       if (this.props.children && templateProp) {
