@@ -16,11 +16,11 @@ const profileLinks = new ProfileLinks({
       text: "Изменить данные",
     },
     {
-      link: "change-password.pug",
+      link: "/change-password",
       text: "Изменить пароль",
     },
     {
-      link: "chat.pug",
+      link: "/chat",
       text: "Вернуться в чат",
     },
     {
