@@ -15,4 +15,7 @@ export class SendMessageForm extends Block {
       submitButton,
     });
   }
+  componentRendered(): void {
+    this.element.classList.add("123");
+  }
 }

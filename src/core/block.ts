@@ -42,6 +42,7 @@ export class Block {
     }
     Object.assign(this.props, newProps);
   }
+  componentRendered() {}
   private _registerEvents(eventBus: EventBus) {
     eventBus.on(EVENTS.INIT, this.init.bind(this));
     eventBus.on(EVENTS.FLOW_CDM, this._componentDidMount.bind(this));
@@ -97,6 +98,7 @@ export class Block {
     const id = v4();
     this._element.setAttribute("id", id);
     this._addEventListeners();
+    this.componentRendered();
   }
 
   private _componentDidMount() {
