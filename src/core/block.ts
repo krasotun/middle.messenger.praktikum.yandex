@@ -59,8 +59,8 @@ export class Block {
     if (!events) {
       return;
     }
+    console.log(events);
     Object.keys(events).forEach((eventName) => {
-      console.log(eventName);
       this._element.addEventListener(eventName, events[eventName]);
     });
   }

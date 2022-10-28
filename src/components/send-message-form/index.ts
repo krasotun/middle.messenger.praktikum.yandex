@@ -10,16 +10,21 @@ const submitButton = new Button({
   buttonText: "Отправить",
   className: "send-message-form__submit-button",
 });
+
+const onBlur = (event: any) => {
+  console.log("Blur");
+};
+const onInput = (event: InputEvent) => {
+  console.log("input", event);
+};
+
+const onFocus = (event: FocusEvent) => {
+  console.log("Focus", event);
+};
 const inputSendMessage = new InputSendMessage({
-  onInput(event) {
-    console.log(event.data);
-  },
-  onFocus() {
-    console.log("Focus", event?.target);
-  },
-  onBlur() {
-    console.log("Blur", event?.target);
-  },
+  onBlur,
+  onInput,
+  onFocus,
 });
 export const sendMessageForm = new SendMessageForm({
   children: {

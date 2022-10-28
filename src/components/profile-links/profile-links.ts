@@ -11,7 +11,6 @@ export class ProfileLinks extends Block {
   }
   render(): string {
     const { linkList } = this.props;
-    console.log(linkList);
     return compileTemplate(template, {
       linkList,
     });
