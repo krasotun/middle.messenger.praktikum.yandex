@@ -11,14 +11,14 @@ const submitButton = new Button({
   className: "send-message-form__submit-button",
 });
 const inputSendMessage = new InputSendMessage({
+  onInput() {
+    console.log("Input", event?.type);
+  },
   onBlur() {
-    console.log("Blur");
+    console.log("Blur", event?.target);
   },
   onFocus() {
-    console.log("Focus");
-  },
-  onInput() {
-    console.log("Input");
+    console.log("Focus", event?.target);
   },
 });
 export const sendMessageForm = new SendMessageForm({
@@ -28,3 +28,4 @@ export const sendMessageForm = new SendMessageForm({
     submitButton,
   },
 });
+console.log(inputSendMessage.props.events);

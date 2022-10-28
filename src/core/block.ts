@@ -7,16 +7,8 @@ enum EVENTS {
   FLOW_CDU = "flow:component-did-update",
   FLOW_RENDER = "flow:render",
 }
-
-type PropList = {
-  name: string;
-  selector: string;
-  attribute: string;
-  isValue?: boolean;
-}[];
 export class Block {
   private _element: HTMLElement;
-  private _propList: PropList = [];
   props: IProps;
   eventBus: () => EventBus;
 
@@ -29,15 +21,6 @@ export class Block {
     this._registerEvents(eventBus);
     eventBus.emit(EVENTS.INIT);
   }
-
-  get proplist(): PropList {
-    return this._propList;
-  }
-
-  // get _children(propsAndChidren: {}) {
-  // 	const children = {};
-
-  // }
 
   get class(): string {
     return this.props.class || "";
@@ -62,13 +45,28 @@ export class Block {
     }
     Object.assign(this.props, newProps);
   }
-
   private _registerEvents(eventBus: EventBus) {
     eventBus.on(EVENTS.INIT, this.init.bind(this));
     eventBus.on(EVENTS.FLOW_CDM, this._componentDidMount.bind(this));
     eventBus.on(EVENTS.FLOW_CDU, this._componentDidUpdate.bind(this));
     eventBus.on(EVENTS.FLOW_RENDER, this._render.bind(this));
   }
+  private _addEventListeners() {
+    if (!this.props) {
+      return;
+    }
+    const { events = {} } = this.props;
+    if (!events) {
+      return;
+    }
+    Object.keys(events).forEach((eventName) => {
+      console.log(eventName);
+      this._element.addEventListener(eventName, events[eventName]);
+    });
+  }
+
+  private _removeEventListeners() {}
+
   private _render() {
     const template = document.createElement("div");
     template.innerHTML = this.render();
@@ -83,6 +81,7 @@ export class Block {
     this._element = template;
     const id = v4();
     this._element.setAttribute("id", id);
+    this._addEventListeners();
   }
 
   private _componentDidMount() {
