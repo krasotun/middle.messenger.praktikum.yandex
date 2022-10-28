@@ -1,5 +1,5 @@
 export interface IInputSendMessageProps {
-  onInput: () => void;
+  onInput: (event: InputEvent) => void;
   onFocus: () => void;
   onBlur: () => void;
 }
