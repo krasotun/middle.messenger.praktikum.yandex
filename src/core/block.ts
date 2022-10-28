@@ -22,9 +22,6 @@ export class Block {
     eventBus.emit(EVENTS.INIT);
   }
 
-  get class(): string {
-    return this.props.class || "";
-  }
   get element(): HTMLElement {
     return this._element;
   }
@@ -60,7 +57,9 @@ export class Block {
       return;
     }
     Object.keys(events).forEach((eventName) => {
-      this._element.addEventListener(eventName, events[eventName]);
+      if (this._element.firstChild) {
+        this._element.firstChild.addEventListener(eventName, events[eventName]);
+      }
     });
   }
 
@@ -73,7 +72,12 @@ export class Block {
       return;
     }
     Object.keys(events).forEach((eventName) => {
-      this._element.removeEventListener(eventName, events[eventName]);
+      if (this._element.firstChild) {
+        this._element.firstChild.removeEventListener(
+          eventName,
+          events[eventName]
+        );
+      }
     });
   }
 
