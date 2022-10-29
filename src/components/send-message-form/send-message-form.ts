@@ -2,13 +2,18 @@ import { Block } from "../../core/block";
 import { ISendMessageFormProps } from "./send-message-form.props";
 import { render as compileTemplate } from "pug";
 import template from "./send-message-form.template";
+import { validateForm } from "../../core/form-validator";
 
 export class SendMessageForm extends Block {
-  constructor({ children }: ISendMessageFormProps) {
-    super({ children });
+  constructor({ children }, onSubmit: ISendMessageFormProps) {
+    super({
+      children,
+      events: {
+        submit: onSubmit,
+      },
+    });
   }
   render(): string {
-    console.log("rendered");
     const { attachButton, submitButton } = this.props;
     return compileTemplate(template, {
       attachButton,
@@ -16,6 +21,6 @@ export class SendMessageForm extends Block {
     });
   }
   componentRendered(): void {
-    this.element.classList.add("123");
+    validateForm(this.element.firstChild as HTMLFormElement);
   }
 }

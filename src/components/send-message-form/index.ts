@@ -1,3 +1,4 @@
+import { handleInputValidation } from "../../core/form-validator";
 import { Button } from "../button/button";
 import { InputSendMessage } from "../input-send-message/input-send-message";
 import { SendMessageForm } from "./send-message-form";
@@ -11,20 +12,9 @@ const submitButton = new Button({
   className: "send-message-form__submit-button",
 });
 
-const onBlur = (event: any) => {
-  console.log("Blur");
-};
-const onInput = (event: InputEvent) => {
-  console.log("input", event);
-};
-
-const onFocus = (event: FocusEvent) => {
-  console.log("Focus", event);
-};
 const inputSendMessage = new InputSendMessage({
-  onBlur,
-  onInput,
-  onFocus,
+  onBlur: handleInputValidation,
+  onFocus: handleInputValidation,
 });
 export const sendMessageForm = new SendMessageForm({
   children: {
@@ -32,4 +22,5 @@ export const sendMessageForm = new SendMessageForm({
     attachButton,
     submitButton,
   },
+  onSubmit: (event) => {},
 });

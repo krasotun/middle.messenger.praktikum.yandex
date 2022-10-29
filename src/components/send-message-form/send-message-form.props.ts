@@ -6,5 +6,6 @@ export interface ISendMessageFormProps {
     attachButton: Button;
     submitButton: Button;
     inputSendMessage: InputSendMessage;
+    onSubmit: (event: any) => void;
   };
 }

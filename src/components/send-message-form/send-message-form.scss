@@ -19,14 +19,18 @@
       outline: transparent;
       border: 1px solid #3369f3;
     }
-  }
-  &__submit-button {
-    width: 28px;
-    height: 28px;
-    border-radius: 50px;
-    background: #3369f3;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    &.input-error {
+      outline: transparent;
+      border: 1px solid red;
+    }
+    &__submit-button {
+      width: 28px;
+      height: 28px;
+      border-radius: 50px;
+      background: #3369f3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
 }

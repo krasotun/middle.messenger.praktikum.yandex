@@ -4,10 +4,9 @@ import { render as compileTemplate } from "pug";
 import template from "./input-send-message.template";
 
 export class InputSendMessage extends Block {
-  constructor({ onInput, onFocus, onBlur }: IInputSendMessageProps) {
+  constructor({ onFocus, onBlur }: IInputSendMessageProps) {
     super({
       events: {
-        input: onInput,
         focus: onFocus,
         blur: onBlur,
       },
