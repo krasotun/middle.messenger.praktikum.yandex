@@ -1,3 +1,3 @@
 export default `
-button(class='button '+className) #{buttonText}
+button(type=buttonType class='button '+className) #{buttonText}
 `;
