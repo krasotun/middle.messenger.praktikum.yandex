@@ -18,11 +18,11 @@ const submitButton = new Button({
 const submitSendMessageForm = (event: SubmitEvent) => {
   event.preventDefault();
   console.log("Form submitted");
-  const isFormValid = formValidator(event.target);
+  const isFormValid = formValidator(event.target as HTMLFormElement);
   console.log(
     isFormValid ? "Данные прошли валидацию" : "Данные не прошли валидацию"
   );
-  const formData = new FormData(event.target);
+  const formData = new FormData(event.target as HTMLFormElement);
   console.log("данные из формы", Object.fromEntries(formData.entries()));
 };
 
