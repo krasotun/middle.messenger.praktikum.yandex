@@ -44,12 +44,13 @@
       &::placeholder {
         opacity: 0.8;
       }
-      &_error {
-        border-bottom: 1px red solid;
-      }
       &:focus {
         outline: transparent;
         border-bottom: 1px solid #3369f3;
+      }
+      &.input_error {
+        outline: transparent;
+        border-bottom: 1px red solid;
       }
     }
     &__label {

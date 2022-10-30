@@ -6,7 +6,11 @@ export interface ISignUpFormProps {
     submitButton: Button;
     email: InputSign;
     login: InputSign;
+    firstName: InputSign;
+    lastName: InputSign;
+    phone: InputSign;
     password: InputSign;
+    passwordAgain: InputSign;
   };
   linkHref: string;
   linkText: string;
