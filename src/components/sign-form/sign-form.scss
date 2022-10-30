@@ -76,6 +76,9 @@
       height: 37px;
       border: none;
       width: 100%;
+      &:disabled {
+        background-color: gray;
+      }
     }
     &__link {
       margin-top: 14px;

@@ -35,10 +35,6 @@ const password = new InputSign({
 const submitSignInForm = (event: SubmitEvent) => {
   event.preventDefault();
   console.log("Sign-in form submitted");
-  const isFormValid = formValidator(event.target as HTMLFormElement);
-  console.log(
-    isFormValid ? "Данные прошли валидацию" : "Данные не прошли валидацию"
-  );
   const formData = new FormData(event.target as HTMLFormElement);
   console.log("данные из формы логина", Object.fromEntries(formData.entries()));
 };

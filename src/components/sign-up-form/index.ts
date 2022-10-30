@@ -92,10 +92,6 @@ const passwordAgain = new InputSign({
 const submitSignUpForm = (event: SubmitEvent) => {
   event.preventDefault();
   console.log("Sign-up form submitted");
-  const isFormValid = formValidator(event.target as HTMLFormElement);
-  console.log(
-    isFormValid ? "Данные прошли валидацию" : "Данные не прошли валидацию"
-  );
   const formData = new FormData(event.target as HTMLFormElement);
   console.log(
     "данные из формы регистрации",

@@ -71,5 +71,21 @@ export const formValidator = (validatedForm: HTMLFormElement) => {
   inputs.forEach((input) => {
     inputsStatus.push(validateInput(input));
   });
-  return !inputsStatus.includes(false);
+  const isValid = !inputsStatus.includes(false);
+  const submitButton = validatedForm.querySelector(".button");
+  if (!isValid) {
+    if (submitButton) {
+      submitButton.disabled = true;
+    }
+  } else if (isValid) {
+    if (submitButton) {
+      submitButton.disabled = false;
+    }
+  }
+  console.log(
+    isValid
+      ? "Валидация прошла, данные валидны"
+      : "Валидация прошла, данные не валидны"
+  );
+  return isValid;
 };
