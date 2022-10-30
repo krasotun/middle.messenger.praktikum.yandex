@@ -1,8 +1,19 @@
-export const checkMessage = (message: string) => {
+const checkMessage = (message: string) => {
   return message.length > 0;
 };
-const checkLogin = (name: string) => {
-  return /^[a-zA-Z][a-zА-ЯA-Z0-9-_\.]{1,20}$/.test(name);
+const checkLogin = (login: string) => {
+  return /^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$/.test(login);
+};
+const checkName = (name: string) => {
+  return /^[a-zа-яA-ZА-Я][a-zа-яA-ZА-Я0-9-_\.]{1,20}$/.test(name);
+};
+const checkEmail = (email: string) => {
+  return /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(
+    email
+  );
+};
+const checkPhone = (phone: string) => {
+  return /^\+?[1-9][0-9]{10,15}$/.test(phone);
 };
 const checkPassword = (password: string) => {
   return /^.*(?=.{8,})(?=.*[a-zA-Z])(?=.*\d).*$/.test(password);
@@ -13,8 +24,18 @@ export const validateInput = (input: HTMLInputElement) => {
       return checkMessage(input.value);
     case "login":
       return checkLogin(input.value);
+    case "email":
+      return checkEmail(input.value);
+    case "first-name":
+      return checkName(input.value);
+    case "second-name":
+      return checkName(input.value);
     case "password":
       return checkPassword(input.value);
+    case "password-again":
+      return checkPassword(input.value);
+    case "phone":
+      return checkPhone(input.value);
     default:
       return input.validity.valid;
   }

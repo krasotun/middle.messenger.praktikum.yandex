@@ -2,6 +2,7 @@ import { Button } from "../button/button";
 import { InputSign } from "../input-sign/input-sign.";
 export interface ISignUpFormProps {
   formTitle: string;
+  onSubmit: (event: SubmitEvent) => void;
   children: {
     submitButton: Button;
     email: InputSign;

@@ -1,4 +1,7 @@
-import { handleInputValidation } from "../../core/form-validator";
+import {
+  formValidator,
+  handleInputValidation,
+} from "../../core/form-validator";
 import { Button } from "../button/button";
 import { InputSign } from "../input-sign/input-sign.";
 import { SignUpForm } from "./sign-up-form";
@@ -43,10 +46,10 @@ const firstName = new InputSign({
 });
 const lastName = new InputSign({
   label: "Фамилия",
-  labelFor: "second_name",
+  labelFor: "second-name",
   type: "text",
-  name: "second_name",
-  id: "second_name",
+  name: "second-name",
+  id: "second-name",
   placeholder: "Введите фамилию",
   required: true,
   onBlur: handleInputValidation,
@@ -86,6 +89,19 @@ const passwordAgain = new InputSign({
   onBlur: handleInputValidation,
   onFocus: handleInputValidation,
 });
+const submitSignUpForm = (event: SubmitEvent) => {
+  event.preventDefault();
+  console.log("Sign-up form submitted");
+  const isFormValid = formValidator(event.target as HTMLFormElement);
+  console.log(
+    isFormValid ? "Данные прошли валидацию" : "Данные не прошли валидацию"
+  );
+  const formData = new FormData(event.target as HTMLFormElement);
+  console.log(
+    "данные из формы регистрации",
+    Object.fromEntries(formData.entries())
+  );
+};
 export const signUpForm = new SignUpForm({
   formTitle: "Регистрация",
   linkText: "Войти",
@@ -100,26 +116,5 @@ export const signUpForm = new SignUpForm({
     password,
     passwordAgain,
   },
+  onSubmit: submitSignUpForm,
 });
-
-// inputList: [
-//   //   {
-//
-//   },
-//   {
-//
-//   },
-//   {
-//
-//   },
-//
-//   {
-//     label: "Пароль еще раз",
-//     labelFor: "password",
-//     type: "password",
-//     name: "password",
-//     id: "password-again",
-//     placeholder: "Пароль еще раз",
-//     required: true,
-//   },
-// ],
