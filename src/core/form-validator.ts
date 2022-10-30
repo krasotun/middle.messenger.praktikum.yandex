@@ -1,25 +1,31 @@
 export const checkMessage = (message: string) => {
   return message.length > 0;
 };
-
+const checkLogin = (name: string) => {
+  return /^[a-zA-Z][a-zА-ЯA-Z0-9-_\.]{1,20}$/.test(name);
+};
+const checkPassword = (password: string) => {
+  return /^.*(?=.{8,})(?=.*[a-zA-Z])(?=.*\d).*$/.test(password);
+};
 export const validateInput = (input: HTMLInputElement) => {
   switch (input.id) {
     case "message":
       return checkMessage(input.value);
+    case "login":
+      return checkLogin(input.value);
+    case "password":
+      return checkPassword(input.value);
     default:
       return input.validity.valid;
   }
 };
 
-export const addInputErrorClass = (
-  errorClass: string,
-  element: HTMLInputElement
-) => {
+const addInputErrorClass = (errorClass: string, element: HTMLInputElement) => {
   if (element) {
     element.classList.add(errorClass);
   }
 };
-export const removeInputErrorClass = (
+const removeInputErrorClass = (
   errorClass: string,
   element: HTMLInputElement
 ) => {

@@ -1,6 +1,9 @@
 import { Button } from "../button/button";
 import { InputSign } from "../input-sign/input-sign.";
-import { handleInputValidation } from "../../core/form-validator";
+import {
+  handleInputValidation,
+  formValidator,
+} from "../../core/form-validator";
 import { SignInForm } from "./sign-in-form";
 const submitButton = new Button({
   buttonText: "Войти",
@@ -29,7 +32,16 @@ const password = new InputSign({
   onBlur: handleInputValidation,
   onFocus: handleInputValidation,
 });
-
+const submitSignInForm = (event: SubmitEvent) => {
+  event.preventDefault();
+  console.log("Sign-in form submitted");
+  const isFormValid = formValidator(event.target as HTMLFormElement);
+  console.log(
+    isFormValid ? "Данные прошли валидацию" : "Данные не прошли валидацию"
+  );
+  const formData = new FormData(event.target as HTMLFormElement);
+  console.log("данные из формы логина", Object.fromEntries(formData.entries()));
+};
 export const signInForm = new SignInForm({
   formTitle: "Вход",
   linkText: "Нет аккаунта?",
@@ -39,4 +51,5 @@ export const signInForm = new SignInForm({
     login,
     password,
   },
+  onSubmit: submitSignInForm,
 });

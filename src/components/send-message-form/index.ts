@@ -17,7 +17,7 @@ const submitButton = new Button({
 });
 const submitSendMessageForm = (event: SubmitEvent) => {
   event.preventDefault();
-  console.log("Form submitted");
+  console.log("Send message form submitted");
   const isFormValid = formValidator(event.target as HTMLFormElement);
   console.log(
     isFormValid ? "Данные прошли валидацию" : "Данные не прошли валидацию"
