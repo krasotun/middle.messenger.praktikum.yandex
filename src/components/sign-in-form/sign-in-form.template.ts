@@ -4,10 +4,6 @@ form.form.sign-form
 		div.sign-form__top-container
 			h2.sign-form__title #{formTitle}
 				div.sign-form__input-container
-					input(template-props='email' class='template-props')
-					span.sign-form__error
-					p.sign-form__error-text.sign-form__error-text_hidden
-				div.sign-form__input-container
 					input(template-props='login' class='template-props')
 					span.sign-form__error
 					p.sign-form__error-text.sign-form__error-text_hidden

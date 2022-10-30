@@ -11,7 +11,6 @@ export class SignForm extends Block {
       linkText,
       children,
     });
-    console.log(this.props.children);
   }
   render(): string {
     const { formTitle, linkHref, linkText } = this.props;

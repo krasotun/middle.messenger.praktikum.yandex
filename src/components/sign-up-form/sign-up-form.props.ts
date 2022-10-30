@@ -1,14 +1,13 @@
 import { Button } from "../button/button";
 import { InputSign } from "../input-sign/input-sign.";
-export interface ISignFormProps {
+export interface ISignUpFormProps {
   formTitle: string;
-  inputList?: {}[];
-  children?: {
+  children: {
     submitButton: Button;
-    email?: InputSign;
+    email: InputSign;
     login: InputSign;
     password: InputSign;
   };
-  linkHref?: string;
-  linkText?: string;
+  linkHref: string;
+  linkText: string;
 }
