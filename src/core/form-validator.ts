@@ -18,7 +18,7 @@ const checkPhone = (phone: string) => {
 const checkPassword = (password: string) => {
   return /^.*(?=.{8,})(?=.*[a-zA-Z])(?=.*\d).*$/.test(password);
 };
-export const validateInput = (input: HTMLInputElement) => {
+const validateInput = (input: HTMLInputElement) => {
   switch (input.id) {
     case "message":
       return checkMessage(input.value);
@@ -57,8 +57,12 @@ const removeInputErrorClass = (
 
 export const handleInputValidation = (event: FocusEvent) => {
   if (!validateInput(event.target as HTMLInputElement)) {
-    addInputErrorClass("input-error", event.target);
-  } else removeInputErrorClass("input-error", event.target);
+    addInputErrorClass("input-error", event.target as HTMLInputElement);
+  } else removeInputErrorClass("input-error", event.target as HTMLInputElement);
+  if (event.target) {
+    const form = (event.target as HTMLInputElement).closest("form");
+    formValidator(form as HTMLFormElement);
+  }
 };
 
 export const formValidator = (validatedForm: HTMLFormElement) => {
