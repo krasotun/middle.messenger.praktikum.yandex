@@ -17,8 +17,8 @@ export const pageToRender = () => {
       return profilePage;
     case "/edit-profile":
       return editProfilePage;
-    case "/change-password":
-      return changePasswordPage;
+    // case "/change-password":
+    //   return changePasswordPage;
     case "/chat":
       return chatPage;
     case "/404":
