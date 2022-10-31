@@ -5,7 +5,6 @@ import {
   formValidator,
 } from "../../core/form-validator";
 import { SignInForm } from "./sign-in-form";
-import { validate } from "uuid";
 const submitButton = new Button({
   buttonText: "Войти",
   className: "sign-form__submit-button",

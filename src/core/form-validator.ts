@@ -76,7 +76,9 @@ export const formValidator = (validatedForm: HTMLFormElement) => {
     inputsStatus.push(validateInput(input));
   });
   const isValid = !inputsStatus.includes(false);
-  const submitButton = validatedForm.querySelector(".button");
+  const submitButton = validatedForm.querySelector(
+    ".button"
+  ) as HTMLButtonElement;
   if (!isValid) {
     if (submitButton) {
       submitButton.disabled = true;
