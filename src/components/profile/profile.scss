@@ -67,6 +67,10 @@
       width: 100%;
       color: #999999;
       border: transparent;
+      &.input-error {
+        outline: transparent;
+        border-bottom: 1px red solid;
+      }
       &:focus {
         outline: transparent;
         border-bottom: 1px solid #3369f3;
@@ -89,6 +93,9 @@
       width: 280px;
       height: 37px;
       margin: 60px auto;
+      &:disabled {
+        background-color: gray;
+      }
     }
   }
 }

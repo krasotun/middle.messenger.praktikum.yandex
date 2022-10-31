@@ -1,4 +1,7 @@
-import { handleInputValidation } from "../../core/form-validator";
+import {
+  formValidator,
+  handleInputValidation,
+} from "../../core/form-validator";
 import { Button } from "../button/button";
 import { InputProfile } from "../input-profile/input-profile";
 import { ChangePasswordForm } from "./change-password-form";
@@ -11,9 +14,10 @@ const submitButton = new Button({
 const submitChangePasswordForm = (event: SubmitEvent) => {
   event.preventDefault();
   console.log("Change password  form submitted");
+  formValidator(event.target as HTMLFormElement);
   const formData = new FormData(event.target as HTMLFormElement);
   console.log(
-    "данные из формы смены пароля",
+    "Данные из формы смены пароля",
     Object.fromEntries(formData.entries())
   );
 };
@@ -31,10 +35,10 @@ export const password = new InputProfile({
 });
 const newPassword = new InputProfile({
   label: "Новый пароль",
-  labelFor: "newPassword",
+  labelFor: "password-new",
   type: "password",
-  name: "newPassword",
-  id: "newPassword",
+  name: "password-new",
+  id: "password-new",
   placeholder: "********",
   required: true,
   disabled: false,
@@ -43,10 +47,10 @@ const newPassword = new InputProfile({
 });
 const againPassword = new InputProfile({
   label: "Подтвердите новый пароль",
-  labelFor: "againPassword",
+  labelFor: "password-again",
   type: "password",
-  name: "againPassword",
-  id: "againPassword",
+  name: "password-again",
+  id: "password-again",
   placeholder: "********",
   required: true,
   disabled: false,

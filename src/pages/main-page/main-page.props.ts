@@ -1,9 +1,9 @@
 import { Header } from "../../components/header/header";
-import { SignForm } from "../../components/sign-form/sign-form";
+import { SignInForm } from "../../components/sign-in-form/sign-in-form";
 
 export interface IMainPageProps {
   children: {
     header: Header;
-    signInForm: SignForm;
+    signInForm: SignInForm;
   };
 }

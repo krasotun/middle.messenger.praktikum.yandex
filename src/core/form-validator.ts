@@ -30,9 +30,13 @@ const validateInput = (input: HTMLInputElement) => {
       return checkName(input.value);
     case "second-name":
       return checkName(input.value);
+    case "display-name":
+      return checkName(input.value);
     case "password":
       return checkPassword(input.value);
     case "password-again":
+      return checkPassword(input.value);
+    case "password-new":
       return checkPassword(input.value);
     case "phone":
       return checkPhone(input.value);

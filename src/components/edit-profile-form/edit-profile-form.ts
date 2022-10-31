@@ -12,9 +12,10 @@ const submitButton = new Button({
 const submitEditProfileForm = (event: SubmitEvent) => {
   event.preventDefault();
   console.log("Edit-profile form submitted");
+  formValidator(event.target as HTMLFormElement);
   const formData = new FormData(event.target as HTMLFormElement);
   console.log(
-    "данные из формы редактиования профиля",
+    "Данные из формы редактиования профиля",
     Object.fromEntries(formData.entries())
   );
 };

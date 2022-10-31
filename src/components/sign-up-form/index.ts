@@ -92,9 +92,10 @@ const passwordAgain = new InputSign({
 const submitSignUpForm = (event: SubmitEvent) => {
   event.preventDefault();
   console.log("Sign-up form submitted");
+  formValidator(event.target as HTMLFormElement);
   const formData = new FormData(event.target as HTMLFormElement);
   console.log(
-    "данные из формы регистрации",
+    "Данные из формы регистрации",
     Object.fromEntries(formData.entries())
   );
 };

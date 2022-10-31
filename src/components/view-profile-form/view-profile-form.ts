@@ -9,11 +9,6 @@ const submitButton = new Button({
 const submitViewProfileForm = (event: SubmitEvent) => {
   event.preventDefault();
   console.log("View-profile form submitted");
-  const formData = new FormData(event.target as HTMLFormElement);
-  console.log(
-    "данные из формы редактиования профиля",
-    Object.fromEntries(formData.entries())
-  );
 };
 const email = new InputProfile({
   label: "Почта",
