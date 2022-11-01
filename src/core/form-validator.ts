@@ -50,6 +50,23 @@ const addInputErrorClass = (errorClass: string, element: HTMLInputElement) => {
     element.classList.add(errorClass);
   }
 };
+
+const showErrorMessage = (element: HTMLInputElement) => {
+  if (element) {
+    const span: HTMLSpanElement = element.closest("div")!.querySelector("span");
+    if (span) {
+      span.textContent = "Ошибка";
+    }
+  }
+};
+const hideErrorMessage = (element: HTMLInputElement) => {
+  if (element) {
+    const span: HTMLSpanElement = element.closest("div")!.querySelector("span");
+    if (span) {
+      span.textContent = "";
+    }
+  }
+};
 const removeInputErrorClass = (
   errorClass: string,
   element: HTMLInputElement
@@ -63,7 +80,11 @@ export const handleInputValidation = (event: FocusEvent) => {
   const eventTarget = event.target as HTMLInputElement;
   if (!validateInput(eventTarget)) {
     addInputErrorClass("input-error", eventTarget);
-  } else removeInputErrorClass("input-error", eventTarget);
+    showErrorMessage(eventTarget);
+  } else {
+    removeInputErrorClass("input-error", eventTarget);
+    hideErrorMessage(eventTarget);
+  }
   if (event.target) {
     const form = eventTarget.closest("form");
     formValidator(form as HTMLFormElement);
