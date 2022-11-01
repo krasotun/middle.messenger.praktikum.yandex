@@ -5,7 +5,7 @@ enum METHODS {
   DELETE = "DELETE",
 }
 
-export type reqOptions = {
+export type ReqOptions = {
   headers?: Record<string, string>;
   method?: string;
   timeout?: number;
@@ -32,7 +32,7 @@ export class HTTPApi {
       return acc;
     }, "?");
   }
-  private _request(url: string, options: reqOptions) {
+  private _request(url: string, options: ReqOptions) {
     const { headers = {}, method, data } = options;
     return new Promise((resolve, reject) => {
       if (!method) {
