@@ -1,11 +1,21 @@
 export default `
 header.header
-	a.header__link(href='/')='Главная'
-	a.header__link(href='/sign-up')='Регистрация'
-	a.header__link(href='/profile')='Профиль'
-	a.header__link(href='/edit-profile')='Редактировать профиль'
-	a.header__link(href='/change-password')='Сменить пароль'
-	a.header__link(href='/chat')='Чаты'
-	a.header__link(href='/404')='Страница 404'
-	a.header__link(href='/500')='Страница 500'
+  nav.header__navigation
+    ul.header__links-list
+      li.header__list-item
+        a.header__link(href='/')='Главная'
+      li.header__list-item
+        a.header__link(href='/sign-up')='Регистрация'
+      li.header__list-item
+        a.header__link(href='/profile')='Профиль'
+      li.header__list-item
+        a.header__link(href='/edit-profile')='Редактировать профиль'
+      li.header__list-item
+        a.header__link(href='/change-password')='Сменить пароль'
+      li.header__list-item
+        a.header__link(href='/chat')='Чаты'
+      li.header__list-item
+        a.header__link(href='/404')='Страница 404'
+      li.header__list-item
+        a.header__link(href='/500')='Страница 500'
 `;

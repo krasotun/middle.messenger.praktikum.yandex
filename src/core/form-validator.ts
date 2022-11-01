@@ -60,11 +60,12 @@ const removeInputErrorClass = (
 };
 
 export const handleInputValidation = (event: FocusEvent) => {
-  if (!validateInput(event.target as HTMLInputElement)) {
-    addInputErrorClass("input-error", event.target as HTMLInputElement);
-  } else removeInputErrorClass("input-error", event.target as HTMLInputElement);
+  const eventTarget = event.target as HTMLInputElement;
+  if (!validateInput(eventTarget)) {
+    addInputErrorClass("input-error", eventTarget);
+  } else removeInputErrorClass("input-error", eventTarget);
   if (event.target) {
-    const form = (event.target as HTMLInputElement).closest("form");
+    const form = eventTarget.closest("form");
     formValidator(form as HTMLFormElement);
   }
 };

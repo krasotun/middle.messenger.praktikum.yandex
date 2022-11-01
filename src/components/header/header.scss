@@ -1,8 +1,14 @@
 .header {
-  display: flex;
-  padding: 10px;
-  justify-content: space-between;
-  gap: 10px;
+  &__links-list {
+    width: 100%;
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  &__list-item {
+    list-style-type: none;
+  }
   &__link {
     font-style: normal;
     font-weight: 500;
