@@ -45,10 +45,10 @@ const login = new InputProfile({
 });
 const firstName = new InputProfile({
   label: "Имя",
-  labelFor: "first-name",
+  labelFor: "first_name",
   type: "text",
-  name: "first-name",
-  id: "first-name",
+  name: "first_name",
+  id: "first_name",
   placeholder: "Marat",
   required: true,
   disabled: false,
@@ -58,10 +58,10 @@ const firstName = new InputProfile({
 
 const lastName = new InputProfile({
   label: "Фамилия",
-  labelFor: "second-name",
+  labelFor: "second_name",
   type: "text",
-  name: "second-name",
-  id: "second-name",
+  name: "second_name",
+  id: "second_name",
   placeholder: "Ibragimov",
   required: true,
   disabled: false,
@@ -70,10 +70,10 @@ const lastName = new InputProfile({
 });
 const displayName = new InputProfile({
   label: "Имя в чате",
-  labelFor: "display-name",
+  labelFor: "display_name",
   type: "text",
-  name: "display-name",
-  id: "display-name",
+  name: "display_name",
+  id: "display_name",
   placeholder: "krasotun",
   required: true,
   disabled: false,

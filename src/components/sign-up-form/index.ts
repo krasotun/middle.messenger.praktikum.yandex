@@ -35,10 +35,10 @@ const login = new InputSign({
 });
 const firstName = new InputSign({
   label: "Имя",
-  labelFor: "first-name",
+  labelFor: "first_name",
   type: "text",
-  name: "first-name",
-  id: "first-name",
+  name: "first_name",
+  id: "first_name",
   placeholder: "Введите имя",
   required: true,
   onBlur: handleInputValidation,
@@ -46,10 +46,10 @@ const firstName = new InputSign({
 });
 const lastName = new InputSign({
   label: "Фамилия",
-  labelFor: "second-name",
+  labelFor: "second_name",
   type: "text",
-  name: "second-name",
-  id: "second-name",
+  name: "second_name",
+  id: "second_name",
   placeholder: "Введите фамилию",
   required: true,
   onBlur: handleInputValidation,

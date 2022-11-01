@@ -26,11 +26,11 @@ const validateInput = (input: HTMLInputElement) => {
       return checkLogin(input.value);
     case "email":
       return checkEmail(input.value);
-    case "first-name":
+    case "first_name":
       return checkName(input.value);
-    case "second-name":
+    case "second_name":
       return checkName(input.value);
-    case "display-name":
+    case "display_name":
       return checkName(input.value);
     case "password":
       return checkPassword(input.value);
