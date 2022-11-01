@@ -24,5 +24,5 @@ form.form.profile-form
 		input(template-props='phone' class='template-props')
 		span.profile-form__error
 		p.profile-form__error-text.profile-form__error-text_hidden
-		button(template-props='submitButton' class='template-props')
+	button(template-props='submitButton' class='template-props')
 	`;
