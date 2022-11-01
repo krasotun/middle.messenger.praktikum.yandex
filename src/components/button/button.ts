@@ -4,12 +4,11 @@ import { render as compileTemplate } from "pug";
 import template from "./button.template";
 
 export class Button extends Block {
-  constructor({ buttonText, className, buttonType }: IButtonProps) {
-    super({ buttonText, className, buttonType });
+  constructor(props: IButtonProps) {
+    super(props);
   }
   render() {
     const { buttonText, className, buttonType } = this.props;
-
     return compileTemplate(template, {
       buttonText,
       className,

@@ -4,20 +4,8 @@ import template from "./single-chat.template";
 import { ISingleChatProps } from "./single-chat.props";
 
 export class SingleChat extends Block {
-  constructor({
-    avatarLink,
-    senderName,
-    messageText,
-    messageTime,
-    unreadMessages,
-  }: ISingleChatProps) {
-    super({
-      avatarLink,
-      senderName,
-      messageText,
-      messageTime,
-      unreadMessages,
-    });
+  constructor(props: ISingleChatProps) {
+    super(props);
   }
   render(): string {
     const { avatarLink, senderName, messageText, messageTime, unreadMessages } =

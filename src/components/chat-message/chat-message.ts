@@ -3,8 +3,8 @@ import { IChatMessageProps } from "./chat-message.props";
 import { render as compileTemplate } from "pug";
 import template from "./chat-message.template";
 export class ChatMessage extends Block {
-  constructor({ text, date }: IChatMessageProps) {
-    super({ text, date });
+  constructor(props: IChatMessageProps) {
+    super(props);
   }
 
   render(): string {

@@ -4,11 +4,8 @@ import { IProfileAvatarProps } from "./profile-avatar.props";
 import { render as compileTemplate } from "pug";
 
 export class ProfileAvatar extends Block {
-  constructor({ name, link }: IProfileAvatarProps) {
-    super({
-      name,
-      link,
-    });
+  constructor(props: IProfileAvatarProps) {
+    super(props);
   }
   render(): string {
     const { name, link } = this.props;

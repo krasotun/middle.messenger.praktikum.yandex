@@ -4,10 +4,8 @@ import { render as compileTemplate } from "pug";
 import { IProfileLinksProps } from "./profile-links.props";
 
 export class ProfileLinks extends Block {
-  constructor({ linkList }: IProfileLinksProps) {
-    super({
-      linkList,
-    });
+  constructor(props: IProfileLinksProps) {
+    super(props);
   }
   render(): string {
     const { linkList } = this.props;
