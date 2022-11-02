@@ -44,6 +44,32 @@ const validateInput = (input: HTMLInputElement) => {
       return input.validity.valid;
   }
 };
+const generateErrorMessage = (input: HTMLInputElement): string => {
+  switch (input.id) {
+    case "message":
+      return "Сообщение не может быть пустым";
+    case "login":
+      return "Cодержит недопустимый символ";
+    case "email":
+      return "Не является e-mail";
+    case "first_name":
+      return "Cодержит недопустимый символ";
+    case "second_name":
+      return "Cодержит недопустимый символ";
+    case "display_name":
+      return "Cодержит недопустимый символ";
+    case "password":
+      return "Ненадежный пароль";
+    case "password-again":
+      return "Ненадежный пароль";
+    case "password-new":
+      return "Ненадежный пароль";
+    case "phone":
+      return "Не является номером телефона";
+    default:
+      return "Ошибка в поле для ввода данных";
+  }
+};
 
 const addInputErrorClass = (errorClass: string, element: HTMLInputElement) => {
   if (element) {
@@ -56,7 +82,7 @@ const showErrorMessage = (element: HTMLInputElement) => {
     console.log(element.id);
     const span: HTMLSpanElement = element.closest("div")!.querySelector("span");
     if (span) {
-      span.textContent = "Ошибка";
+      span.textContent = generateErrorMessage(element);
     }
   }
 };
