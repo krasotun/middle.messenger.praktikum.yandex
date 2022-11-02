@@ -53,6 +53,7 @@ const addInputErrorClass = (errorClass: string, element: HTMLInputElement) => {
 
 const showErrorMessage = (element: HTMLInputElement) => {
   if (element) {
+    console.log(element.id);
     const span: HTMLSpanElement = element.closest("div")!.querySelector("span");
     if (span) {
       span.textContent = "Ошибка";
