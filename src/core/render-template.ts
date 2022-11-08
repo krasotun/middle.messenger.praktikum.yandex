@@ -1,10 +1,9 @@
 import { Block } from "./block";
 
-export const renderTemplateToDoM = (
-  template: Block,
-  container: HTMLElement
-) => {
-  if (container) {
-    container.appendChild(template.element);
+export const renderTemplateToDoM = (template: Block) => {
+  const root: HTMLElement | null = document.getElementById("root");
+  if (root) {
+    root.innerHTML = "";
+    root.appendChild(template.element);
   }
 };

@@ -25,7 +25,12 @@ export class Block {
   get element(): HTMLElement {
     return this._element;
   }
-
+  show() {
+    this.element.style.display = "block";
+  }
+  hide() {
+    this.element.style.display = "none";
+  }
   init() {
     this.eventBus().emit(EVENTS.FLOW_CDM);
   }
