@@ -1,6 +1,5 @@
 import { Block } from "../core/block";
 import { IProps } from "./props";
-
-export interface IBlockName extends Function {
+export interface IBlockName {
   new (props: IProps): Block;
 }

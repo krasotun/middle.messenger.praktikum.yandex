@@ -14,7 +14,7 @@ export class Route {
     this.blockName = view;
     this.props = props;
   }
-  private _match(pathname: string) {
+  match(pathname: string) {
     return pathname === this.pathname;
   }
   leave() {
@@ -23,7 +23,7 @@ export class Route {
     }
   }
   navigate(pathname: string) {
-    if (this._match(pathname)) {
+    if (this.match(pathname)) {
       this.render();
     }
   }
