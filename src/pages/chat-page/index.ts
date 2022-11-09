@@ -1,7 +1,7 @@
 import { ChatMessage } from "../../components/chat-message/chat-message";
 import { chatSearchForm } from "../../components/chat-search-form";
-import { header } from "../../components/header/";
 import { sendMessageForm } from "../../components/send-message-form";
+import { header } from "../../components/header/";
 import { SingleChat } from "../../components/single-chat/single-chat";
 import { ChatPage } from "./chat-page";
 

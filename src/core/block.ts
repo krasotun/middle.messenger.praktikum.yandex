@@ -27,9 +27,11 @@ export class Block {
   }
   show() {
     this.element.style.display = "block";
+    console.log("show");
   }
   hide() {
     this.element.style.display = "none";
+    console.log("hide");
   }
   init() {
     this.eventBus().emit(EVENTS.FLOW_CDM);
