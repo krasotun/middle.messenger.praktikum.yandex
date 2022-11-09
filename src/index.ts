@@ -1,6 +1,11 @@
-import { renderTemplateToDoM } from "./core/render-template";
-import { pageToRender } from "./core/router";
-const root: HTMLElement | null = document.getElementById("root");
+import { ServicePage } from "./components/service-page/service-page";
+import { Router } from "./core/router";
+
+const router = new Router();
 document.addEventListener("DOMContentLoaded", () => {
-  renderTemplateToDoM(pageToRender(), root as HTMLElement);
+  router.use("/", ServicePage, {
+    errorCode: "404",
+    errorText: "Страница не найдена",
+  });
+  router.start();
 });
