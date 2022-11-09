@@ -12,7 +12,7 @@ export type ReqOptions = {
   data?: any;
 };
 
-export class HTTPApi {
+export class HTTPClient {
   get(url: string, options = {}) {
     return this._request(url, { ...options, method: METHODS.GET });
   }
