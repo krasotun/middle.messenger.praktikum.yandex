@@ -2,7 +2,7 @@ import { IBlockName } from "../interfaces/block-name";
 import { IProps } from "../interfaces/props";
 import { Route } from "./route";
 
-export class Router {
+class Router {
   static _instance: Router;
   private _routes: Route[] = [];
   private _history: History = window.history;
@@ -52,3 +52,4 @@ export class Router {
     route.render();
   }
 }
+export default new Router();

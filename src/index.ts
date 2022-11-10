@@ -1,6 +1,6 @@
 import { Header } from "./components/header/header";
 import { ServicePage } from "./components/service-page/service-page";
-import { Router } from "./core/router";
+import router from "./core/router";
 import { MainPage } from "./pages/main-page/main-page";
 import { signInForm } from "./components/sign-in-form/";
 import { signUpForm } from "./components/sign-up-form/";
@@ -18,6 +18,7 @@ import { ChangePasswordPage } from "./pages/change-password-page/change-password
 import { SingleChat } from "./components/single-chat/single-chat";
 import { ChatMessage } from "./components/chat-message/chat-message";
 import { ChatPage } from "./pages/chat-page/chat-page";
+import { PATHS } from "./core/constants";
 
 const header = new Header();
 const profileAvatar = new ProfileAvatar({
@@ -57,21 +58,20 @@ const chatMessage = new ChatMessage({
   text: "Привет! Смотри, тут всплыл интересный кусок лунной космической истории НАСА в какой-то момент попросила Хассельблад адаптировать модель SWC для полетов на Луну.",
 });
 
-const router = new Router();
 document.addEventListener("DOMContentLoaded", () => {
-  router.use("/", MainPage, {
+  router.use(PATHS.MAINPAGE, MainPage, {
     children: {
       header,
       signInForm,
     },
   });
-  router.use("/sign-up", SignUpPage, {
+  router.use(PATHS.SIGNUPPAGE, SignUpPage, {
     children: {
       header,
       signUpForm,
     },
   });
-  router.use("/profile", ProfilePage, {
+  router.use(PATHS.PROFILEPAGE, ProfilePage, {
     children: {
       profileAvatar,
       viewProfileForm,
@@ -79,19 +79,19 @@ document.addEventListener("DOMContentLoaded", () => {
       profileLinks,
     },
   });
-  router.use("/edit-profile", EditProfilePage, {
+  router.use(PATHS.EDITPROFILEPAGE, EditProfilePage, {
     children: {
       header,
       editProfileForm,
     },
   });
-  router.use("/change-password", ChangePasswordPage, {
+  router.use(PATHS.CHANGEPASSWORDPAGE, ChangePasswordPage, {
     children: {
       header,
       changePasswordForm,
     },
   });
-  router.use("/chat", ChatPage, {
+  router.use(PATHS.CHATPAGE, ChatPage, {
     children: {
       header,
       chatSearchForm,
@@ -101,11 +101,11 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   });
 
-  router.use("/404", ServicePage, {
+  router.use(PATHS.NOTFOUNDPAGE, ServicePage, {
     errorCode: "404",
     errorText: "Страница не найдена",
   });
-  router.use("/500", ServicePage, {
+  router.use(PATHS.SERVERERRORPAGE, ServicePage, {
     errorCode: "500",
     errorText: "Ошибка сервера",
   });
