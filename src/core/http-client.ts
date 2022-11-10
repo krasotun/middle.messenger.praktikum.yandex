@@ -20,6 +20,7 @@ export class HTTPClient {
     return this._request(url, { ...options, method: METHODS.GET });
   }
   post(url: string, options = {}) {
+    console.log(options);
     return this._request(url, { ...options, method: METHODS.POST });
   }
   delete(url: string, options = {}) {

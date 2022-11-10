@@ -5,6 +5,8 @@ import {
   formValidator,
 } from "../../core/form-validator";
 import { SignInForm } from "./sign-in-form";
+import authController from "../../controllers/auth-controller";
+import { ISigninIn } from "../../interfaces/sign-in";
 const submitButton = new Button({
   buttonText: "Войти",
   className: "sign-form__submit-button",
@@ -37,7 +39,8 @@ const submitSignInForm = (event: SubmitEvent) => {
   console.log("Sign-in form submitted");
   formValidator(event.target as HTMLFormElement);
   const formData = new FormData(event.target as HTMLFormElement);
-  console.log("Данные из формы логина", Object.fromEntries(formData.entries()));
+  const dataForSend = Object.fromEntries(formData.entries());
+  authController.signin(dataForSend);
 };
 export const signInForm = new SignInForm({
   formTitle: "Вход",
