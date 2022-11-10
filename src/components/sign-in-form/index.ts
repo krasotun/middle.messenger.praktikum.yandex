@@ -6,7 +6,7 @@ import {
 } from "../../core/form-validator";
 import { SignInForm } from "./sign-in-form";
 import authController from "../../controllers/auth-controller";
-import { ISigninIn } from "../../interfaces/sign-in";
+import { ISignIn } from "../../interfaces/sign-in";
 const submitButton = new Button({
   buttonText: "Войти",
   className: "sign-form__submit-button",

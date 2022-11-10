@@ -20,7 +20,6 @@ export class HTTPClient {
     return this._request(url, { ...options, method: METHODS.GET });
   }
   post(url: string, options = {}) {
-    console.log(options);
     return this._request(url, { ...options, method: METHODS.POST });
   }
   delete(url: string, options = {}) {
@@ -59,7 +58,7 @@ export class HTTPClient {
       if (isGet || !data) {
         xhr.send();
       } else {
-        xhr.send(data);
+        xhr.send(JSON.stringify(data));
       }
     });
   }

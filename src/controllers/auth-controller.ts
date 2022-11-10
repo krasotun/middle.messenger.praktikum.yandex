@@ -1,7 +1,7 @@
 import authApi from "../api/auth-api";
 import { PATHS } from "../core/constants";
 import router from "../core/router";
-import { ISigninIn } from "../interfaces/sign-in";
+import { ISignIn } from "../interfaces/sign-in";
 import { ISignUp } from "../interfaces/sign-up";
 
 class AuthController {
@@ -15,11 +15,11 @@ class AuthController {
         console.log(error);
       });
   }
-  signin({ ...data }: ISigninIn) {
+  signin({ ...data }: ISignIn) {
     authApi
       .signin({ ...data })
       .then((res) => {
-        console.log(res);
+        console.log(JSON.parse(res.response));
         router.go(PATHS.CHATPAGE);
       })
       .catch((error) => {

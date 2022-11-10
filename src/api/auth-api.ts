@@ -1,4 +1,4 @@
-import { ISigninIn } from "../interfaces/sign-in";
+import { ISignIn } from "../interfaces/sign-in";
 import { ISignUp } from "../interfaces/sign-up";
 import { BaseAPI } from "./base-api";
 
@@ -9,7 +9,7 @@ class AuthAPI extends BaseAPI {
   signup({ ...data }: ISignUp) {
     return this.post("signup", { ...data });
   }
-  signin({ ...data }: ISigninIn) {
+  signin({ ...data }: ISignIn) {
     return this.post("signin", { ...data });
   }
   signout() {
