@@ -1,7 +1,7 @@
 import { URLS } from "../core/constants";
 import { HTTPClient } from "../core/http-client";
 
-export abstract class Api {
+export abstract class BaseAPI {
   private _httpClient: HTTPClient;
   private _baseUrl: string;
   private _headers: Record<string, string>;
