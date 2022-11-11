@@ -79,7 +79,6 @@ const addInputErrorClass = (errorClass: string, element: HTMLInputElement) => {
 
 const showErrorMessage = (element: HTMLInputElement) => {
   if (element) {
-    console.log(element.id);
     const span: HTMLSpanElement = element.closest("div")!.querySelector("span");
     if (span) {
       span.textContent = generateErrorMessage(element);
@@ -137,10 +136,5 @@ export const formValidator = (validatedForm: HTMLFormElement) => {
       submitButton.disabled = false;
     }
   }
-  console.log(
-    isValid
-      ? "Валидация прошла, данные валидны"
-      : "Валидация прошла, данные не валидны"
-  );
   return isValid;
 };

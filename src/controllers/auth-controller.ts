@@ -18,11 +18,11 @@ class AuthController {
   signin({ ...data }: ISignIn) {
     authApi
       .signin({ ...data })
-      .then((res) => {
-        console.log(res);
+      .then(() => {
         router.go(PATHS.CHATPAGE);
       })
       .catch((error) => {
+        console.log("Ошибка");
         console.log(error);
       });
   }

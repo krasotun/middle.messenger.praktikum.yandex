@@ -1,8 +1,10 @@
 import authController from "../../controllers/auth-controller";
+import { PATHS } from "../../core/constants";
 import {
   formValidator,
   handleInputValidation,
 } from "../../core/form-validator";
+import router from "../../core/router";
 import { Button } from "../button/button";
 import { InputSign } from "../input-sign/input-sign.";
 import { SignInForm } from "./sign-in-form";
@@ -35,11 +37,11 @@ const password = new InputSign({
 });
 const submitSignInForm = (event: SubmitEvent) => {
   event.preventDefault();
-  console.log("Sign-in form submitted");
-  formValidator(event.target as HTMLFormElement);
-  const formData = new FormData(event.target as HTMLFormElement);
-  const dataForSend = Object.fromEntries(formData.entries());
-  authController.signin(dataForSend);
+  if (formValidator(event.target as HTMLFormElement)) {
+    const formData = new FormData(event.target as HTMLFormElement);
+    const dataForSend = Object.fromEntries(formData.entries());
+    authController.signin(dataForSend);
+  }
 };
 export const signInForm = new SignInForm({
   formTitle: "Вход",

@@ -18,9 +18,9 @@ export class Route {
     return pathname === this.pathname;
   }
   leave() {
-    if (this.block) {
-      this.block.hide();
-    }
+    // if (this.block) {
+    //   this.block.hide();
+    // }
   }
   navigate(pathname: string) {
     if (this.match(pathname)) {
@@ -33,6 +33,6 @@ export class Route {
       renderTemplateToDoM(this.block);
       return;
     }
-    this.block.show();
+    // this.block.show();
   }
 }
