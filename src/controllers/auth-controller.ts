@@ -19,7 +19,7 @@ class AuthController {
     authApi
       .signin({ ...data })
       .then((res) => {
-        console.log(JSON.parse(res.response));
+        console.log(res);
         router.go(PATHS.CHATPAGE);
       })
       .catch((error) => {

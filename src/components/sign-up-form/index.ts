@@ -5,6 +5,7 @@ import {
 import { Button } from "../button/button";
 import { InputSign } from "../input-sign/input-sign.";
 import { SignUpForm } from "./sign-up-form";
+import authController from "../../controllers/auth-controller";
 
 const submitButton = new Button({
   buttonText: "Регистрация",
@@ -91,13 +92,10 @@ const passwordAgain = new InputSign({
 });
 const submitSignUpForm = (event: SubmitEvent) => {
   event.preventDefault();
-  console.log("Sign-up form submitted");
   formValidator(event.target as HTMLFormElement);
   const formData = new FormData(event.target as HTMLFormElement);
-  console.log(
-    "Данные из формы регистрации",
-    Object.fromEntries(formData.entries())
-  );
+  const dataForSend = Object.fromEntries(formData.entries());
+  authController.signup(dataForSend);
 };
 export const signUpForm = new SignUpForm({
   formTitle: "Регистрация",
