@@ -1,3 +1,5 @@
+import { IInitialState } from "../interfaces/initial-state";
+
 export enum URLS {
   BASE = "https://ya-praktikum.tech/api/v2",
 }
@@ -11,3 +13,7 @@ export enum PATHS {
   NOTFOUNDPAGE = "/404",
   SERVERERRORPAGE = "/500",
 }
+
+export const initialState: IInitialState = {
+  isLoggedIn: false,
+};
