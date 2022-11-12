@@ -5,7 +5,8 @@
     justify-content: center;
     flex-direction: column;
     height: 100vh;
-    &__error {
+    &__error,
+    &__auth-error {
       color: red;
       font-style: normal;
       font-weight: 500;
