@@ -10,6 +10,7 @@ export type ReqOptions = {
   method?: string;
   timeout?: number;
   data?: any;
+  withCredentials?: Boolean;
 };
 
 export class HTTPClient {
@@ -56,7 +57,7 @@ export class HTTPClient {
   }
 
   private _request(url: string, options: ReqOptions) {
-    const { headers = {}, method, data } = options;
+    const { headers = {}, method, data, withCredentials = true } = options;
     return new Promise((resolve, reject) => {
       if (!method) {
         reject("No method");
@@ -68,6 +69,9 @@ export class HTTPClient {
         method,
         isGet && !!data ? `${url}${this._queryStringify(data)}` : url
       );
+      if (withCredentials) {
+        xhr.withCredentials = true;
+      }
       Object.keys(headers).forEach((key) => {
         xhr.setRequestHeader(key, headers[key]);
       });

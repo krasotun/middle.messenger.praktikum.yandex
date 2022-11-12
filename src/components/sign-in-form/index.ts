@@ -41,6 +41,7 @@ const submitSignInForm = (event: SubmitEvent) => {
     const formData = new FormData(event.target as HTMLFormElement);
     const dataForSend = Object.fromEntries(formData.entries());
     authController.signin(dataForSend);
+    // authController.getUserInfo();
   }
 };
 export const signInForm = new SignInForm({

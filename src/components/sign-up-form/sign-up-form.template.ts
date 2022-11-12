@@ -19,5 +19,6 @@ form.form.sign-form
 					input(template-props='passwordAgain' class='template-props')
 			div.sign-form__bottom-container
 				button(template-props='submitButton' class='template-props')
+				span.sign-form__auth-error
 				a.sign-form__link(href=linkHref) #{linkText}
 `;

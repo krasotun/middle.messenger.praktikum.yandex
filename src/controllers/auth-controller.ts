@@ -10,7 +10,11 @@ class AuthController {
     authApi
       .signup({ ...data })
       .then((res) => {
-        console.log(res);
+        if (res.ok) {
+          router.go(PATHS.MAINPAGE);
+        } else {
+          errorsHandler(".sign-form__auth-error", res.json().reason);
+        }
       })
       .catch((error) => {
         console.log(error);
@@ -25,6 +29,16 @@ class AuthController {
         } else {
           errorsHandler(".sign-form__auth-error", res.json().reason);
         }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+  getUserInfo() {
+    authApi
+      .getUserInfo()
+      .then((res) => {
+        console.log(res);
       })
       .catch((error) => {
         console.log(error);
