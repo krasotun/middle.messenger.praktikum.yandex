@@ -1,6 +1,6 @@
 import { IInitialState } from "../interfaces/initial-state";
 import { EventBus } from "./event-bus";
-enum StoreEvents {
+export enum StoreEvents {
   UPDATE = "update",
 }
 const initialState: IInitialState = {
@@ -11,6 +11,8 @@ class Store<T> extends EventBus {
   constructor(startState: T | null) {
     super();
     this.state = startState;
+    console.log("Store создан");
+    console.log(this.state);
   }
   getState() {
     return this.state;

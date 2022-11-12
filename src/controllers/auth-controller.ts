@@ -2,6 +2,7 @@ import authApi from "../api/auth-api";
 import { PATHS } from "../core/constants";
 import { errorsHandler } from "../core/errors-handler";
 import router from "../core/router";
+import store from "../core/store";
 import { ISignIn } from "../interfaces/sign-in";
 import { ISignUp } from "../interfaces/sign-up";
 
@@ -21,6 +22,8 @@ class AuthController {
       });
   }
   signin({ ...data }: ISignIn) {
+    // store.setState({ isLoggedIn: true });
+    // console.log(store.getState());
     authApi
       .signin({ ...data })
       .then((res) => {
