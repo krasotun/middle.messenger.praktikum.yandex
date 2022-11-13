@@ -12,6 +12,7 @@ import { changePasswordForm } from "./components/change-password-form/";
 import { SignUpPage } from "./pages/sign-up-page/sign-up-page";
 import { ProfileAvatar } from "./components/profile-avatar/profile-avatar";
 import { ProfileLinks } from "./components/profile-links/profile-links";
+import { profileData } from "./components/profile-data/";
 import { ProfilePage } from "./pages/profile-page/profile-page";
 import { EditProfilePage } from "./pages/edit-profile-page/edit-profile-page";
 import { ChangePasswordPage } from "./pages/change-password-page/change-password-page";
@@ -77,6 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
       viewProfileForm,
       header,
       profileLinks,
+      profileData,
     },
   });
   router.use(PATHS.EDITPROFILEPAGE, EditProfilePage, {

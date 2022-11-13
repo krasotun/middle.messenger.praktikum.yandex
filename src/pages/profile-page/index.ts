@@ -1,6 +1,7 @@
 import { Header } from "../../components/header/header";
 import { ProfilePage } from "./profile-page";
 import { viewProfileForm } from "../../components/view-profile-form/view-profile-form";
+import { profileData } from "../../components/profile-data";
 import { ProfileAvatar } from "../../components/profile-avatar/profile-avatar";
 import { ProfileLinks } from "../../components/profile-links/profile-links";
 
@@ -33,6 +34,7 @@ const profileLinks = new ProfileLinks({
 export const profilePage = new ProfilePage({
   children: {
     profileAvatar,
+    profileData,
     viewProfileForm,
     header,
     profileLinks,

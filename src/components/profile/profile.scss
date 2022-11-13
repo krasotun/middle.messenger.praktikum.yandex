@@ -107,4 +107,27 @@
       }
     }
   }
+  &__data {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px gray solid;
+  }
+  &__label {
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 13px;
+    color: #1e1e1e;
+  }
+  &__value {
+    font-size: 13px;
+    line-height: 13px;
+    color: #999999;
+    font-weight: 500;
+  }
 }
