@@ -4,7 +4,6 @@ import router from "./core/router";
 import { MainPage } from "./pages/main-page/main-page";
 import { signInForm } from "./components/sign-in-form/";
 import { signUpForm } from "./components/sign-up-form/";
-import { viewProfileForm } from "./components/view-profile-form/view-profile-form";
 import { editProfileForm } from "./components/edit-profile-form/edit-profile-form";
 import { chatSearchForm } from "./components/chat-search-form";
 import { sendMessageForm } from "./components/send-message-form";
@@ -75,7 +74,6 @@ document.addEventListener("DOMContentLoaded", () => {
   router.use(PATHS.PROFILEPAGE, ProfilePage, {
     children: {
       profileAvatar,
-      viewProfileForm,
       header,
       profileLinks,
       profileData,
