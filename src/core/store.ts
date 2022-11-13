@@ -4,15 +4,21 @@ export enum StoreEvents {
   UPDATE = "update",
 }
 const initialState: IInitialState = {
-  isLoggedIn: false,
+  userInfo: {
+    first_name: "Имя из стора",
+    second_name: "Фамилия из стора",
+    display_name: "Имя в чате из стора",
+    login: "Логин из стора",
+    avatar: "Avatar из стора",
+    email: "Email из стора",
+    phone: "Телефон из стора",
+  },
 };
 class Store<T> extends EventBus {
   state: T | null;
   constructor(startState: T | null) {
     super();
     this.state = startState;
-    console.log("Store создан");
-    console.log(this.state);
   }
   getState() {
     return this.state;
