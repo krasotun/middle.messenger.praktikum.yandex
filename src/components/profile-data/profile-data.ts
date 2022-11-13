@@ -3,6 +3,7 @@ import { IProfileDataProps } from "./profile-data.props";
 import { render as compileTemplate } from "pug";
 import template from "./profile-data.template";
 import store, { StoreEvents } from "../../core/store";
+import authController from "../../controllers/auth-controller";
 
 export class ProfileData extends Block {
   constructor(props: IProfileDataProps) {

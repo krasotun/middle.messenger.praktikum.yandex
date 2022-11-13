@@ -22,8 +22,6 @@ class AuthController {
       });
   }
   signin({ ...data }: ISignIn) {
-    // store.setState({ isLoggedIn: true });
-    // console.log(store.getState());
     authApi
       .signin({ ...data })
       .then((res) => {
@@ -41,7 +39,7 @@ class AuthController {
     authApi
       .getUserInfo()
       .then((res) => {
-        console.log(res);
+        store.setState({ userInfo: res.json() });
       })
       .catch((error) => {
         console.log(error);
