@@ -18,4 +18,10 @@ export default `
   .profile__container
       .span.profile__label Телефон
       .span.profile__value #{phone}
+  .profile__container
+      .span.profile__label Аватар
+      .span.profile__value #{avatar}
+  .profile__container
+      .span.profile__label Телефон
+      .span.profile__value #{avatar}
 `;

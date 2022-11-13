@@ -12,6 +12,7 @@ const initialState: IInitialState = {
     avatar: "Avatar из стора",
     email: "Email из стора",
     phone: "Телефон из стора",
+    id: 12346,
   },
 };
 class Store<T> extends EventBus {
@@ -23,9 +24,9 @@ class Store<T> extends EventBus {
   getState() {
     return this.state;
   }
-  setState(newState: any, action?: string) {
+  setState(newState: any) {
     this.state = { ...this.state, ...newState };
-    this.emit(action ? action : StoreEvents.UPDATE);
+    this.emit(StoreEvents.UPDATE);
   }
 }
 
