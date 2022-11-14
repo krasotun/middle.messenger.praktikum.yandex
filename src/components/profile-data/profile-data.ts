@@ -12,7 +12,6 @@ export class ProfileData extends Block {
       const propsFromStore = store.getState();
       if (propsFromStore) {
         this.setProps(propsFromStore?.userInfo);
-        this.componentDidMount();
       }
     });
     authController.getUserInfo();

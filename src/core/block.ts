@@ -11,7 +11,6 @@ export class Block {
   private _element: HTMLElement;
   props: IProps;
   eventBus: () => EventBus;
-
   constructor(props?: IProps) {
     const eventBus = new EventBus();
     if (props) {
@@ -21,7 +20,6 @@ export class Block {
     this._registerEvents(eventBus);
     eventBus.emit(EVENTS.INIT);
   }
-
   get element(): HTMLElement {
     return this._element;
   }
@@ -34,6 +32,7 @@ export class Block {
     console.log("hide");
   }
   init() {
+    this._element = this._createDocumentElement("div");
     this.eventBus().emit(EVENTS.FLOW_CDM);
   }
   render() {
@@ -50,6 +49,10 @@ export class Block {
     Object.assign(this.props, newProps);
   }
   componentRendered() {}
+  private _createDocumentElement(tag) {
+    const element = document.createElement(tag);
+    return element;
+  }
   private _registerEvents(eventBus: EventBus) {
     eventBus.on(EVENTS.INIT, this.init.bind(this));
     eventBus.on(EVENTS.FLOW_CDM, this._componentDidMount.bind(this));
@@ -88,12 +91,10 @@ export class Block {
       }
     });
   }
-
-  private _render() {
-    const template = document.createElement("div");
-    template.innerHTML = this.render();
-    this._removeEventListeners();
-    template.querySelectorAll(".template-props").forEach((item) => {
+  private _compile() {
+    const fragment = this._createDocumentElement("div");
+    fragment.innerHTML = this.render();
+    fragment.querySelectorAll(".template-props").forEach((item) => {
       const templateProp = item.getAttribute("template-props");
       if (this.props.children && templateProp) {
         // @ts-ignore
@@ -101,11 +102,14 @@ export class Block {
         item.replaceWith(propForReplace.element);
       }
     });
-    this._element = template;
-    const id = v4();
-    this._element.setAttribute("id", id);
+    return fragment;
+  }
+  private _render() {
+    const block = this._compile();
+    this._removeEventListeners();
+    this._element.innerHTML = "";
+    this._element.appendChild(block);
     this._addEventListeners();
-    this.componentRendered();
   }
 
   private _componentDidMount() {

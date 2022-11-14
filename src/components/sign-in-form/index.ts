@@ -1,10 +1,8 @@
 import authController from "../../controllers/auth-controller";
-import { PATHS } from "../../core/constants";
 import {
   formValidator,
   handleInputValidation,
 } from "../../core/form-validator";
-import router from "../../core/router";
 import { Button } from "../button/button";
 import { InputSign } from "../input-sign/input-sign.";
 import { SignInForm } from "./sign-in-form";
@@ -55,14 +53,3 @@ export const signInForm = new SignInForm({
   },
   onSubmit: submitSignInForm,
 });
-
-signInForm.setProps({
-  formTitle: "Выход",
-});
-
-setTimeout(() => {
-  console.log("Прошло 3 секунды");
-  signInForm.setProps({
-    formTitle: "Выхода нет",
-  });
-}, 3000);
