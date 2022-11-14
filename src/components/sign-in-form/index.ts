@@ -55,3 +55,14 @@ export const signInForm = new SignInForm({
   },
   onSubmit: submitSignInForm,
 });
+
+signInForm.setProps({
+  formTitle: "Выход",
+});
+
+setTimeout(() => {
+  console.log("Прошло 3 секунды");
+  signInForm.setProps({
+    formTitle: "Выхода нет",
+  });
+}, 3000);
