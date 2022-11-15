@@ -13,13 +13,11 @@ const submitButton = new Button({
 const submitEditProfileForm = (event: SubmitEvent) => {
   event.preventDefault();
   console.log("Edit-profile form submitted");
-
   formValidator(event.target as HTMLFormElement);
   if (formValidator(event.target as HTMLFormElement)) {
     const formData = new FormData(event.target as HTMLFormElement);
     const dataForSend = Object.fromEntries(formData.entries());
     userController.changeUserInfo(dataForSend);
-    // authController.getUserInfo();
   }
   const formData = new FormData(event.target as HTMLFormElement);
   console.log(
