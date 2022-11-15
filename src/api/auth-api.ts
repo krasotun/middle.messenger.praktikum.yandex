@@ -12,7 +12,7 @@ class AuthAPI extends BaseAPI {
   signin({ ...data }: ISignIn) {
     return this.post("signin", { ...data });
   }
-  signout() {
+  logout() {
     return this.post("logout", {});
   }
   getUserInfo() {
