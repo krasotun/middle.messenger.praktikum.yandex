@@ -7,7 +7,8 @@ class UserController {
   changeUserInfo({ ...data }: IUserInfo) {
     userApi
       .changeUserInfo({ ...data })
-      .then(() => {
+      .then((res) => {
+        console.log(res);
         authApi.getUserInfo();
       })
       .catch((error) => {

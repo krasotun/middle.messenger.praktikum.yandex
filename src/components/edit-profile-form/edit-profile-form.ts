@@ -5,6 +5,7 @@ import {
   handleInputValidation,
   formValidator,
 } from "../../core/form-validator";
+import userController from "../../controllers/user-controller";
 const submitButton = new Button({
   buttonText: "Сохранить",
   className: "profile-form__submit-button",
@@ -12,7 +13,14 @@ const submitButton = new Button({
 const submitEditProfileForm = (event: SubmitEvent) => {
   event.preventDefault();
   console.log("Edit-profile form submitted");
+
   formValidator(event.target as HTMLFormElement);
+  if (formValidator(event.target as HTMLFormElement)) {
+    const formData = new FormData(event.target as HTMLFormElement);
+    const dataForSend = Object.fromEntries(formData.entries());
+    userController.changeUserInfo(dataForSend);
+    // authController.getUserInfo();
+  }
   const formData = new FormData(event.target as HTMLFormElement);
   console.log(
     "Данные из формы редактиования профиля",
