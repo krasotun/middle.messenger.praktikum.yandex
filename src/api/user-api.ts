@@ -9,8 +9,8 @@ class UserApi extends BaseAPI {
   changeUserInfo({ ...data }: IUserInfo) {
     return this.put("profile", { ...data });
   }
-  changeUserAvatar(file) {
-    return this.put("profile/avatar", file);
+  changeUserAvatar(avatar: FormData) {
+    return this.put("profile/avatar", avatar);
   }
   changeUserPassword({ ...data }: IUserPassword) {
     return this.put("profile", { ...data });

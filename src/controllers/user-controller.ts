@@ -14,9 +14,9 @@ class UserController {
         console.log(error);
       });
   }
-  changeUserAvatar(file) {
+  changeUserAvatar(avatar: FormData) {
     userApi
-      .changeUserAvatar(file)
+      .changeUserAvatar(avatar)
       .then((res) => {
         console.log(res);
       })
