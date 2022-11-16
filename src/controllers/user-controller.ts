@@ -15,6 +15,7 @@ class UserController {
       });
   }
   changeUserAvatar(avatar: FormData) {
+    console.log(avatar);
     userApi
       .changeUserAvatar(avatar)
       .then((res) => {
