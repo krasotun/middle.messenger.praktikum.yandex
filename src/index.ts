@@ -1,30 +1,26 @@
+import { changeAvatarForm } from "./components/change-avatar-form/";
+import { changePasswordForm } from "./components/change-password-form/";
+import { ChatMessage } from "./components/chat-message/chat-message";
+import { chatSearchForm } from "./components/chat-search-form";
+import { editProfileForm } from "./components/edit-profile-form/edit-profile-form";
 import { Header } from "./components/header/header";
+import { ProfileLinks } from "./components/profile-links/profile-links";
+import { sendMessageForm } from "./components/send-message-form";
+import { profileData } from "./components/profile-data/";
 import { ServicePage } from "./components/service-page/service-page";
-import router from "./core/router";
-import { MainPage } from "./pages/main-page/main-page";
 import { signInForm } from "./components/sign-in-form/";
 import { signUpForm } from "./components/sign-up-form/";
-import { editProfileForm } from "./components/edit-profile-form/edit-profile-form";
-import { chatSearchForm } from "./components/chat-search-form";
-import { sendMessageForm } from "./components/send-message-form";
-import { changePasswordForm } from "./components/change-password-form/";
-import { SignUpPage } from "./pages/sign-up-page/sign-up-page";
-import { ProfileAvatar } from "./components/profile-avatar/profile-avatar";
-import { ProfileLinks } from "./components/profile-links/profile-links";
-import { profileData } from "./components/profile-data/";
-import { ProfilePage } from "./pages/profile-page/profile-page";
-import { EditProfilePage } from "./pages/edit-profile-page/edit-profile-page";
-import { ChangePasswordPage } from "./pages/change-password-page/change-password-page";
 import { SingleChat } from "./components/single-chat/single-chat";
-import { ChatMessage } from "./components/chat-message/chat-message";
-import { ChatPage } from "./pages/chat-page/chat-page";
 import { PATHS } from "./core/constants";
+import router from "./core/router";
+import { ChangePasswordPage } from "./pages/change-password-page/change-password-page";
+import { ChatPage } from "./pages/chat-page/chat-page";
+import { EditProfilePage } from "./pages/edit-profile-page/edit-profile-page";
+import { MainPage } from "./pages/main-page/main-page";
+import { ProfilePage } from "./pages/profile-page/profile-page";
+import { SignUpPage } from "./pages/sign-up-page/sign-up-page";
 
 const header = new Header();
-const profileAvatar = new ProfileAvatar({
-  link: "https://avatarko.ru/img/kartinka/33/muzhchina_kapyushon_33779.jpg",
-  name: "Krasotun",
-});
 const profileLinks = new ProfileLinks({
   linkList: [
     {
@@ -73,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   router.use(PATHS.PROFILEPAGE, ProfilePage, {
     children: {
-      profileAvatar,
+      changeAvatarForm,
       header,
       profileLinks,
       profileData,
