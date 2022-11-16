@@ -1,5 +1,7 @@
 export default `
 .profile__avatar
-	img.profile__avatar-image(src=link alt=name)
-	p.profile__user-name #{name}
-	`;
+form(id='changeAvatar')
+  h2 Смена аватара
+  input(id='avatar' type='file' name='avatar' accept='image/*')
+  input(type='submit')
+`;

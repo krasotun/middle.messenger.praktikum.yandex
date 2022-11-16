@@ -10,11 +10,7 @@
     margin-top: 60px;
     display: flex;
     flex-direction: column;
-    &-image {
-      width: 130px;
-      height: 130px;
-      border-radius: 50%;
-    }
+    align-items: center;
   }
   &__user-name {
     font-style: normal;
