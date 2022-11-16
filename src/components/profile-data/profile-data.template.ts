@@ -1,6 +1,6 @@
 export default `
 .profile__avatar
-	img.profile__avatar-image(src=avatar alt=display_name)
+	img.profile__avatar-image(src='https://ya-praktikum.tech/api/v2/resources'+avatar alt=display_name)
 	p.profile__user-name #{display_name}
 	.profile__data
 	.profile__container
