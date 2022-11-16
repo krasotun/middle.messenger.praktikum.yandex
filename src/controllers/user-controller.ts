@@ -25,6 +25,7 @@ class UserController {
       });
   }
   changeUserPassword({ ...data }: IUserPassword) {
+    console.log("Change user password");
     userApi
       .changeUserPassword({ ...data })
       .then((res) => {

@@ -1,3 +1,4 @@
+import userController from "../../controllers/user-controller";
 import {
   formValidator,
   handleInputValidation,
@@ -13,21 +14,18 @@ const submitButton = new Button({
 
 const submitChangePasswordForm = (event: SubmitEvent) => {
   event.preventDefault();
-  console.log("Change password  form submitted");
-  formValidator(event.target as HTMLFormElement);
   const formData = new FormData(event.target as HTMLFormElement);
-  console.log(
-    "Данные из формы смены пароля",
-    Object.fromEntries(formData.entries())
-  );
+  const dataForSend = Object.fromEntries(formData.entries());
+  userController.changeUserPassword(dataForSend);
+  // }
 };
 export const password = new InputProfile({
   label: "Старый пароль",
   labelFor: "password",
   type: "password",
-  name: "password",
-  id: "password",
-  placeholder: "********",
+  name: "oldPassword",
+  id: "oldPassword",
+  placeholder: "",
   required: true,
   disabled: false,
   onBlur: handleInputValidation,
@@ -35,11 +33,11 @@ export const password = new InputProfile({
 });
 const newPassword = new InputProfile({
   label: "Новый пароль",
-  labelFor: "password-new",
+  labelFor: "newPassword",
   type: "password",
-  name: "password-new",
-  id: "password-new",
-  placeholder: "********",
+  name: "newPassword",
+  id: "newPassword",
+  placeholder: "",
   required: true,
   disabled: false,
   onBlur: handleInputValidation,
@@ -51,7 +49,7 @@ const againPassword = new InputProfile({
   type: "password",
   name: "password-again",
   id: "password-again",
-  placeholder: "********",
+  placeholder: "",
   required: true,
   disabled: false,
   onBlur: handleInputValidation,

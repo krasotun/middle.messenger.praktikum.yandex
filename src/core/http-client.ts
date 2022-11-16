@@ -18,13 +18,13 @@ export class HTTPClient {
     return this._request(url, { ...options, method: METHODS.GET });
   }
   put(url: string, options = {}) {
-    return this._request(url, { ...options, method: METHODS.GET });
+    return this._request(url, { ...options, method: METHODS.PUT });
   }
   post(url: string, options = {}) {
     return this._request(url, { ...options, method: METHODS.POST });
   }
   delete(url: string, options = {}) {
-    return this._request(url, { ...options, method: METHODS.POST });
+    return this._request(url, { ...options, method: METHODS.DELETE });
   }
   private _queryStringify(data: {}) {
     return Object.entries(data).reduce((acc, entry, index) => {

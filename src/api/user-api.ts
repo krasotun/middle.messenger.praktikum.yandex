@@ -13,7 +13,7 @@ class UserApi extends BaseAPI {
     return this.put("profile/avatar", avatar);
   }
   changeUserPassword({ ...data }: IUserPassword) {
-    return this.put("profile", { ...data });
+    return this.put("password", { ...data });
   }
 }
 export default new UserApi();
