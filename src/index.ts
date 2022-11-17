@@ -3,6 +3,7 @@ import { changePasswordForm } from "./components/change-password-form/";
 import { ChatMessage } from "./components/chat-message/chat-message";
 import { chatSearchForm } from "./components/chat-search-form";
 import { editProfileForm } from "./components/edit-profile-form/edit-profile-form";
+import { chatAddForm } from "./components/chat-add-form";
 import { Header } from "./components/header/header";
 import { ProfileLinks } from "./components/profile-links/profile-links";
 import { sendMessageForm } from "./components/send-message-form";
@@ -90,6 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
   router.use(PATHS.CHATPAGE, ChatPage, {
     children: {
       header,
+      chatAddForm,
       chatSearchForm,
       singleChat,
       chatMessage,

@@ -72,10 +72,10 @@ export class HTTPClient {
       if (withCredentials) {
         xhr.withCredentials = true;
       }
-      // Object.keys(headers).forEach((key) => {
-      //   xhr.setRequestHeader(key, headers[key]);
-      // });
-      xhr.setRequestHeader("accept", "application/json");
+      Object.keys(headers).forEach((key) => {
+        xhr.setRequestHeader(key, headers[key]);
+      });
+      // xhr.setRequestHeader("accept", "application/json");
       xhr.onload = () => {
         resolve(this._getRequestResult(xhr));
       };
