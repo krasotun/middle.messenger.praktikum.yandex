@@ -75,7 +75,6 @@ export class HTTPClient {
       // Object.keys(headers).forEach((key) => {
       //   xhr.setRequestHeader(key, headers[key]);
       // });
-      xhr.setRequestHeader("accept", "application/json");
       xhr.onload = () => {
         resolve(this._getRequestResult(xhr));
       };
@@ -88,7 +87,13 @@ export class HTTPClient {
       if (isGet || !data) {
         xhr.send();
       } else {
-        xhr.send(JSON.stringify(data));
+        if (data instanceof FormData) {
+          xhr.setRequestHeader("accept", "application/json");
+          xhr.send(data);
+        } else {
+          xhr.setRequestHeader("content-type", "application/json");
+          xhr.send(JSON.stringify(data));
+        }
       }
     });
   }

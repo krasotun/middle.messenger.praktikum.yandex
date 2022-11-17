@@ -2,6 +2,7 @@ import authApi from "../api/auth-api";
 import userApi from "../api/user-api";
 import { IUserInfo } from "../interfaces/user-info";
 import { IUserPassword } from "../interfaces/user-password";
+import authController from "./auth-controller";
 
 class UserController {
   changeUserInfo({ ...data }: IUserInfo) {
@@ -15,10 +16,10 @@ class UserController {
       });
   }
   changeUserAvatar(avatar: FormData) {
-    console.log(avatar);
     userApi
       .changeUserAvatar(avatar)
       .then((res) => {
+        authController.getUserInfo();
         console.log(res);
       })
       .catch((error) => {
@@ -26,7 +27,6 @@ class UserController {
       });
   }
   changeUserPassword({ ...data }: IUserPassword) {
-    console.log("Change user password");
     userApi
       .changeUserPassword({ ...data })
       .then((res) => {

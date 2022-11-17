@@ -23,6 +23,9 @@ export abstract class BaseAPI {
     });
   }
   put(url: string, data: {}, headers?: {}) {
+    if (data instanceof FormData) {
+      this._headers = { "content-type": "multipart/form-data" };
+    }
     return this._httpClient.put(`${this._baseUrl}/${url}`, {
       headers: headers ? headers : this._headers,
       data,

@@ -10,7 +10,6 @@ class UserApi extends BaseAPI {
     return this.put("profile", { ...data });
   }
   changeUserAvatar(avatar: FormData) {
-    console.log("More called");
     return this.put("profile/avatar", avatar);
   }
   changeUserPassword({ ...data }: IUserPassword) {
