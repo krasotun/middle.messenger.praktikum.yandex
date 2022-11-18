@@ -110,6 +110,7 @@ export class Block {
     this._element.innerHTML = "";
     this._element.appendChild(block);
     this._addEventListeners();
+    this.componentRendered();
   }
 
   private _componentDidMount() {
