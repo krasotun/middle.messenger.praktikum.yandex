@@ -7,16 +7,16 @@ class AuthAPI extends BaseAPI {
     super({ path: "/auth" });
   }
   signup({ ...data }: ISignUp) {
-    return this.post("signup", { ...data });
+    return this.post("/signup", { ...data });
   }
   signin({ ...data }: ISignIn) {
-    return this.post("signin", { ...data });
+    return this.post("/signin", { ...data });
   }
   logout() {
-    return this.post("logout", {});
+    return this.post("/logout", {});
   }
   getUserInfo() {
-    return this.get("user");
+    return this.get("/user");
   }
 }
 

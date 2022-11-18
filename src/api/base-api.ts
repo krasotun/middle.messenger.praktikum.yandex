@@ -12,13 +12,13 @@ export abstract class BaseAPI {
     this._headers = { "Content-Type": "application/json" };
   }
   post(url: string, data: {}) {
-    return this._httpClient.post(`${this._baseUrl}/${url}`, {
+    return this._httpClient.post(`${this._baseUrl}${url}`, {
       headers: this._headers,
       data,
     });
   }
   get(url: string) {
-    return this._httpClient.get(`${this._baseUrl}/${url}`, {
+    return this._httpClient.get(`${this._baseUrl}${url}`, {
       headers: this._headers,
     });
   }
@@ -26,13 +26,13 @@ export abstract class BaseAPI {
     if (data instanceof FormData) {
       this._headers = { "content-type": "multipart/form-data" };
     }
-    return this._httpClient.put(`${this._baseUrl}/${url}`, {
+    return this._httpClient.put(`${this._baseUrl}${url}`, {
       headers: headers ? headers : this._headers,
       data,
     });
   }
   delete(url: string, data: {}) {
-    return this._httpClient.delete(`${this._baseUrl}/${url}`, {
+    return this._httpClient.delete(`${this._baseUrl}${url}`, {
       headers: this._headers,
       data,
     });

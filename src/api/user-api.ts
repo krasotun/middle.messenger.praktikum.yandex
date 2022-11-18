@@ -7,13 +7,13 @@ class UserApi extends BaseAPI {
     super({ path: "/user" });
   }
   changeUserInfo({ ...data }: IUserInfo) {
-    return this.put("profile", { ...data });
+    return this.put("/profile", { ...data });
   }
   changeUserAvatar(avatar: FormData) {
-    return this.put("profile/avatar", avatar);
+    return this.put("/profile/avatar", avatar);
   }
   changeUserPassword({ ...data }: IUserPassword) {
-    return this.put("password", { ...data });
+    return this.put("/password", { ...data });
   }
 }
 export default new UserApi();
