@@ -11,6 +11,7 @@ import { profileData } from "./components/profile-data/";
 import { ServicePage } from "./components/service-page/service-page";
 import { signInForm } from "./components/sign-in-form/";
 import { signUpForm } from "./components/sign-up-form/";
+import { chatsList } from "./components/chats-list/";
 import { SingleChat } from "./components/single-chat/single-chat";
 import { PATHS } from "./core/constants";
 import router from "./core/router";
@@ -93,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
       header,
       chatAddForm,
       chatSearchForm,
-      singleChat,
+      chatsList,
       chatMessage,
       sendMessageForm,
     },
