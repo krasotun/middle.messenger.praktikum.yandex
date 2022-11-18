@@ -14,6 +14,26 @@ const initialState: IInitialState = {
     phone: "Телефон из стора",
     id: 12346,
   },
+  chats: [
+    {
+      id: 0,
+      title: "Title from store",
+      avatar: "Avatar from store",
+      unread_count: 0,
+      last_message: {
+        user: {
+          first_name: "First_name from store",
+          second_name: "Second_name from store",
+          avatar: "Avatar from store",
+          email: "Email from store",
+          login: "Login from store",
+          phone: "Phone from store",
+        },
+        time: "Time from store",
+        content: "Content from store",
+      },
+    },
+  ],
 };
 class Store<T> extends EventBus {
   state: T | null;

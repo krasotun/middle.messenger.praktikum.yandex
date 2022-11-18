@@ -1,3 +1,4 @@
+import chatController from "../../controllers/chat-controller";
 import { Button } from "../button/button";
 import { ChatAddForm } from "./chat-add-form";
 const submitButton = new Button({
@@ -7,7 +8,9 @@ const submitButton = new Button({
 });
 const submitAddChatForm = (event: SubmitEvent) => {
   event.preventDefault();
-  console.log(event);
+  const formData = new FormData(event.target as HTMLFormElement);
+  const dataForSend = Object.fromEntries(formData.entries());
+  chatController.createNewChat(dataForSend);
 };
 
 export const chatAddForm = new ChatAddForm({
