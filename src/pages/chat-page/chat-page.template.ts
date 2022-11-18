@@ -3,9 +3,9 @@ header(template-props='header' class='template-props')
 main
   .chat
     .chat-list
-      a.chat-list__profile-link(href="/profile")='Профиль >'
       .chat-list__form-container
       form(template-props='chatSearchForm' class='template-props')
+      form(template-props='chatAddForm' class='template-props')
       ul.chat-list__chats-list
         li(template-props='singleChat' class='template-props')
     .chat-window

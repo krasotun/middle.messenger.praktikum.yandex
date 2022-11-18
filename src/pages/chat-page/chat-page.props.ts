@@ -1,3 +1,4 @@
+import { ChatAddForm } from "../../components/chat-add-form/chat-add-form";
 import { ChatMessage } from "../../components/chat-message/chat-message";
 import { ChatSearchForm } from "../../components/chat-search-form/chat-search-form";
 import { Header } from "../../components/header/header";
@@ -7,6 +8,7 @@ import { SingleChat } from "../../components/single-chat/single-chat";
 export default interface IChatPageProps {
   children: {
     header: Header;
+    chatAddForm: ChatAddForm;
     chatSearchForm: ChatSearchForm;
     singleChat: SingleChat;
     chatMessage: ChatMessage;

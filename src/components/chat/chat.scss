@@ -6,7 +6,7 @@
     border-right: 1px solid #eaeaea;
     border-left: 1px solid #eaeaea;
     border-bottom: 1px solid #eaeaea;
-    padding: 21px 10px;
+    padding: 0 10px;
     &__form-container {
       margin-top: 23px;
     }
@@ -42,6 +42,40 @@
         outline: transparent;
         border: 1px black solid;
       }
+    }
+  }
+  &-add-form {
+    margin-top: 20px;
+    &__input {
+      background: #efefef;
+      border-radius: 5px;
+      border: 1px transparent solid;
+      height: 32px;
+      width: 100%;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 12px;
+      color: #999999;
+      text-align: center;
+      &:focus {
+        outline: transparent;
+        border: 1px black solid;
+      }
+    }
+    &__submit-button {
+      text-align: center;
+      color: #fff;
+      height: 37px;
+      width: 100%;
+      background: #3369f3;
+      border: none;
+      border-radius: 8px;
+      margin-top: 20px;
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 13px;
     }
   }
   &-window {
