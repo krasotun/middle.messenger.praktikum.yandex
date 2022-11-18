@@ -20,7 +20,7 @@ class ChatController {
       .createNewChat({ ...data })
       .then((res) => {
         console.log(res);
-        // this.getChats();
+        this.getChats();
       })
       .catch((error) => {
         console.log(error);

@@ -19,5 +19,3 @@ export const chatAddForm = new ChatAddForm({
   },
   onSubmit: submitAddChatForm,
 });
-
-console.log(chatAddForm);
