@@ -12,7 +12,6 @@ import { ServicePage } from "./components/service-page/service-page";
 import { signInForm } from "./components/sign-in-form/";
 import { signUpForm } from "./components/sign-up-form/";
 import { chatsList } from "./components/chats-list/";
-import { SingleChat } from "./components/single-chat/single-chat";
 import { PATHS } from "./core/constants";
 import router from "./core/router";
 import { ChangePasswordPage } from "./pages/change-password-page/change-password-page";
@@ -42,14 +41,6 @@ const profileLinks = new ProfileLinks({
       text: "Выход",
     },
   ],
-});
-const singleChat = new SingleChat({
-  avatarLink:
-    "https://avatarko.ru/img/kartinka/33/muzhchina_kapyushon_33779.jpg",
-  senderName: "Krasotun",
-  messageText: "Привет, это сообщение от Красотуна",
-  messageTime: "18:25",
-  unreadMessages: "3",
 });
 const chatMessage = new ChatMessage({
   date: "11:01",

@@ -13,4 +13,10 @@ export class ChatsList extends Block {
       chats,
     });
   }
+  componentDidMount(): void {
+    document.addEventListener("DOMContentLoaded", () => {
+      const items = document.querySelectorAll(".chat-list__chats-list");
+      console.log(items);
+    });
+  }
 }
