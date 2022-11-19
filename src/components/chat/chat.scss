@@ -81,6 +81,15 @@
   &-window {
     border-right: 1px solid #eaeaea;
     width: 880px;
+    &__title {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 20px;
+      margin-top: 30px;
+      margin-left: 20px;
+      line-height: 20px;
+      color: #1e1e1e;
+    }
     &__header {
       display: flex;
       justify-content: space-between;

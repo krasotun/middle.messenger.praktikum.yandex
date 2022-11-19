@@ -2,7 +2,7 @@ import chatController from "../../controllers/chat-controller";
 import { Button } from "../button/button";
 import { ChatAddForm } from "./chat-add-form";
 const submitButton = new Button({
-  buttonText: "Добавить чат",
+  buttonText: "Создать чат",
   className: "chat-add-form__submit-button",
   buttonType: "submit",
 });
