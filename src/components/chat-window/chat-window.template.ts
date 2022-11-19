@@ -5,8 +5,9 @@ export default `
   else
     header.chat-window__header
      .chat-window__left-block
-      img.single-chat__avatar(src='https://avatarko.ru/img/kartinka/33/muzhchina_kapyushon_33779.jpg' alt='Krasotun')
-      p.single-chat__sender-name Название чата
+        img.single-chat__avatar(src='https://oir.mobi/uploads/posts/2021-03/thumbs/1616429741_57-p-kartinki-goluboi-fon-62.jpg' alt='Krasotun')
+        p.single-chat__title Название чата
+     .chat-window__right-block
     .chat-window__content
       ul.chat-messages-list
         li.chat-message__container
