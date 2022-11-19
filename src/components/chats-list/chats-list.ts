@@ -16,7 +16,17 @@ export class ChatsList extends Block {
   componentRendered(): void {
     const element = this.element;
     element.querySelectorAll(".single-chat__container").forEach((element) => {
-      element.classList.add("test");
+      element.addEventListener("click", () => {
+        console.log("clicked", element.id);
+      });
     });
+    element
+      .querySelectorAll(".single-chat__delete-button")
+      .forEach((element) => {
+        element.addEventListener("click", (event) => {
+          event.stopPropagation();
+          console.log("clicked button", element.id);
+        });
+      });
   }
 }
