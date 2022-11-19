@@ -9,6 +9,9 @@
       background-color: #e4edfd;
       cursor: pointer;
     }
+    &_active {
+      background-color: #e4edfd;
+    }
   }
   &__left-block {
     display: flex;

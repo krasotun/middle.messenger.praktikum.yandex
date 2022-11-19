@@ -5,7 +5,7 @@ const chats = [
     id: 0,
     title: "Title from template",
     avatar: "https://avatarko.ru/img/kartinka/33/muzhchina_kapyushon_33779.jpg",
-    unread_count: 0,
+    unread_count: 8,
     last_message: {
       user: {
         first_name: "First_name from template",

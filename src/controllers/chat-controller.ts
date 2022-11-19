@@ -1,5 +1,6 @@
 import chatApi from "../api/chat-api";
 import store from "../core/store";
+import { IDeleteChat } from "../interfaces/delete-chat";
 import { INewChat } from "../interfaces/new-chat";
 import { IUserToChat } from "../interfaces/user-to-chat";
 
@@ -15,6 +16,18 @@ class ChatController {
         console.log(error);
       });
   }
+  deleteChat({ ...data }: IDeleteChat) {
+    chatApi
+      .deleteChat({ ...data })
+      .then((res) => {
+        console.log(res);
+        this.getChats();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
   createNewChat({ ...data }: INewChat) {
     chatApi
       .createNewChat({ ...data })

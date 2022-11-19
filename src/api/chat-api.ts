@@ -1,3 +1,4 @@
+import { IDeleteChat } from "../interfaces/delete-chat";
 import { INewChat } from "../interfaces/new-chat";
 import { IUserToChat } from "../interfaces/user-to-chat";
 import { BaseAPI } from "./base-api";
@@ -8,6 +9,9 @@ class ChatApi extends BaseAPI {
   }
   getChats() {
     return this.get("");
+  }
+  deleteChat({ ...data }: IDeleteChat) {
+    return this.delete("", { ...data });
   }
   createNewChat({ ...data }: INewChat) {
     return this.post("", { ...data });

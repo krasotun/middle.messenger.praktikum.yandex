@@ -4,14 +4,11 @@ import { IChatsListProps } from "./chats-list.props";
 import template from "./chats-list.template";
 import store, { StoreEvents } from "../../core/store";
 import chatController from "../../controllers/chat-controller";
-import authController from "../../controllers/auth-controller";
-
 export class ChatsList extends Block {
   constructor(props: IChatsListProps) {
     super(props);
     store.on(StoreEvents.UPDATE, () => {
       const propsFromStore = store.getState()?.chats;
-      console.log(propsFromStore);
       this.setProps({
         chats: propsFromStore,
       });
@@ -26,9 +23,9 @@ export class ChatsList extends Block {
   }
   componentRendered(): void {
     const element = this.element;
-    element.querySelectorAll(".single-chat__container").forEach((element) => {
-      element.addEventListener("click", () => {
-        console.log("clicked", element.id);
+    element.querySelectorAll(".single-chat__container").forEach((item) => {
+      item.addEventListener("click", () => {
+        store.setState({ activeChat: item.id });
       });
     });
     element
@@ -36,7 +33,7 @@ export class ChatsList extends Block {
       .forEach((element) => {
         element.addEventListener("click", (event) => {
           event.stopPropagation();
-          console.log("clicked button", element.id);
+          chatController.deleteChat({ chatId: element.id });
         });
       });
   }

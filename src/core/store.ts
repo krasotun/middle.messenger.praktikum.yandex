@@ -49,7 +49,7 @@ class Store<T> extends EventBus {
   setState(newState: any) {
     this.state = { ...this.state, ...newState };
     this.emit(StoreEvents.UPDATE);
-    console.log(this.state.chats);
+    console.log(this.state.activeChat);
   }
 }
 

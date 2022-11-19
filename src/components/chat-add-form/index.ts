@@ -11,6 +11,7 @@ const submitAddChatForm = (event: SubmitEvent) => {
   const formData = new FormData(event.target as HTMLFormElement);
   const dataForSend = Object.fromEntries(formData.entries());
   chatController.createNewChat(dataForSend);
+  (event.target as HTMLFormElement).reset();
 };
 
 export const chatAddForm = new ChatAddForm({
