@@ -9,9 +9,9 @@ export class ProfileData extends Block {
   constructor(props: IProfileDataProps) {
     super(props);
     store.on(StoreEvents.UPDATE, () => {
-      const propsFromStore = store.getState();
+      const propsFromStore = store.getState()?.userInfo;
       if (propsFromStore) {
-        this.setProps(propsFromStore?.userInfo);
+        this.setProps(propsFromStore);
       }
     });
     authController.getUserInfo();

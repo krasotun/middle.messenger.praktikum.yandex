@@ -17,6 +17,7 @@ const initialState: IInitialState = {
   chats: [
     {
       id: 0,
+      created_by: 123,
       title: "Title from store",
       avatar: "Avatar from store",
       unread_count: 0,
@@ -29,11 +30,12 @@ const initialState: IInitialState = {
           login: "Login from store",
           phone: "Phone from store",
         },
-        time: "Time from store",
+        time: "22:47",
         content: "Content from store",
       },
     },
   ],
+  activeChat: 0,
 };
 class Store<T> extends EventBus {
   state: T | null;
@@ -47,7 +49,7 @@ class Store<T> extends EventBus {
   setState(newState: any) {
     this.state = { ...this.state, ...newState };
     this.emit(StoreEvents.UPDATE);
-    console.log(this.state);
+    console.log(this.state.chats);
   }
 }
 

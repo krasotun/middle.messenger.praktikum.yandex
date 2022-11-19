@@ -4,4 +4,5 @@ import { IChatProps } from "./chat-props";
 export interface IInitialState {
   userInfo: IProfileDataProps;
   chats: IChatProps[];
+  activeChat: number;
 }

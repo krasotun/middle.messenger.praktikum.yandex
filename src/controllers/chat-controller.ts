@@ -8,7 +8,7 @@ class ChatController {
     chatApi
       .getChats()
       .then((res) => {
-        console.log(res);
+        console.log(res.json());
         store.setState({ chats: res.json() });
       })
       .catch((error) => {

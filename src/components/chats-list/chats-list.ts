@@ -2,10 +2,21 @@ import { Block } from "../../core/block";
 import { render as compileTemplate } from "pug";
 import { IChatsListProps } from "./chats-list.props";
 import template from "./chats-list.template";
+import store, { StoreEvents } from "../../core/store";
+import chatController from "../../controllers/chat-controller";
+import authController from "../../controllers/auth-controller";
 
 export class ChatsList extends Block {
   constructor(props: IChatsListProps) {
     super(props);
+    store.on(StoreEvents.UPDATE, () => {
+      const propsFromStore = store.getState()?.chats;
+      console.log(propsFromStore);
+      this.setProps({
+        chats: propsFromStore,
+      });
+    });
+    chatController.getChats();
   }
   render(): string {
     const { chats } = this.props;
