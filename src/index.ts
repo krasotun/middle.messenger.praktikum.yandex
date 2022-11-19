@@ -6,8 +6,8 @@ import { editProfileForm } from "./components/edit-profile-form/edit-profile-for
 import { chatAddForm } from "./components/chat-add-form";
 import { Header } from "./components/header/header";
 import { ProfileLinks } from "./components/profile-links/profile-links";
-import { sendMessageForm } from "./components/send-message-form";
 import { profileData } from "./components/profile-data/";
+import { chatWindow } from "./components/chat-window/";
 import { ServicePage } from "./components/service-page/service-page";
 import { signInForm } from "./components/sign-in-form/";
 import { signUpForm } from "./components/sign-up-form/";
@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
       chatSearchForm,
       chatsList,
       chatMessage,
-      sendMessageForm,
+      chatWindow,
     },
   });
 
