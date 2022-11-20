@@ -8,6 +8,7 @@ export default `
         img.single-chat__avatar(src='https://oir.mobi/uploads/posts/2021-03/thumbs/1616429741_57-p-kartinki-goluboi-fon-62.jpg' alt='Krasotun')
         p.single-chat__title Название чата
      .chat-window__right-block
+      form(template-props='userAddForm' class='template-props')
     .chat-window__content
       ul.chat-messages-list
         li.chat-message__container

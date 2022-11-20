@@ -7,10 +7,11 @@ export class ChatWindow extends Block {
     super(props);
   }
   render(): string {
-    const { sendMessageForm, activeChat } = this.props;
+    const { sendMessageForm, activeChat, userAddForm } = this.props;
     return compileTemplate(template, {
       sendMessageForm,
       activeChat,
+      userAddForm,
     });
   }
 }
