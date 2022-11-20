@@ -62,7 +62,7 @@ class ChatController {
     chatApi
       .getChatToken(id)
       .then((res) => {
-        store.setState({ chatToken: res.json().token });
+        console.log(res);
       })
       .catch((error) => {
         console.log(error);
