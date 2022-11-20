@@ -9,7 +9,6 @@ class ChatController {
     chatApi
       .getChats()
       .then((res) => {
-        console.log(res.json());
         store.setState({ chats: res.json() });
       })
       .catch((error) => {
@@ -39,9 +38,9 @@ class ChatController {
         console.log(error);
       });
   }
-  addUserToChat({ ...data }: IUserToChat) {
+  addUserToChat(data: IUserToChat) {
     chatApi
-      .addUserToChat({ ...data })
+      .addUserToChat(data)
       .then((res) => {
         console.log(res);
       })
@@ -49,9 +48,9 @@ class ChatController {
         console.log(error);
       });
   }
-  removeUserFromChat({ ...data }: IUserToChat) {
+  removeUserFromChat(data: IUserToChat) {
     chatApi
-      .addUserToChat({ ...data })
+      .removeUserFromChat(data)
       .then((res) => {
         console.log(res);
       })

@@ -25,6 +25,7 @@ export class ProfileData extends Block {
       avatar,
       email,
       phone,
+      id,
     } = this.props;
     return compileTemplate(template, {
       first_name,
@@ -34,6 +35,7 @@ export class ProfileData extends Block {
       avatar,
       email,
       phone,
+      id,
     });
   }
 }
