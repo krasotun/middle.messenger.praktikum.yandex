@@ -5,4 +5,5 @@ export interface IInitialState {
   userInfo: IProfileDataProps;
   chats: IChatProps[];
   activeChat: number;
+  chatToken: string;
 }

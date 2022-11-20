@@ -11,7 +11,7 @@ export abstract class BaseAPI {
     this._baseUrl = `${URLS.BASE}${path}`;
     this._headers = { "Content-Type": "application/json" };
   }
-  post(url: string, data: {}) {
+  post(url: string, data?: {}) {
     return this._httpClient.post(`${this._baseUrl}${url}`, {
       headers: this._headers,
       data,

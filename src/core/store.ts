@@ -36,6 +36,7 @@ const initialState: IInitialState = {
     },
   ],
   activeChat: 0,
+  chatToken: "token",
 };
 class Store<T> extends EventBus {
   state: T | null;
@@ -49,7 +50,6 @@ class Store<T> extends EventBus {
   setState(newState: any) {
     this.state = { ...this.state, ...newState };
     this.emit(StoreEvents.UPDATE);
-    console.log(this.state.activeChat);
   }
 }
 

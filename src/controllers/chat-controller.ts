@@ -1,5 +1,6 @@
 import chatApi from "../api/chat-api";
 import store from "../core/store";
+import { IChatToken } from "../interfaces/chat-token";
 import { IDeleteChat } from "../interfaces/delete-chat";
 import { INewChat } from "../interfaces/new-chat";
 import { IUserToChat } from "../interfaces/user-to-chat";
@@ -26,7 +27,6 @@ class ChatController {
         console.log(error);
       });
   }
-
   createNewChat({ ...data }: INewChat) {
     chatApi
       .createNewChat({ ...data })
@@ -53,6 +53,16 @@ class ChatController {
       .removeUserFromChat(data)
       .then((res) => {
         console.log(res);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+  getChatToken(id: IChatToken) {
+    chatApi
+      .getChatToken(id)
+      .then((res) => {
+        store.setState({ chatToken: res.json().token });
       })
       .catch((error) => {
         console.log(error);
