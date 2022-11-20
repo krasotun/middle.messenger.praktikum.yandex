@@ -1,0 +1,35 @@
+.user-add-form {
+  &__input {
+    display: flex;
+    height: 30px;
+    border: transparent;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 13px;
+    color: #1e1e1e;
+    border-bottom: 1px #e8e8e8 solid;
+    width: 110px;
+    &::placeholder {
+      opacity: 0.8;
+    }
+    &:focus {
+      outline: transparent;
+      border-bottom: 1px solid #3369f3;
+    }
+  }
+  &__submit-button {
+    margin-top: 5px;
+    background: #3369f3;
+    border-radius: 8px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 13px;
+    text-align: center;
+    color: #ffffff;
+    height: 37px;
+    border: none;
+    width: 110px;
+  }
+}

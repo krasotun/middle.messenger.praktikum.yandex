@@ -1,20 +1,20 @@
 import { Button } from "../button/button";
-import { UserAddForm } from "./user-add-form";
+import { UserRemoveForm } from "./user-remove-form";
 
 const submitButton = new Button({
-  buttonText: "Добавить в чат",
+  buttonText: "Удалить из чата",
   className: "user-add-form__submit-button",
   buttonType: "submit",
 });
 
-const submitUserAddForm = (event: SubmitEvent) => {
+const submitUserRemoveForm = (event: SubmitEvent) => {
   event.preventDefault();
   console.log(event.target);
 };
 
-export const userAddForm = new UserAddForm({
+export const userRemoveForm = new UserRemoveForm({
   children: {
     submitButton,
   },
-  onSubmit: submitUserAddForm,
+  onSubmit: submitUserRemoveForm,
 });

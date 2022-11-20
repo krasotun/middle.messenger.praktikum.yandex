@@ -109,7 +109,12 @@
     &__left-block {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 20px;
+    }
+    &__right-block {
+      display: flex;
+      gap: 20px;
+      align-items: center;
     }
     &__content {
       padding: 0 15px;

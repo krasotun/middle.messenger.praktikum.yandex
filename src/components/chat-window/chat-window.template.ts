@@ -9,6 +9,7 @@ export default `
         p.single-chat__title Название чата
      .chat-window__right-block
       form(template-props='userAddForm' class='template-props')
+      form(template-props='userRemoveForm' class='template-props')
     .chat-window__content
       ul.chat-messages-list
         li.chat-message__container
