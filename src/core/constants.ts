@@ -1,7 +1,6 @@
-import { IInitialState } from "../interfaces/initial-state";
-
 export enum URLS {
   BASE = "https://ya-praktikum.tech/api/v2",
+  WEBSOCKET = "wss://ya-praktikum.tech/ws/chats",
 }
 export enum PATHS {
   MAINPAGE = "/",
@@ -13,7 +12,3 @@ export enum PATHS {
   NOTFOUNDPAGE = "/404",
   SERVERERRORPAGE = "/500",
 }
-
-export const initialState: IInitialState = {
-  isLoggedIn: false,
-};
