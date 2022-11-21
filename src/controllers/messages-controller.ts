@@ -10,12 +10,16 @@ class MessagesController {
 
   private _onOpen() {
     console.log("Connected");
-    console.log(this._socket);
+    this._getMessages();
   }
   private _omMessage(event: MessageEvent) {
     console.log("Получены данные");
+    const data = JSON.parse(event.data);
+    if (Array.isArray(data)) {
+      const messages = data.reverse();
+      store.setState({ messageList: messages });
+    }
     chatController.getChats();
-    console.log(event);
   }
   private _onError(event: Error) {
     console.log("Произошла ошибка", event.message);
@@ -25,6 +29,14 @@ class MessagesController {
       event.wasClean
         ? "Соединение закрыто корректно"
         : "Соединение разорвано неожиданно"
+    );
+  }
+  private _getMessages() {
+    this._socket.send(
+      JSON.stringify({
+        content: "0",
+        type: "get old",
+      })
     );
   }
   private _addEventListeners() {

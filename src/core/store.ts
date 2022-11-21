@@ -37,6 +37,18 @@ const initialState: IInitialState = {
   ],
   activeChat: 0,
   chatToken: "token",
+  messageList: [
+    {
+      chat_id: 1,
+      content: "Content form store",
+      file: null,
+      id: 111,
+      is_read: true,
+      time: "Time from store",
+      type: "Type from store",
+      user_id: "1111",
+    },
+  ],
 };
 class Store<T> extends EventBus {
   state: T | null;
@@ -50,6 +62,7 @@ class Store<T> extends EventBus {
   setState(newState: any) {
     this.state = { ...this.state, ...newState };
     this.emit(StoreEvents.UPDATE);
+    console.log(this.state.messageList);
   }
 }
 
