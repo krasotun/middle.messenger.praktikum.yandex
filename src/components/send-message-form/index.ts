@@ -1,3 +1,4 @@
+import messagesController from "../../controllers/messages-controller";
 import {
   handleInputValidation,
   formValidator,
@@ -18,12 +19,11 @@ const submitButton = new Button({
 const submitSendMessageForm = (event: SubmitEvent) => {
   event.preventDefault();
   console.log("Send message form submitted");
-  const isFormValid = formValidator(event.target as HTMLFormElement);
-  console.log(
-    isFormValid ? "Данные прошли валидацию" : "Данные не прошли валидацию"
-  );
   const formData = new FormData(event.target as HTMLFormElement);
-  console.log("данные из формы", Object.fromEntries(formData.entries()));
+  const dataForSend = Object.fromEntries(formData.entries());
+  console.log(dataForSend.message);
+  messagesController.sendMessage(dataForSend.message as string);
+  (event.target as HTMLFormElement).reset();
 };
 
 const inputSendMessage = new InputSendMessage({

@@ -24,6 +24,9 @@ export class ChatWindow extends Block {
     });
   }
   componentRendered(): void {
-    messagesController.connect();
+    const activeChat = store.getState()?.activeChat;
+    if (activeChat !== 0) {
+      messagesController.connect();
+    }
   }
 }
