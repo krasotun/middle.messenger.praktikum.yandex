@@ -1,10 +1,12 @@
 import authApi from "../api/auth-api";
+import chatApi from "../api/chat-api";
 import { PATHS } from "../core/constants";
 import { errorsHandler } from "../core/errors-handler";
 import router from "../core/router";
 import store from "../core/store";
 import { ISignIn } from "../interfaces/sign-in";
 import { ISignUp } from "../interfaces/sign-up";
+import chatController from "./chat-controller";
 
 class AuthController {
   signup({ ...data }: ISignUp) {
@@ -12,7 +14,7 @@ class AuthController {
       .signup({ ...data })
       .then((res) => {
         if (res.ok) {
-          router.go(PATHS.MAINPAGE);
+          router.go(PATHS.CHATPAGE);
         } else {
           errorsHandler(".sign-form__auth-error", res.json().reason);
         }
@@ -25,6 +27,7 @@ class AuthController {
     authApi
       .signin({ ...data })
       .then((res) => {
+        chatController.getChats();
         if (res.ok) {
           router.go(PATHS.CHATPAGE);
         } else {
