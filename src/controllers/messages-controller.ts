@@ -18,6 +18,9 @@ class MessagesController {
     if (Array.isArray(data)) {
       const messages = data.reverse();
       store.setState({ messageList: messages });
+    } else if (data.type === "message") {
+      const messages = store.getState()?.messageList;
+      messages?.push(data);
     }
     chatController.getChats();
   }
