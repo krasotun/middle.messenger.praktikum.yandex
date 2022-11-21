@@ -12,9 +12,10 @@ export default `
       form(template-props='userRemoveForm' class='template-props')
     .chat-window__content
       ul.chat-messages-list
-        li.chat-message__container
-          p.chat-message__text Текст сообщения
-          p.chat-message__date='05:10'
+        each val in messageList
+          li.chat-message__container
+            p.chat-message__text=val.content
+            p.chat-message__date=val.time
     footer.chat-window__footer
       form(template-props='sendMessageForm' class='template-props')
     `;

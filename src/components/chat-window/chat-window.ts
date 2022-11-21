@@ -14,13 +14,22 @@ export class ChatWindow extends Block {
         this.setProps({ activeChat });
       }
     });
+    store.on(StoreEvents.UPDATE, () => {
+      const messageList = store.getState()?.messageList;
+      const activeChat = store.getState()?.activeChat;
+      if (activeChat !== 0) {
+        this.setProps({ messageList });
+      }
+    });
   }
   render(): string {
-    const { sendMessageForm, activeChat, userAddForm } = this.props;
+    const { sendMessageForm, activeChat, userAddForm, messageList } =
+      this.props;
     return compileTemplate(template, {
       sendMessageForm,
       activeChat,
       userAddForm,
+      messageList,
     });
   }
   componentRendered(): void {
