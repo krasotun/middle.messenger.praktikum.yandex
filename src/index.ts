@@ -21,6 +21,7 @@ import { MainPage } from "./pages/main-page/main-page";
 import { ProfilePage } from "./pages/profile-page/profile-page";
 import { SignUpPage } from "./pages/sign-up-page/sign-up-page";
 import authController from "./controllers/auth-controller";
+import { handleInputValidation } from "./core/form-validator";
 
 const header = new Header();
 const profileLinks = new ProfileLinks({
@@ -100,5 +101,20 @@ document.addEventListener("DOMContentLoaded", () => {
   const exitButton = document.querySelector(".profile__link_clickable");
   exitButton?.addEventListener("click", () => {
     authController.logout();
+  });
+
+  const signInputs = document.querySelectorAll(".sign-form__input");
+  signInputs.forEach((input) => {
+    input.removeEventListener("blur", handleInputValidation);
+    input.removeEventListener("focus", handleInputValidation);
+    input.addEventListener("blur", handleInputValidation);
+    input.addEventListener("focus", handleInputValidation);
+  });
+  const profileInputs = document.querySelectorAll(".profile-form__input");
+  profileInputs.forEach((input) => {
+    input.removeEventListener("blur", handleInputValidation);
+    input.removeEventListener("focus", handleInputValidation);
+    input.addEventListener("blur", handleInputValidation);
+    input.addEventListener("focus", handleInputValidation);
   });
 });
