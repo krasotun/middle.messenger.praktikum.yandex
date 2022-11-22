@@ -16,9 +16,9 @@ ul.chat-list__chats-list
               p.single-chat__sender-name=''
               p.single-chat__message-text='Нет непрочитанных сообщений'
         .single-chat__right-block
-          if val.last_message !==null
+          // if val.last_message !==null
             p.single-chat__message-time=val.last_message.time
-          else
+          // else
             p.single-chat__message-time=' '
           if val.unread_count !==0
             span.single-chat__unread-messages=val.unread_count
