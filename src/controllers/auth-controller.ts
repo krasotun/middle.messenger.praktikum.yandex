@@ -31,7 +31,9 @@ class AuthController {
         if (res.ok) {
           router.go(PATHS.CHATPAGE);
         } else {
-          errorsHandler(".sign-form__auth-error", res.json().reason);
+          if (res.json().reason === "User already in system") {
+            router.go(PATHS.CHATPAGE);
+          } else errorsHandler(".sign-form__auth-error", res.json().reason);
         }
       })
       .catch((error) => {
