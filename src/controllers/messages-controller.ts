@@ -17,9 +17,15 @@ class MessagesController {
     const data = JSON.parse(event.data);
     if (Array.isArray(data)) {
       const messages = data.reverse();
+      messages.forEach((item) => {
+        const formattedTime = new Date(item.time);
+        item.time = formattedTime.toLocaleTimeString();
+      });
       store.setState({ messageList: messages });
     } else if (data.type === "message") {
       const messages = store.getState()?.messageList;
+      const formattedTime = new Date(data.time);
+      data.time = formattedTime.toLocaleTimeString();
       messages?.push(data);
     }
     chatController.getChats();
