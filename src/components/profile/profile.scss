@@ -41,6 +41,17 @@
     line-height: 13px;
     color: #3369f3;
     text-decoration: none;
+    &_clickable {
+      padding: 4px;
+      background-color: red;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 13px;
+      line-height: 13px;
+      color: white;
+      text-align: center;
+      cursor: pointer;
+    }
   }
   &-form {
     width: 510px;

@@ -40,6 +40,18 @@ class AuthController {
         console.log(error);
       });
   }
+  logout() {
+    authApi
+      .logout()
+      .then((res) => {
+        if (res.ok) {
+          router.go(PATHS.MAINPAGE);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
   getUserInfo() {
     authApi
       .getUserInfo()

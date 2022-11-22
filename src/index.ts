@@ -20,6 +20,7 @@ import { EditProfilePage } from "./pages/edit-profile-page/edit-profile-page";
 import { MainPage } from "./pages/main-page/main-page";
 import { ProfilePage } from "./pages/profile-page/profile-page";
 import { SignUpPage } from "./pages/sign-up-page/sign-up-page";
+import authController from "./controllers/auth-controller";
 
 const header = new Header();
 const profileLinks = new ProfileLinks({
@@ -35,10 +36,6 @@ const profileLinks = new ProfileLinks({
     {
       link: "/chat",
       text: "Вернуться в чат",
-    },
-    {
-      link: "/",
-      text: "Выход",
     },
   ],
 });
@@ -100,4 +97,8 @@ document.addEventListener("DOMContentLoaded", () => {
     errorText: "Ошибка сервера",
   });
   router.start();
+  const exitButton = document.querySelector(".profile__link_clickable");
+  exitButton?.addEventListener("click", () => {
+    authController.logout();
+  });
 });

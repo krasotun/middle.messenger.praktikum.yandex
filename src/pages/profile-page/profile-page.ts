@@ -10,7 +10,6 @@ export class ProfilePage extends Block {
   }
   render(): string {
     const { header, changeAvatarForm, profileLinks, profileData } = this.props;
-    console.log(changeAvatarForm, header);
     return compileTemplate(template, {
       header,
       changeAvatarForm,
