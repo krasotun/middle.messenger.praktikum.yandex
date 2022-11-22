@@ -141,6 +141,9 @@
       width: 400px;
       padding: 11px;
       border-radius: 0px 15px 15px 0px;
+      &_mine {
+        align-self: flex-end;
+      }
     }
     &__text {
       font-style: normal;

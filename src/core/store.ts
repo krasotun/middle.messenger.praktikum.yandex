@@ -47,6 +47,7 @@ const initialState: IInitialState = {
       time: "Time from store",
       type: "Type from store",
       user_id: "1111",
+      isMine: false,
     },
   ],
 };

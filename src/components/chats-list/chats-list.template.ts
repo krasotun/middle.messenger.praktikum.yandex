@@ -20,7 +20,7 @@ ul.chat-list__chats-list
             p.single-chat__message-time=val.last_message.time
           // else
             p.single-chat__message-time=' '
-          if val.unread_count !==0
+          if val.unread_count !== 0
             span.single-chat__unread-messages=val.unread_count
           button(class='button single-chat__delete-button' id=val.id) Удалить
 `;

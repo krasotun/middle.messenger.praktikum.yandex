@@ -13,6 +13,7 @@ const messageList = [
     time: "Time from store",
     type: "Type from store",
     user_id: "1111",
+    isMine: false,
   },
   {
     chat_id: 1,
@@ -23,6 +24,7 @@ const messageList = [
     time: "Time from store",
     type: "Type from store",
     user_id: "1111",
+    isMine: false,
   },
   {
     chat_id: 1,
@@ -33,6 +35,7 @@ const messageList = [
     time: "Time from store",
     type: "Type from store",
     user_id: "1111",
+    isMine: false,
   },
 ];
 export const chatWindow = new ChatWindow({

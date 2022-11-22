@@ -13,9 +13,14 @@ export default `
     .chat-window__content
       ul.chat-messages-list
         each val in messageList
-          li.chat-message__container
-            p.chat-message__text=val.content
-            p.chat-message__date=val.time
+          if (!val.isMine)
+            li(class="chat-message__container")
+              p.chat-message__text=val.content
+              p.chat-message__date=val.time
+          else
+            li(class="chat-message__container chat-message__container_mine")
+              p.chat-message__text=val.content
+              p.chat-message__date=val.time
     footer.chat-window__footer
       form(template-props='sendMessageForm' class='template-props')
     `;

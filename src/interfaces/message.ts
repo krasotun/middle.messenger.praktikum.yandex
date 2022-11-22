@@ -7,4 +7,5 @@ export interface IMessage {
   content: string;
   is_read: boolean;
   file: any;
+  isMine: boolean;
 }

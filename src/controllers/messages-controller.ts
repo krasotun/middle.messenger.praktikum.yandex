@@ -20,12 +20,14 @@ class MessagesController {
       messages.forEach((item) => {
         const formattedTime = new Date(item.time);
         item.time = formattedTime.toLocaleTimeString();
+        item.isMine = this._currentUser === item.user_id;
       });
       store.setState({ messageList: messages });
     } else if (data.type === "message") {
       const messages = store.getState()?.messageList;
       const formattedTime = new Date(data.time);
       data.time = formattedTime.toLocaleTimeString();
+      data.isMine = this._currentUser === data.user_id;
       messages?.push(data);
     }
     chatController.getChats();
