@@ -3,8 +3,8 @@ ul.chat-list__chats-list
     each val in chats
       li(class="single-chat__container" id=val.id)
         .single-chat__left-block
-          if val.avatar !==null
-            img.single-chat__avatar(src=val.avatar alt=val.title)
+          if val.avatar !== null
+            img.single-chat__avatar(src='https://ya-praktikum.tech/api/v2/resources'+val.avatar alt=val.title)
           else
             img.single-chat__avatar(src="https://oir.mobi/uploads/posts/2021-03/thumbs/1616429741_57-p-kartinki-goluboi-fon-62.jpg" alt=val.title)
         .single-chat__message-data
