@@ -7,6 +7,10 @@ class MessagesController {
   private _socket: WebSocket;
   private _currentChat: number;
   private _currentUser: number;
+  private _bindedOpenEventListener = this._onOpen.bind(this);
+  private _bindedMessageEventListener = this._omMessage.bind(this);
+  private _bindedErrorEventListener = this._onError.bind(this);
+  private _bindedCloseEventListener = this._onClose.bind(this);
 
   private _onOpen() {
     console.log("Connected");
@@ -51,16 +55,19 @@ class MessagesController {
     );
   }
   private _addEventListeners() {
-    this._socket.addEventListener("open", this._onOpen.bind(this));
-    this._socket.addEventListener("message", this._omMessage.bind(this));
-    this._socket.addEventListener("error", this._onError.bind(this));
-    this._socket.addEventListener("close", this._onClose.bind(this));
+    this._socket.addEventListener("open", this._bindedOpenEventListener);
+    this._socket.addEventListener("message", this._bindedMessageEventListener);
+    this._socket.addEventListener("error", this._bindedErrorEventListener);
+    this._socket.addEventListener("close", this._bindedCloseEventListener);
   }
   private _removeEventListeners() {
-    this._socket.removeEventListener("open", this._onOpen.bind(this));
-    this._socket.removeEventListener("message", this._omMessage.bind(this));
-    this._socket.removeEventListener("error", this._onError.bind(this));
-    this._socket.removeEventListener("close", this._onClose.bind(this));
+    this._socket.removeEventListener("open", this._bindedOpenEventListener);
+    this._socket.removeEventListener(
+      "message",
+      this._bindedMessageEventListener
+    );
+    this._socket.removeEventListener("error", this._bindedErrorEventListener);
+    this._socket.removeEventListener("close", this._bindedCloseEventListener);
   }
 
   connect() {
