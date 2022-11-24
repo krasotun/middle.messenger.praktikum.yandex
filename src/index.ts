@@ -22,6 +22,7 @@ import { ProfilePage } from "./pages/profile-page/profile-page";
 import { SignUpPage } from "./pages/sign-up-page/sign-up-page";
 import authController from "./controllers/auth-controller";
 import { handleInputValidation } from "./core/form-validator";
+import { TextHbs } from "./components/test-hbs/test-hbs";
 
 const header = new Header();
 const profileLinks = new ProfileLinks({
@@ -97,6 +98,8 @@ document.addEventListener("DOMContentLoaded", () => {
     errorCode: "500",
     errorText: "Ошибка сервера",
   });
+
+  router.use(PATHS.TESTHBS, TextHbs);
   router.start();
   const exitButton = document.querySelector(".profile__link_clickable");
   exitButton?.addEventListener("click", () => {
