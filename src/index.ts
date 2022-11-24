@@ -101,6 +101,21 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   router.use(PATHS.TESTHBS, TextHbs, {
     title: "Из пропсов",
+    list: [
+      {
+        number: 1,
+        name: "Марат",
+      },
+
+      {
+        number: 2,
+        name: "Петя",
+      },
+      {
+        number: 3,
+        name: "Стасик",
+      },
+    ],
     children: {
       submitButton: new Button({
         buttonText: "Кнопка",

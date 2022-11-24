@@ -3,14 +3,15 @@ import template from "./test-hbs.template";
 import { Block } from "../../core/block";
 import { ITestHbsProps } from "./test-hbs.props";
 export class TextHbs extends Block {
-  constructor({ children, title }: ITestHbsProps) {
+  constructor({ children, title, list }: ITestHbsProps) {
     super({
       children,
       title,
+      list,
     });
   }
   render() {
-    const { title } = this.props;
-    return compileTemplate(template)({ title });
+    const { title, list } = this.props;
+    return compileTemplate(template)({ title, list });
   }
 }
