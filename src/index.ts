@@ -24,81 +24,82 @@ import authController from "./controllers/auth-controller";
 import { handleInputValidation } from "./core/form-validator";
 import { TextHbs } from "./components/test-hbs/test-hbs";
 import { Button } from "./components/button/button";
+import { NewTest } from "./components/new-test/new-test";
 
-const header = new Header();
-const profileLinks = new ProfileLinks({
-  linkList: [
-    {
-      link: "/edit-profile",
-      text: "Изменить данные",
-    },
-    {
-      link: "/change-password",
-      text: "Изменить пароль",
-    },
-    {
-      link: "/chat",
-      text: "Вернуться в чат",
-    },
-  ],
-});
-const chatMessage = new ChatMessage({
-  date: "11:01",
-  text: "Привет! Смотри, тут всплыл интересный кусок лунной космической истории НАСА в какой-то момент попросила Хассельблад адаптировать модель SWC для полетов на Луну.",
-});
+// const header = new Header();
+// const profileLinks = new ProfileLinks({
+//   linkList: [
+//     {
+//       link: "/edit-profile",
+//       text: "Изменить данные",
+//     },
+//     {
+//       link: "/change-password",
+//       text: "Изменить пароль",
+//     },
+//     {
+//       link: "/chat",
+//       text: "Вернуться в чат",
+//     },
+//   ],
+// });
+// const chatMessage = new ChatMessage({
+//   date: "11:01",
+//   text: "Привет! Смотри, тут всплыл интересный кусок лунной космической истории НАСА в какой-то момент попросила Хассельблад адаптировать модель SWC для полетов на Луну.",
+// });
 
 document.addEventListener("DOMContentLoaded", () => {
-  router.use(PATHS.MAINPAGE, MainPage, {
-    children: {
-      header,
-      signInForm,
-    },
-  });
-  router.use(PATHS.SIGNUPPAGE, SignUpPage, {
-    children: {
-      header,
-      signUpForm,
-    },
-  });
-  router.use(PATHS.PROFILEPAGE, ProfilePage, {
-    children: {
-      changeAvatarForm,
-      header,
-      profileLinks,
-      profileData,
-    },
-  });
-  router.use(PATHS.EDITPROFILEPAGE, EditProfilePage, {
-    children: {
-      header,
-      editProfileForm,
-    },
-  });
-  router.use(PATHS.CHANGEPASSWORDPAGE, ChangePasswordPage, {
-    children: {
-      header,
-      changePasswordForm,
-    },
-  });
-  router.use(PATHS.CHATPAGE, ChatPage, {
-    children: {
-      header,
-      chatAddForm,
-      chatSearchForm,
-      chatsList,
-      chatMessage,
-      chatWindow,
-    },
-  });
+  // router.use(PATHS.MAINPAGE, MainPage, {
+  //   children: {
+  //     header,
+  //     signInForm,
+  //   },
+  // });
+  // router.use(PATHS.SIGNUPPAGE, SignUpPage, {
+  //   children: {
+  //     header,
+  //     signUpForm,
+  //   },
+  // });
+  // router.use(PATHS.PROFILEPAGE, ProfilePage, {
+  //   children: {
+  //     changeAvatarForm,
+  //     header,
+  //     profileLinks,
+  //     profileData,
+  //   },
+  // });
+  // router.use(PATHS.EDITPROFILEPAGE, EditProfilePage, {
+  //   children: {
+  //     header,
+  //     editProfileForm,
+  //   },
+  // });
+  // router.use(PATHS.CHANGEPASSWORDPAGE, ChangePasswordPage, {
+  //   children: {
+  //     header,
+  //     changePasswordForm,
+  //   },
+  // });
+  // router.use(PATHS.CHATPAGE, ChatPage, {
+  //   children: {
+  //     header,
+  //     chatAddForm,
+  //     chatSearchForm,
+  //     chatsList,
+  //     chatMessage,
+  //     chatWindow,
+  //   },
+  // });
 
-  router.use(PATHS.NOTFOUNDPAGE, ServicePage, {
-    errorCode: "404",
-    errorText: "Страница не найдена",
-  });
-  router.use(PATHS.SERVERERRORPAGE, ServicePage, {
-    errorCode: "500",
-    errorText: "Ошибка сервера",
-  });
+  // router.use(PATHS.NOTFOUNDPAGE, ServicePage, {
+  //   errorCode: "404",
+  //   errorText: "Страница не найдена",
+  // });
+  // router.use(PATHS.SERVERERRORPAGE, ServicePage, {
+  //   errorCode: "500",
+  //   errorText: "Ошибка сервера",
+  // });
   router.use(PATHS.TESTHBS, TextHbs, {
     title: "Из пропсов",
     list: [
@@ -123,24 +124,27 @@ document.addEventListener("DOMContentLoaded", () => {
       }),
     },
   });
-  router.start();
-  const exitButton = document.querySelector(".profile__link_clickable");
-  exitButton?.addEventListener("click", () => {
-    authController.logout();
-  });
 
-  const signInputs = document.querySelectorAll(".sign-form__input");
-  signInputs.forEach((input) => {
-    input.removeEventListener("blur", handleInputValidation);
-    input.removeEventListener("focus", handleInputValidation);
-    input.addEventListener("blur", handleInputValidation);
-    input.addEventListener("focus", handleInputValidation);
-  });
-  const profileInputs = document.querySelectorAll(".profile-form__input");
-  profileInputs.forEach((input) => {
-    input.removeEventListener("blur", handleInputValidation);
-    input.removeEventListener("focus", handleInputValidation);
-    input.addEventListener("blur", handleInputValidation);
-    input.addEventListener("focus", handleInputValidation);
-  });
+  // router.use(PATHS.TESTHBS, NewTest);
+
+  router.start();
+  // const exitButton = document.querySelector(".profile__link_clickable");
+  // exitButton?.addEventListener("click", () => {
+  //   authController.logout();
+  // });
+
+  // const signInputs = document.querySelectorAll(".sign-form__input");
+  // signInputs.forEach((input) => {
+  //   input.removeEventListener("blur", handleInputValidation);
+  //   input.removeEventListener("focus", handleInputValidation);
+  //   input.addEventListener("blur", handleInputValidation);
+  //   input.addEventListener("focus", handleInputValidation);
+  // });
+  // const profileInputs = document.querySelectorAll(".profile-form__input");
+  // profileInputs.forEach((input) => {
+  //   input.removeEventListener("blur", handleInputValidation);
+  //   input.removeEventListener("focus", handleInputValidation);
+  //   input.addEventListener("blur", handleInputValidation);
+  //   input.addEventListener("focus", handleInputValidation);
+  // });
 });

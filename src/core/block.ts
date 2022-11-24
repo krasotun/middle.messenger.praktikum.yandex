@@ -1,6 +1,7 @@
 import { EventBus } from "./event-bus";
 import { v4 } from "uuid";
 import { IProps } from "../interfaces/props";
+import { compile as compileTemplate } from "handlebars";
 enum EVENTS {
   INIT = "init",
   FLOW_CDM = "flow:component-did-mount",
@@ -35,9 +36,7 @@ export class Block {
     this._element = this._createDocumentElement("div");
     this.eventBus().emit(EVENTS.FLOW_CDM);
   }
-  render() {
-    return "";
-  }
+  render() {}
   componentDidMount() {}
   componentDidUpdate() {
     return true;
@@ -91,9 +90,10 @@ export class Block {
       }
     });
   }
-  private _compile() {
-    const fragment = this._createDocumentElement("div");
-    fragment.innerHTML = this.render();
+  compile(template: string, props?) {
+    props = this.props;
+    const fragment = this._createDocumentElement("template");
+    fragment.innerHTML = compileTemplate(template)({ props });
     fragment.querySelectorAll(".template-props").forEach((item) => {
       const templateProp = item.getAttribute("template-props");
       if (this.props.children && templateProp) {
@@ -102,10 +102,23 @@ export class Block {
         item.replaceWith(propForReplace.element);
       }
     });
-    return fragment;
+    return fragment.content;
   }
+  // private _compile() {
+  //   const fragment = this._createDocumentElement("div");
+  //   fragment.innerHTML = this.render();
+  //   fragment.querySelectorAll(".template-props").forEach((item) => {
+  //     const templateProp = item.getAttribute("template-props");
+  //     if (this.props.children && templateProp) {
+  //       // @ts-ignore
+  //       const propForReplace = this.props.children[templateProp];
+  //       item.replaceWith(propForReplace.element);
+  //     }
+  //   });
+  //   return fragment.content;
+  // }
   private _render() {
-    const block = this._compile();
+    const block = this.render();
     this._removeEventListeners();
     this._element.innerHTML = "";
     this._element.appendChild(block);
