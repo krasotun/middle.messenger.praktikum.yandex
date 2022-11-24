@@ -1,10 +1,16 @@
 import { compile as compileTemplate } from "handlebars";
 import template from "./test-hbs.template";
 import { Block } from "../../core/block";
+import { ITestHbsProps } from "./test-hbs.props";
 export class TextHbs extends Block {
-  render(): string {
-    const rendered = compileTemplate(template);
-    const renderedTemplate = rendered({ title: "Заголовок" });
-    return renderedTemplate;
+  constructor({ children, title }: ITestHbsProps) {
+    super({
+      children,
+      title,
+    });
+  }
+  render() {
+    const { title } = this.props;
+    return compileTemplate(template)({ title });
   }
 }

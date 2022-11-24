@@ -23,6 +23,7 @@ import { SignUpPage } from "./pages/sign-up-page/sign-up-page";
 import authController from "./controllers/auth-controller";
 import { handleInputValidation } from "./core/form-validator";
 import { TextHbs } from "./components/test-hbs/test-hbs";
+import { Button } from "./components/button/button";
 
 const header = new Header();
 const profileLinks = new ProfileLinks({
@@ -98,8 +99,15 @@ document.addEventListener("DOMContentLoaded", () => {
     errorCode: "500",
     errorText: "Ошибка сервера",
   });
-
-  router.use(PATHS.TESTHBS, TextHbs);
+  router.use(PATHS.TESTHBS, TextHbs, {
+    title: "Из пропсов",
+    children: {
+      submitButton: new Button({
+        buttonText: "Кнопка",
+        className: "sign_in_button",
+      }),
+    },
+  });
   router.start();
   const exitButton = document.querySelector(".profile__link_clickable");
   exitButton?.addEventListener("click", () => {
