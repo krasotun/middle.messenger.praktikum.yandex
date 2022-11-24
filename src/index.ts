@@ -118,10 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
       },
     ],
     children: {
-      submitButton: new Button({
-        buttonText: "Кнопка",
-        className: "sign_in_button",
-      }),
+      newTest: new NewTest(),
     },
   });
 

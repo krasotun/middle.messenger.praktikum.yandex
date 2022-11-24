@@ -93,10 +93,10 @@ export class Block {
   compile(template: string, props?) {
     props = this.props;
     const fragment = this._createDocumentElement("template");
-    fragment.innerHTML = compileTemplate(template)({ props });
+    fragment.innerHTML = compileTemplate(template)(props);
     fragment.querySelectorAll(".template-props").forEach((item) => {
       const templateProp = item.getAttribute("template-props");
-      if (this.props.children && templateProp) {
+      if (props.children && templateProp) {
         // @ts-ignore
         const propForReplace = this.props.children[templateProp];
         item.replaceWith(propForReplace.element);
@@ -104,19 +104,6 @@ export class Block {
     });
     return fragment.content;
   }
-  // private _compile() {
-  //   const fragment = this._createDocumentElement("div");
-  //   fragment.innerHTML = this.render();
-  //   fragment.querySelectorAll(".template-props").forEach((item) => {
-  //     const templateProp = item.getAttribute("template-props");
-  //     if (this.props.children && templateProp) {
-  //       // @ts-ignore
-  //       const propForReplace = this.props.children[templateProp];
-  //       item.replaceWith(propForReplace.element);
-  //     }
-  //   });
-  //   return fragment.content;
-  // }
   private _render() {
     const block = this.render();
     this._removeEventListeners();

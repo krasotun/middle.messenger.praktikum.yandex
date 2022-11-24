@@ -1,7 +1,7 @@
 export default `
 <h1>{{title}}</h1>
-<button template-props='submitButton' class='template-props')></button>
 {{#each list}}
   <h2>{{this.number}} {{this.name}}</h2>
-  {{/each}}
+{{/each}}
+<h1 template-props='newTest' class='template-props')></h1>
 `;
