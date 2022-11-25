@@ -1,4 +1,5 @@
 import { Button } from "../button/button";
+import { Header } from "../header/header";
 import { NewTest } from "../new-test/new-test";
 
 export interface ITestHbsProps {
@@ -6,5 +7,6 @@ export interface ITestHbsProps {
   list: [];
   children: {
     newTest: NewTest;
+    header: Header;
   };
 }

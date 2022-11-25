@@ -49,12 +49,12 @@ import { NewTest } from "./components/new-test/new-test";
 // });
 
 document.addEventListener("DOMContentLoaded", () => {
-  // router.use(PATHS.MAINPAGE, MainPage, {
-  //   children: {
-  //     header,
-  //     signInForm,
-  //   },
-  // });
+  router.use(PATHS.MAINPAGE, MainPage, {
+    children: {
+      header: new Header(),
+      signInForm,
+    },
+  });
   // router.use(PATHS.SIGNUPPAGE, SignUpPage, {
   //   children: {
   //     header,
@@ -119,11 +119,10 @@ document.addEventListener("DOMContentLoaded", () => {
     ],
     children: {
       newTest: new NewTest(),
+      header: new Header(),
     },
   });
-
   // router.use(PATHS.TESTHBS, NewTest);
-
   router.start();
   // const exitButton = document.querySelector(".profile__link_clickable");
   // exitButton?.addEventListener("click", () => {

@@ -1,6 +1,5 @@
 import { Block } from "../../core/block";
 import { IButtonProps } from "./button.props";
-import { render as compileTemplate } from "pug";
 import template from "./button.template";
 
 export class Button extends Block {
@@ -9,7 +8,7 @@ export class Button extends Block {
   }
   render() {
     const { buttonText, className, buttonType } = this.props;
-    return compileTemplate(template, {
+    return this.compile(template, {
       buttonText,
       className,
       buttonType,

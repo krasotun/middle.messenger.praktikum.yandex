@@ -1,3 +1,5 @@
 export default `
-button(type=buttonType class='button '+className) #{buttonText}
+<button class ='button + {{className}}' type={{buttonType}}>
+  {{buttonText}}
+</button>
 `;

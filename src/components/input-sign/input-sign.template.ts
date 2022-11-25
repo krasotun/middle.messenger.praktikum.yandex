@@ -1,5 +1,8 @@
 export default `
-input.sign-form__input(type=type required=required id=id name=name placeholder=placeholder)
-label.sign-form__label(for=labelFor)=label
-span.sign-form__error
+<input class="sign-form__input" type={{type}} required={{required}} id={{id}} name={{name}} placeholder="{{placeholder}}" />
+<label class="sign-form__label" for={{labelFor}}>
+ {{label}}
+ </label>
+<span class="sign-form__error">
+</span>
 `;

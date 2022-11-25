@@ -1,8 +1,6 @@
 import { Block } from "../../core/block";
 import { IInputSignProps } from "./input-sign.props";
-import { render as compileTemplate } from "pug";
 import template from "./input-sign.template";
-
 export class InputSign extends Block {
   constructor({
     labelFor,
@@ -32,7 +30,7 @@ export class InputSign extends Block {
   render(): string {
     const { labelFor, label, type, required, id, name, placeholder } =
       this.props;
-    return compileTemplate(template, {
+    return this.compile(template, {
       labelFor,
       label,
       type,

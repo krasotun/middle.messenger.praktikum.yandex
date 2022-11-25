@@ -1,10 +1,7 @@
-import { render as compileTemplate } from "pug";
 import { Block } from "../../core/block";
 import template from "./header.template";
-
 export class Header extends Block {
   render() {
-    return compileTemplate(template);
+    return this.compile(template);
   }
 }
-export const header = new Header();
