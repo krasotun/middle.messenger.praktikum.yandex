@@ -1,5 +1,4 @@
 import { EventBus } from "./event-bus";
-import { v4 } from "uuid";
 import { IProps } from "../interfaces/props";
 import { compile as compileTemplate } from "handlebars";
 enum EVENTS {
@@ -67,8 +66,11 @@ export class Block {
       return;
     }
     Object.keys(events).forEach((eventName) => {
-      if (this._element.firstChild) {
-        this._element.firstChild.addEventListener(eventName, events[eventName]);
+      if (this._element.firstElementChild) {
+        this._element.firstElementChild.addEventListener(
+          eventName,
+          events[eventName]
+        );
       }
     });
   }
@@ -82,8 +84,8 @@ export class Block {
       return;
     }
     Object.keys(events).forEach((eventName) => {
-      if (this._element.firstChild) {
-        this._element.firstChild.removeEventListener(
+      if (this._element.firstElementChild) {
+        this._element.firstElementChild.removeEventListener(
           eventName,
           events[eventName]
         );
@@ -96,7 +98,6 @@ export class Block {
     fragment.innerHTML = compileTemplate(template)(props);
     if (props?.children) {
       fragment.content.querySelectorAll(".template-props").forEach((item) => {
-        console.log(item);
         const templateProp = item.getAttribute("template-props");
         if (props.children && templateProp) {
           // @ts-ignore
