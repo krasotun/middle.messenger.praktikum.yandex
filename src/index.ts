@@ -8,7 +8,7 @@ import { Header } from "./components/header/header";
 import { ProfileLinks } from "./components/profile-links/profile-links";
 import { profileData } from "./components/profile-data/";
 import { chatWindow } from "./components/chat-window/";
-import { ServicePage } from "./components/service-page/service-page";
+import { ServicePage } from "./pages/service-page/service-page";
 import { signInForm } from "./components/sign-in-form/";
 import { signUpForm } from "./components/sign-up-form/";
 import { chatsList } from "./components/chats-list/";
@@ -92,14 +92,14 @@ document.addEventListener("DOMContentLoaded", () => {
   //   },
   // });
 
-  // router.use(PATHS.NOTFOUNDPAGE, ServicePage, {
-  //   errorCode: "404",
-  //   errorText: "Страница не найдена",
-  // });
-  // router.use(PATHS.SERVERERRORPAGE, ServicePage, {
-  //   errorCode: "500",
-  //   errorText: "Ошибка сервера",
-  // });
+  router.use(PATHS.NOTFOUNDPAGE, ServicePage, {
+    errorCode: "404",
+    errorText: "Страница не найдена",
+  });
+  router.use(PATHS.SERVERERRORPAGE, ServicePage, {
+    errorCode: "500",
+    errorText: "Ошибка сервера",
+  });
   router.use(PATHS.TESTHBS, TextHbs, {
     title: "Из пропсов",
     list: [
@@ -126,20 +126,5 @@ document.addEventListener("DOMContentLoaded", () => {
   // const exitButton = document.querySelector(".profile__link_clickable");
   // exitButton?.addEventListener("click", () => {
   //   authController.logout();
-  // });
-
-  // const signInputs = document.querySelectorAll(".sign-form__input");
-  // signInputs.forEach((input) => {
-  //   input.removeEventListener("blur", handleInputValidation);
-  //   input.removeEventListener("focus", handleInputValidation);
-  //   input.addEventListener("blur", handleInputValidation);
-  //   input.addEventListener("focus", handleInputValidation);
-  // });
-  // const profileInputs = document.querySelectorAll(".profile-form__input");
-  // profileInputs.forEach((input) => {
-  //   input.removeEventListener("blur", handleInputValidation);
-  //   input.removeEventListener("focus", handleInputValidation);
-  //   input.addEventListener("blur", handleInputValidation);
-  //   input.addEventListener("focus", handleInputValidation);
   // });
 });

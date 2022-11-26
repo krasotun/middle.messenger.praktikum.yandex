@@ -1,7 +1,6 @@
 import { Block } from "../../core/block";
 import { IServicePageProps } from "./service-page.props";
 import template from "./service-page.template";
-import { render as compileTemplate } from "pug";
 
 export class ServicePage extends Block {
   constructor(props: IServicePageProps) {
@@ -9,7 +8,7 @@ export class ServicePage extends Block {
   }
   render(): string {
     const { errorCode, errorText } = this.props;
-    return compileTemplate(template, {
+    return this.compile(template, {
       errorCode,
       errorText,
     });
