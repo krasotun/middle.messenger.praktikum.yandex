@@ -1,5 +1,4 @@
 import { Block } from "../../core/block";
-import { render as compileTemplate } from "pug";
 import { ISignUpPageProps } from "./sign-up-page.props";
 import template from "./sign-up-page.template";
 export class SignUpPage extends Block {
@@ -8,7 +7,7 @@ export class SignUpPage extends Block {
   }
   render(): string {
     const { header, signUpForm } = this.props;
-    return compileTemplate(template, {
+    return this.compile(template, {
       header,
       signUpForm,
     });

@@ -1,5 +1,6 @@
 export default `
-header(template-props='header' class='template-props')
-main
-  form(template-props='signUpForm' class='template-props')
+<header template-props='header' class='template-props')></header>
+<main>
+  <form class="template-props" template-props="signUpForm"></form>
+</main>
 `;

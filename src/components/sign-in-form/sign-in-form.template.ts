@@ -11,7 +11,6 @@ export default `
         <div class="sign-form__input-container">
           <input class="template-props" template-props="password"/>
         </div>
-      </h2>
       <div class="sign-form__bottom-container">
         <button class="template-props" template-props="submitButton"></button><span class="sign-form__auth-error"></span>
         <a class="sign-form__link" href={{linkHref}}>{{linkText}}</a>

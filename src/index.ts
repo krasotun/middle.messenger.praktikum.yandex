@@ -55,12 +55,12 @@ document.addEventListener("DOMContentLoaded", () => {
       signInForm,
     },
   });
-  // router.use(PATHS.SIGNUPPAGE, SignUpPage, {
-  //   children: {
-  //     header,
-  //     signUpForm,
-  //   },
-  // });
+  router.use(PATHS.SIGNUPPAGE, SignUpPage, {
+    children: {
+      header: new Header(),
+      signUpForm,
+    },
+  });
   // router.use(PATHS.PROFILEPAGE, ProfilePage, {
   //   children: {
   //     changeAvatarForm,
@@ -122,7 +122,6 @@ document.addEventListener("DOMContentLoaded", () => {
       header: new Header(),
     },
   });
-  // router.use(PATHS.TESTHBS, NewTest);
   router.start();
   // const exitButton = document.querySelector(".profile__link_clickable");
   // exitButton?.addEventListener("click", () => {
