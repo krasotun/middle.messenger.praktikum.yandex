@@ -1,4 +1,3 @@
-import { render as compileTemplate } from "pug";
 import { Block } from "../../core/block";
 import { IChangeAvatarFormProps } from "./change-avatar-form.props";
 import template from "./change-avatar-form.template";
@@ -12,7 +11,7 @@ export class ChangeAvatarForm extends Block {
     });
   }
 
-  render(): string {
-    return compileTemplate(template);
+  render() {
+    return this.compile(template);
   }
 }

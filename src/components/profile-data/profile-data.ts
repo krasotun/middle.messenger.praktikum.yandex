@@ -1,6 +1,5 @@
 import { Block } from "../../core/block";
 import { IProfileDataProps } from "./profile-data.props";
-import { render as compileTemplate } from "pug";
 import template from "./profile-data.template";
 import store, { StoreEvents } from "../../core/store";
 import authController from "../../controllers/auth-controller";
@@ -27,7 +26,7 @@ export class ProfileData extends Block {
       phone,
       id,
     } = this.props;
-    return compileTemplate(template, {
+    return this.compile(template, {
       first_name,
       second_name,
       display_name,

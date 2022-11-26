@@ -26,23 +26,6 @@ import { TextHbs } from "./components/test-hbs/test-hbs";
 import { Button } from "./components/button/button";
 import { NewTest } from "./components/new-test/new-test";
 
-// const header = new Header();
-// const profileLinks = new ProfileLinks({
-//   linkList: [
-//     {
-//       link: "/edit-profile",
-//       text: "Изменить данные",
-//     },
-//     {
-//       link: "/change-password",
-//       text: "Изменить пароль",
-//     },
-//     {
-//       link: "/chat",
-//       text: "Вернуться в чат",
-//     },
-//   ],
-// });
 // const chatMessage = new ChatMessage({
 //   date: "11:01",
 //   text: "Привет! Смотри, тут всплыл интересный кусок лунной космической истории НАСА в какой-то момент попросила Хассельблад адаптировать модель SWC для полетов на Луну.",
@@ -61,14 +44,29 @@ document.addEventListener("DOMContentLoaded", () => {
       signUpForm,
     },
   });
-  // router.use(PATHS.PROFILEPAGE, ProfilePage, {
-  //   children: {
-  //     changeAvatarForm,
-  //     header,
-  //     profileLinks,
-  //     profileData,
-  //   },
-  // });
+  router.use(PATHS.PROFILEPAGE, ProfilePage, {
+    children: {
+      changeAvatarForm,
+      header: new Header(),
+      profileLinks: new ProfileLinks({
+        linkList: [
+          {
+            link: "/edit-profile",
+            text: "Изменить данные",
+          },
+          {
+            link: "/change-password",
+            text: "Изменить пароль",
+          },
+          {
+            link: "/chat",
+            text: "Вернуться в чат",
+          },
+        ],
+      }),
+      profileData,
+    },
+  });
   // router.use(PATHS.EDITPROFILEPAGE, EditProfilePage, {
   //   children: {
   //     header,

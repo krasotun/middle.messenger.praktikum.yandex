@@ -1,6 +1,5 @@
 import { Block } from "../../core/block";
 import template from "./profile-links.template";
-import { render as compileTemplate } from "pug";
 import { IProfileLinksProps } from "./profile-links.props";
 
 export class ProfileLinks extends Block {
@@ -9,7 +8,7 @@ export class ProfileLinks extends Block {
   }
   render(): string {
     const { linkList } = this.props;
-    return compileTemplate(template, {
+    return this.compile(template, {
       linkList,
     });
   }
