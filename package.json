@@ -20,10 +20,10 @@
   "homepage": "https://github.com/krasotun/middle.messenger.praktikum.yandex#readme",
   "dependencies": {
     "express": "4.17.2",
-    "handlebars": "^4.7.7",
     "uuid": "^9.0.0"
   },
   "devDependencies": {
+    "handlebars": "^4.7.7",
     "@parcel/transformer-pug": "2.7.0",
     "@parcel/transformer-sass": "2.7.0",
     "@types/mocha": "^10.0.0",

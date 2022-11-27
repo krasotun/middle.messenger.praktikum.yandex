@@ -1,5 +1,4 @@
 import { Block } from "../../core/block";
-import { render as compileTemplate } from "pug";
 import template from "./edit-profile-page.template";
 import { IEditProfileProps } from "./edit-profile-page.props";
 
@@ -8,10 +7,10 @@ export class EditProfilePage extends Block {
     super({ children });
   }
   render(): string {
-    const { header, editProfileForm } = this.props;
-    return compileTemplate(template, {
+    const { header, profileForm } = this.props;
+    return this.compile(template, {
       header,
-      editProfileForm,
+      profileForm,
     });
   }
 }

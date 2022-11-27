@@ -2,7 +2,7 @@ import { changeAvatarForm } from "./components/change-avatar-form/";
 import { changePasswordForm } from "./components/change-password-form/";
 import { ChatMessage } from "./components/chat-message/chat-message";
 import { chatSearchForm } from "./components/chat-search-form";
-import { editProfileForm } from "./components/edit-profile-form/edit-profile-form";
+import { profileForm } from "./components/profile-form";
 import { chatAddForm } from "./components/chat-add-form";
 import { Header } from "./components/header/header";
 import { ProfileLinks } from "./components/profile-links/profile-links";
@@ -67,12 +67,12 @@ document.addEventListener("DOMContentLoaded", () => {
       profileData,
     },
   });
-  // router.use(PATHS.EDITPROFILEPAGE, EditProfilePage, {
-  //   children: {
-  //     header,
-  //     editProfileForm,
-  //   },
-  // });
+  router.use(PATHS.EDITPROFILEPAGE, EditProfilePage, {
+    children: {
+      header: new Header(),
+      profileForm,
+    },
+  });
   // router.use(PATHS.CHANGEPASSWORDPAGE, ChangePasswordPage, {
   //   children: {
   //     header,

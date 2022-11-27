@@ -1,6 +1,5 @@
 import { Block } from "../../core/block";
 import template from "./profile-form.template";
-import { render as compileTemplate } from "pug";
 import { IProfileFormProps } from "./profile-form.props";
 
 export class ProfileForm extends Block {
@@ -13,6 +12,6 @@ export class ProfileForm extends Block {
     });
   }
   render(): string {
-    return compileTemplate(template);
+    return this.compile(template);
   }
 }

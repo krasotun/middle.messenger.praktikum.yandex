@@ -1,5 +1,8 @@
 export default `
-input.profile-form__input(type=type disabled=disabled required=required id=id name=name placeholder=placeholder)
-label.profile-form__label(for=labelFor)=label
-span.profile-form__error
+<input class="profile-form__input" type={{type}} id={{id}} name={{name}}
+  placeholder="{{placeholder}}" />
+<label class="profile-form__label" for={{labelFor}}>
+  {{label}}
+</label>
+<span class="profile-form__error"></span>
 `;

@@ -1,28 +1,28 @@
 export default `
-form.form.profile-form
-	div.profile-form__input-container
-		input(template-props='email' class='template-props')
-		span.profile-form__error
-		p.profile-form__error-text.profile-form__error-text_hidden
-	div.profile-form__input-container
-		input(template-props='login' class='template-props')
-		span.profile-form__error
-		p.profile-form__error-text.profile-form__error-text_hidden
-	div.profile-form__input-container
-		input(template-props='firstName' class='template-props')
-		span.profile-form__error
-		p.profile-form__error-text.profile-form__error-text_hidden
-	div.profile-form__input-container
-		input(template-props='lastName' class='template-props')
-		span.profile-form__error
-		p.profile-form__error-text.profile-form__error-text_hidden
-	div.profile-form__input-container
-		input(template-props='displayName' class='template-props')
-		span.profile-form__error
-		p.profile-form__error-text.profile-form__error-text_hidden
-	div.profile-form__input-container
-		input(template-props='phone' class='template-props')
-		span.profile-form__error
-		p.profile-form__error-text.profile-form__error-text_hidden
-	button(template-props='submitButton' class='template-props')
-	`;
+<form class="form profile-form">
+  <div class="profile-form__input-container">
+    <input class="template-props" template-props="email">
+    <span class="profile-form__error"></span>
+  </div>
+  <div class="profile-form__input-container">
+    <input class="template-props" template-props="login">
+    <span class="profile-form__error"></span>
+  </div>
+  <div class="profile-form__input-container">
+    <input class="template-props" template-props="firstName">
+    <span class="profile-form__error"></span>
+  </div>
+  <div class="profile-form__input-container">
+    <input class="template-props" template-props="lastName">
+    <span class="profile-form__error"></span>
+  </div>
+  <div class="profile-form__input-container">
+    <input class="template-props" template-props="displayName">
+    <span class="profile-form__error"></span>
+  </div>
+  <div class="profile-form__input-container">
+    <input class="template-props" template-props="phone">
+    <span class="profile-form__error"></span>
+  </div>
+  <button class="template-props" template-props="submitButton"></button>
+</form>`;
