@@ -1,7 +1,8 @@
 export default `
-header(template-props='header' class='template-props')
-main
-  .profile
-    .profile__form
-      form(template-props='changePasswordForm' class='template-props')
+<header template-props='header' class='template-props'></header>
+<main>
+  <div class="profile">
+     <form class='template-props' template-props='changePasswordForm'></form>
+  </div>
+</main>
 `;

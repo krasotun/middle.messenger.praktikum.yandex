@@ -1,6 +1,5 @@
 import { Block } from "../../core/block";
 import template from "./change-password-form.template";
-import { render as compileTemplate } from "pug";
 import { IChangePasswordFormProps } from "./change-password-form.props";
 
 export class ChangePasswordForm extends Block {
@@ -12,7 +11,7 @@ export class ChangePasswordForm extends Block {
       },
     });
   }
-  render(): string {
-    return compileTemplate(template);
+  render() {
+    return this.compile(template);
   }
 }

@@ -73,12 +73,12 @@ document.addEventListener("DOMContentLoaded", () => {
       profileForm,
     },
   });
-  // router.use(PATHS.CHANGEPASSWORDPAGE, ChangePasswordPage, {
-  //   children: {
-  //     header,
-  //     changePasswordForm,
-  //   },
-  // });
+  router.use(PATHS.CHANGEPASSWORDPAGE, ChangePasswordPage, {
+    children: {
+      header: new Header(),
+      changePasswordForm,
+    },
+  });
   // router.use(PATHS.CHATPAGE, ChatPage, {
   //   children: {
   //     header,
@@ -121,8 +121,8 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   });
   router.start();
-  // const exitButton = document.querySelector(".profile__link_clickable");
-  // exitButton?.addEventListener("click", () => {
-  //   authController.logout();
-  // });
+  const exitButton = document.querySelector(".profile__link_clickable");
+  exitButton?.addEventListener("click", () => {
+    authController.logout();
+  });
 });
