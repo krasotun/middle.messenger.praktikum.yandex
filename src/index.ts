@@ -1,3 +1,4 @@
+import "./style.scss";
 import { changeAvatarForm } from "./components/change-avatar-form/";
 import { changePasswordForm } from "./components/change-password-form/";
 import { profileForm } from "./components/profile-form";
