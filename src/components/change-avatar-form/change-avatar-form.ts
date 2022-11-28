@@ -10,7 +10,6 @@ export class ChangeAvatarForm extends Block {
       },
     });
   }
-
   render() {
     return this.compile(template);
   }
