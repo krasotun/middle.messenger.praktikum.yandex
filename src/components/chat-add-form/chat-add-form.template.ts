@@ -1,5 +1,6 @@
 export default `
-form.form.chat-add-form
-		input.chat-add-form__input(type='text' id="title" name='title' placeholder='Название чата')
-		button(template-props='submitButton' class='template-props')
+<form class="form chat-add-form">
+  <input class="chat-add-form__input" type='text' id="title" name='title' placeholder='Название чата' />
+  <button class="template-props" template-props="submitButton"></button>
+</form>
 `;

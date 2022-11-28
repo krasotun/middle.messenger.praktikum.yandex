@@ -11,8 +11,6 @@ export default interface IChatPageProps {
     header: Header;
     chatAddForm: ChatAddForm;
     chatsList: ChatsList;
-    chatSearchForm: ChatSearchForm;
     chatWindow: ChatWindow;
-    chatMessage: ChatMessage;
   };
 }

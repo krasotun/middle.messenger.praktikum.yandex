@@ -1,7 +1,5 @@
 import { changeAvatarForm } from "./components/change-avatar-form/";
 import { changePasswordForm } from "./components/change-password-form/";
-import { ChatMessage } from "./components/chat-message/chat-message";
-import { chatSearchForm } from "./components/chat-search-form";
 import { profileForm } from "./components/profile-form";
 import { chatAddForm } from "./components/chat-add-form";
 import { Header } from "./components/header/header";
@@ -21,15 +19,6 @@ import { MainPage } from "./pages/main-page/main-page";
 import { ProfilePage } from "./pages/profile-page/profile-page";
 import { SignUpPage } from "./pages/sign-up-page/sign-up-page";
 import authController from "./controllers/auth-controller";
-import { handleInputValidation } from "./core/form-validator";
-import { TextHbs } from "./components/test-hbs/test-hbs";
-import { Button } from "./components/button/button";
-import { NewTest } from "./components/new-test/new-test";
-
-// const chatMessage = new ChatMessage({
-//   date: "11:01",
-//   text: "Привет! Смотри, тут всплыл интересный кусок лунной космической истории НАСА в какой-то момент попросила Хассельблад адаптировать модель SWC для полетов на Луну.",
-// });
 
 document.addEventListener("DOMContentLoaded", () => {
   router.use(PATHS.MAINPAGE, MainPage, {
@@ -79,17 +68,14 @@ document.addEventListener("DOMContentLoaded", () => {
       changePasswordForm,
     },
   });
-  // router.use(PATHS.CHATPAGE, ChatPage, {
-  //   children: {
-  //     header,
-  //     chatAddForm,
-  //     chatSearchForm,
-  //     chatsList,
-  //     chatMessage,
-  //     chatWindow,
-  //   },
-  // });
-
+  router.use(PATHS.CHATPAGE, ChatPage, {
+    children: {
+      header: new Header(),
+      chatAddForm,
+      chatsList,
+      chatWindow,
+    },
+  });
   router.use(PATHS.NOTFOUNDPAGE, ServicePage, {
     errorCode: "404",
     errorText: "Страница не найдена",
@@ -97,28 +83,6 @@ document.addEventListener("DOMContentLoaded", () => {
   router.use(PATHS.SERVERERRORPAGE, ServicePage, {
     errorCode: "500",
     errorText: "Ошибка сервера",
-  });
-  router.use(PATHS.TESTHBS, TextHbs, {
-    title: "Из пропсов",
-    list: [
-      {
-        number: 1,
-        name: "Марат",
-      },
-
-      {
-        number: 2,
-        name: "Петя",
-      },
-      {
-        number: 3,
-        name: "Стасик",
-      },
-    ],
-    children: {
-      newTest: new NewTest(),
-      header: new Header(),
-    },
   });
   router.start();
   const exitButton = document.querySelector(".profile__link_clickable");

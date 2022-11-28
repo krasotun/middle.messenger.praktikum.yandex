@@ -11,5 +11,4 @@ export enum PATHS {
   CHANGEPASSWORDPAGE = "/change-password",
   NOTFOUNDPAGE = "/404",
   SERVERERRORPAGE = "/500",
-  TESTHBS = "/test",
 }

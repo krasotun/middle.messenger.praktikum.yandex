@@ -1,5 +1,6 @@
 export default `
-form.form.user-add-form
-		input.user-add-form__input(type='text' id="user" name='user' placeholder='ID пользователя')
-		button(template-props='submitButton' class='template-props')
+<form class="user-add-form">
+  <input class="user-add-form__input" type="text" id="user" name='user' placeholder='ID пользователя'>
+  <button class="template-props" template-props='submitButton'></button>
+</form>
 `;

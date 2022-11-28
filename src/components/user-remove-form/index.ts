@@ -2,13 +2,6 @@ import chatController from "../../controllers/chat-controller";
 import store from "../../core/store";
 import { Button } from "../button/button";
 import { UserRemoveForm } from "./user-remove-form";
-
-const submitButton = new Button({
-  buttonText: "Удалить из чата",
-  className: "user-add-form__submit-button",
-  buttonType: "submit",
-});
-
 const submitUserRemoveForm = (event: SubmitEvent) => {
   event.preventDefault();
   const inputValue = event.target.querySelector(".user-add-form__input").value;
@@ -22,7 +15,11 @@ const submitUserRemoveForm = (event: SubmitEvent) => {
 
 export const userRemoveForm = new UserRemoveForm({
   children: {
-    submitButton,
+    submitButton: new Button({
+      buttonText: "Удалить из чата",
+      className: "user-add-form__submit-button",
+      buttonType: "submit",
+    }),
   },
   onSubmit: submitUserRemoveForm,
 });

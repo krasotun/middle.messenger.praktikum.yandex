@@ -1,3 +1,3 @@
 export default `
-input.send-message-form__input(type='text' id='message' name='message')
+<input class="send-message-form__input" type='text' id='message' name='message'/>
 `;

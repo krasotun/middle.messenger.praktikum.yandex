@@ -1,7 +1,6 @@
 import { Block } from "../../core/block";
 import { IChatAddFormProps } from "./chat-add-form.props";
 import template from "./chat-add-form.template";
-import { render as compileTemplate } from "pug";
 
 export class ChatAddForm extends Block {
   constructor({ children, onSubmit }: IChatAddFormProps) {
@@ -13,6 +12,6 @@ export class ChatAddForm extends Block {
     });
   }
   render(): string {
-    return compileTemplate(template);
+    return this.compile(template);
   }
 }

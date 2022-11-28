@@ -1,6 +1,6 @@
 export default `
-form.form.send-message-form
-	// button(template-props='attachButton' class='template-props')
-	input(template-props='inputSendMessage' class='template-props')
-	button(template-props='submitButton' class='template-props')
+<form class="form send-message-form">
+  <input class="template-props" template-props="inputSendMessage" />
+  <button class="template-props" template-props="submitButton"></button>
+</form>
 `;

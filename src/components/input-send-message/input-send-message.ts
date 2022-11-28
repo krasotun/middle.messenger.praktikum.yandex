@@ -1,6 +1,5 @@
 import { Block } from "../../core/block";
 import { IInputSendMessageProps } from "./input-send-message.props";
-import { render as compileTemplate } from "pug";
 import template from "./input-send-message.template";
 
 export class InputSendMessage extends Block {
@@ -13,6 +12,6 @@ export class InputSendMessage extends Block {
     });
   }
   render(): string {
-    return compileTemplate(template);
+    return this.compile(template);
   }
 }

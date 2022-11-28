@@ -1,9 +1,7 @@
 import { Block } from "../../core/block";
 import { IChatWindowProps } from "./chat-window.props";
-import { render as compileTemplate } from "pug";
 import template from "./chat-window.template";
 import store, { StoreEvents } from "../../core/store";
-import chatApi from "../../api/chat-api";
 import messagesController from "../../controllers/messages-controller";
 export class ChatWindow extends Block {
   constructor(props: IChatWindowProps) {
@@ -25,7 +23,7 @@ export class ChatWindow extends Block {
   render(): string {
     const { sendMessageForm, activeChat, userAddForm, messageList } =
       this.props;
-    return compileTemplate(template, {
+    return this.compile(template, {
       sendMessageForm,
       activeChat,
       userAddForm,

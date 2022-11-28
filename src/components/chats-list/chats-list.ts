@@ -1,5 +1,4 @@
 import { Block } from "../../core/block";
-import { render as compileTemplate } from "pug";
 import { IChatsListProps } from "./chats-list.props";
 import template from "./chats-list.template";
 import store, { StoreEvents } from "../../core/store";
@@ -17,7 +16,7 @@ export class ChatsList extends Block {
   }
   render(): string {
     const { chats } = this.props;
-    return compileTemplate(template, {
+    return this.compile(template, {
       chats,
     });
   }

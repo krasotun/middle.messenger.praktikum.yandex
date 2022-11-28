@@ -1,7 +1,6 @@
 import { Block } from "../../core/block";
 import { IUserAddFormProps } from "./user-add-form.props";
 import template from "./user-add-form.template";
-import { render as compileTemplate } from "pug";
 
 export class UserAddForm extends Block {
   constructor({ children, onSubmit }: IUserAddFormProps) {
@@ -12,7 +11,7 @@ export class UserAddForm extends Block {
       },
     });
   }
-  render(): string {
-    return compileTemplate(template);
+  render() {
+    return this.compile(template);
   }
 }
