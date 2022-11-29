@@ -19,7 +19,8 @@
   },
   "homepage": "https://github.com/krasotun/middle.messenger.praktikum.yandex#readme",
   "dependencies": {
-    "express": "4.17.2"
+    "express": "4.17.2",
+    "express-history-api-fallback": "^2.2.1"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.20.2",
