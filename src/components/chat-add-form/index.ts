@@ -4,7 +4,7 @@ import { ChatAddForm } from "./chat-add-form";
 const submitAddChatForm = (event: SubmitEvent) => {
   event.preventDefault();
   const formData = new FormData(event.target as HTMLFormElement);
-  const dataForSend = Object.fromEntries(formData.entries());
+  const dataForSend: any = Object.fromEntries(formData.entries());
   chatController.createNewChat(dataForSend);
   (event.target as HTMLFormElement).reset();
 };

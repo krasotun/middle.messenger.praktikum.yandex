@@ -47,7 +47,7 @@ export class Block {
     Object.assign(this.props, newProps);
   }
   componentRendered() {}
-  private _createDocumentElement(tag) {
+  private _createDocumentElement(tag: any) {
     const element = document.createElement(tag);
     return element;
   }
@@ -92,24 +92,26 @@ export class Block {
       }
     });
   }
-  compile(template: string, props?) {
+  compile(template: string, props?: any) {
     props = this.props;
     const fragment = this._createDocumentElement("template");
     fragment.innerHTML = compileTemplate(template)(props);
     if (props?.children) {
-      fragment.content.querySelectorAll(".template-props").forEach((item) => {
-        const templateProp = item.getAttribute("template-props");
-        if (props.children && templateProp) {
-          // @ts-ignore
-          const propForReplace = this.props.children[templateProp];
-          item.replaceWith(propForReplace.element);
-        }
-      });
+      fragment.content
+        .querySelectorAll(".template-props")
+        .forEach((item: any) => {
+          const templateProp = item.getAttribute("template-props");
+          if (props.children && templateProp) {
+            // @ts-ignore
+            const propForReplace = this.props.children[templateProp];
+            item.replaceWith(propForReplace.element);
+          }
+        });
     }
     return fragment.content;
   }
   private _render() {
-    const block = this.render();
+    const block: any = this.render();
     this._removeEventListeners();
     this._element.innerHTML = "";
     this._element.appendChild(block);

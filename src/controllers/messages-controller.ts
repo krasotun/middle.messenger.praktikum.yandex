@@ -71,7 +71,7 @@ class MessagesController {
   }
 
   connect() {
-    const activeChat = store.getState()?.activeChat;
+    const activeChat: any = store.getState()?.activeChat;
     const userId = store.getState()?.userInfo.id;
 
     if (activeChat === 0) {
@@ -88,7 +88,7 @@ class MessagesController {
     }
     chatApi
       .getChatToken(activeChat)
-      .then((res) => {
+      .then((res: any) => {
         const chatToken = res.json().token;
         this._socket = new WebSocket(
           `${URLS.WEBSOCKET}/${userId}/${activeChat}/${chatToken}`

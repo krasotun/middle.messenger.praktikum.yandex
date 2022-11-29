@@ -1,8 +1,5 @@
 import messagesController from "../../controllers/messages-controller";
-import {
-  handleInputValidation,
-  formValidator,
-} from "../../core/form-validator";
+import { handleInputValidation } from "../../core/form-validator";
 import { Button } from "../button/button";
 import { InputSendMessage } from "../input-send-message/input-send-message";
 import { SendMessageForm } from "./send-message-form";

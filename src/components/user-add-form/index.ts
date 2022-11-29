@@ -3,7 +3,7 @@ import store from "../../core/store";
 import { Button } from "../button/button";
 import { UserAddForm } from "./user-add-form";
 
-const submitUserAddForm = (event: SubmitEvent) => {
+const submitUserAddForm = (event: any) => {
   event.preventDefault();
   const inputValue = event.target.querySelector(".user-add-form__input").value;
   const activeChat = store.getState()?.activeChat;

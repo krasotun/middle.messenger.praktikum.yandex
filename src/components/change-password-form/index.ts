@@ -1,8 +1,6 @@
 import userController from "../../controllers/user-controller";
-import {
-  formValidator,
-  handleInputValidation,
-} from "../../core/form-validator";
+import { handleInputValidation } from "../../core/form-validator";
+import { IUserPassword } from "../../interfaces/user-password";
 import { Button } from "../button/button";
 import { InputProfile } from "../input-profile/input-profile";
 import { ChangePasswordForm } from "./change-password-form";
@@ -10,7 +8,7 @@ import { ChangePasswordForm } from "./change-password-form";
 const submitChangePasswordForm = (event: SubmitEvent) => {
   event.preventDefault();
   const formData = new FormData(event.target as HTMLFormElement);
-  const dataForSend = Object.fromEntries(formData.entries());
+  const dataForSend: IUserPassword = Object.fromEntries(formData.entries());
   userController.changeUserPassword(dataForSend);
 };
 export const changePasswordForm = new ChangePasswordForm({

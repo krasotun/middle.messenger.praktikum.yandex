@@ -57,7 +57,7 @@ export class HTTPClient {
   }
 
   private _request(url: string, options: ReqOptions) {
-    const { headers = {}, method, data, withCredentials = true } = options;
+    const { method, data, withCredentials = true } = options;
     return new Promise((resolve, reject) => {
       if (!method) {
         reject("No method");

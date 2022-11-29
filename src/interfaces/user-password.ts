@@ -1,4 +1,4 @@
 export interface IUserPassword {
-  oldPassword: string;
-  newPassword: string;
+  oldPassword?: string;
+  newPassword?: string;
 }

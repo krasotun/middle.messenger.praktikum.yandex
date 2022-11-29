@@ -1,6 +1,6 @@
 import { ChatsList } from "./chats-list";
 
-const chats = [
+const chats: any = [
   {
     id: 0,
     title: "Title from template",

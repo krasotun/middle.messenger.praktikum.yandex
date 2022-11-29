@@ -1,5 +1,4 @@
 import authApi from "../api/auth-api";
-import chatApi from "../api/chat-api";
 import { PATHS } from "../core/constants";
 import { errorsHandler } from "../core/errors-handler";
 import router from "../core/router";
@@ -12,7 +11,7 @@ class AuthController {
   signup({ ...data }: ISignUp) {
     authApi
       .signup({ ...data })
-      .then((res) => {
+      .then((res: any) => {
         if (res.ok) {
           router.go(PATHS.CHATPAGE);
         } else {
@@ -26,7 +25,7 @@ class AuthController {
   signin({ ...data }: ISignIn) {
     authApi
       .signin({ ...data })
-      .then((res) => {
+      .then((res: any) => {
         chatController.getChats();
         if (res.ok) {
           router.go(PATHS.CHATPAGE);
@@ -43,7 +42,7 @@ class AuthController {
   logout() {
     authApi
       .logout()
-      .then((res) => {
+      .then((res: any) => {
         if (res.ok) {
           router.go(PATHS.MAINPAGE);
         }
@@ -55,7 +54,7 @@ class AuthController {
   getUserInfo() {
     authApi
       .getUserInfo()
-      .then((res) => {
+      .then((res: any) => {
         store.setState({ userInfo: res.json() });
       })
       .catch((error) => {

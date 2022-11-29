@@ -15,7 +15,8 @@ module.exports = {
     static: path.resolve(__dirname, './dist'),
     compress: true,
     port: 8080,
-    open: true
+    open: true,
+    historyApiFallback: true,
   },
   resolve: {
     extensions: ['.ts', '.js', '.json'],

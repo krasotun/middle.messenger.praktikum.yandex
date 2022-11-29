@@ -6,13 +6,13 @@ import {
   formValidator,
 } from "../../core/form-validator";
 import userController from "../../controllers/user-controller";
-const submitProfileForm = (event: SubmitEvent) => {
+const submitProfileForm = (event: any) => {
   event.preventDefault();
   console.log("Edit-profile form submitted");
   formValidator(event.target as HTMLFormElement);
   if (formValidator(event.target as HTMLFormElement)) {
     const formData = new FormData(event.target as HTMLFormElement);
-    const dataForSend = Object.fromEntries(formData.entries());
+    const dataForSend: any = Object.fromEntries(formData.entries());
     userController.changeUserInfo(dataForSend);
   }
   const formData = new FormData(event.target as HTMLFormElement);

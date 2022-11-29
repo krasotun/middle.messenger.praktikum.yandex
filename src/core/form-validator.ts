@@ -79,7 +79,7 @@ const addInputErrorClass = (errorClass: string, element: HTMLInputElement) => {
 
 const showErrorMessage = (element: HTMLInputElement) => {
   if (element) {
-    const span: HTMLSpanElement = element.closest("div")!.querySelector("span");
+    const span: any = element.closest("div")!.querySelector("span");
     if (span) {
       span.textContent = generateErrorMessage(element);
     }
@@ -87,7 +87,7 @@ const showErrorMessage = (element: HTMLInputElement) => {
 };
 const hideErrorMessage = (element: HTMLInputElement) => {
   if (element) {
-    const span: HTMLSpanElement = element.closest("div")!.querySelector("span");
+    const span: any = element.closest("div")!.querySelector("span");
     if (span) {
       span.textContent = "";
     }

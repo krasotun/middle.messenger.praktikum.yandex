@@ -2,7 +2,7 @@ import chatController from "../../controllers/chat-controller";
 import store from "../../core/store";
 import { Button } from "../button/button";
 import { UserRemoveForm } from "./user-remove-form";
-const submitUserRemoveForm = (event: SubmitEvent) => {
+const submitUserRemoveForm = (event: any) => {
   event.preventDefault();
   const inputValue = event.target.querySelector(".user-add-form__input").value;
   const activeChat = store.getState()?.activeChat;

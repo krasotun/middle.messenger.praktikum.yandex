@@ -9,7 +9,7 @@ class ChatController {
   getChats() {
     chatApi
       .getChats()
-      .then((res) => {
+      .then((res: any) => {
         store.setState({ chats: res.json() });
       })
       .catch((error) => {

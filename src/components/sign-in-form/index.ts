@@ -10,7 +10,7 @@ const submitSignInForm = (event: SubmitEvent) => {
   event.preventDefault();
   if (formValidator(event.target as HTMLFormElement)) {
     const formData = new FormData(event.target as HTMLFormElement);
-    const dataForSend = Object.fromEntries(formData.entries());
+    const dataForSend: any = Object.fromEntries(formData.entries());
     authController.signin(dataForSend);
     // authController.getUserInfo();
   }
