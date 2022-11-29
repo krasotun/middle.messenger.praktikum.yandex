@@ -1,7 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const miniCss = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: { main: './src/index.ts' },
@@ -41,15 +41,12 @@ module.exports = {
       },
       { test: /\.(png|ico|svg|jpg|gif|woff(2)?|eot|ttf|otf)$/, type: 'asset/resource' },
       {
-        test: /\.s[ac]ss$/i,
+        test: /\.(s*)css$/,
         use: [
-          // Creates `style` nodes from JS strings
-          "style-loader",
-          // Translates CSS into CommonJS
-          "css-loader",
-          // Compiles Sass to CSS
-          "sass-loader",
-        ],
+          miniCss.loader,
+          'css-loader',
+          'sass-loader',
+        ]
       },
     ]
   },
@@ -58,8 +55,9 @@ module.exports = {
       template: './src/index.html'
     }),
     new CleanWebpackPlugin(),
-    new MiniCssExtractPlugin()
+    new miniCss({
+      filename: 'style.css',
+    }),
   ]
-
 }
 
