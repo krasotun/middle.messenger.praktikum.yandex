@@ -7,7 +7,8 @@
     "build": "webpack",
     "test": "ts-mocha -p tsconfig.json src/**/*.spec.ts",
     "start": "node server.js",
-    "docker": "docker build -t messenger ."
+    "docker-build": "docker build -t messenger .",
+    "docker-start": "docker run -p 3000:3000 -d messenger"
   },
   "repository": {
     "type": "git",
