@@ -5,10 +5,12 @@
   "scripts": {
     "dev": "webpack serve",
     "build": "webpack",
+    "lint": "npx eslint .",
     "test": "ts-mocha -p tsconfig.json src/**/*.spec.ts",
     "start": "node server.js",
     "docker-build": "docker build -t messenger .",
-    "docker-start": "docker run -p 3000:3000 -d messenger"
+    "docker-start": "docker run -p 3000:3000 -d messenger",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -43,6 +45,7 @@
     "eslint-plugin-react": "7.31.10",
     "handlebars": "^4.7.7",
     "html-webpack-plugin": "^5.5.0",
+    "husky": "^8.0.2",
     "mini-css-extract-plugin": "^2.7.0",
     "os-browserify": "0.3.0",
     "path-browserify": "1.0.1",

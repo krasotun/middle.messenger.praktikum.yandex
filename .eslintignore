@@ -1,0 +1,5 @@
+/node_modules
+/dist
+/.github
+babel.config.js
+webpack.config.js

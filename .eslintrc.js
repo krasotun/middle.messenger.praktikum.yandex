@@ -31,6 +31,5 @@ module.exports = {
     'class-methods-use-this': 'warn',
     'max-len': ['error', { ignoreComments: true, code: 100 }],
     'linebreak-style': 0,
-    "quotes": "double",
   },
 };
