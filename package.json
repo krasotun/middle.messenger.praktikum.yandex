@@ -12,6 +12,12 @@
     "docker-start": "docker run -p 3000:3000 -d messenger",
     "prepare": "husky install"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint",
+      "pre-push": "npm run lint"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/krasotun/middle.messenger.praktikum.yandex.git"
