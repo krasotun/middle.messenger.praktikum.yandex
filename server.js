@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const fallback = require('express-history-api-fallback');
+
 const root = `${__dirname}/dist`;
 const app = express();
 const PORT = 3000;
